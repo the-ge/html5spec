@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 from pathlib import Path
 from slugify import slugify
 import re
+import string
 
 specdir = Path("contrib")
 output_json = Path("spec-json")
@@ -75,17 +76,25 @@ t_event_handler = namedtuple("EventHandlers", ["name", "applies_to"])
 
 
 def gen_elements(element):
+    element = element.strip()
     if element == "autonomous custom elements":
         pass
+    elif element == "HTML elements":
+        pass
+    elif element == "form-associated custom elements":
+        yield "custom"
+    elif element == "MathML math":
+        yield "math"
+    elif element == "SVG svg":
+        yield "svg"
     elif ", " in element:
         # e.g. h1, h2, h3, h4, h5, h6
-        for e in element.split(", "):
+        for e in element.strip(string.whitespace + ",").split(", "):
             yield from gen_elements(e)
     elif ";" in element:
-        for e in element.split(";"):
+        for e in re.split(r'[;\r\n]+', element.strip(string.whitespace + ";")):
             yield from gen_elements(e.strip())
     elif " " in element:
-        # e.g. MathML math, SVG svg, ElementSpec element
         yield element.split(" ")[1]
     else:
         yield element
