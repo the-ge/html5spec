@@ -101,7 +101,7 @@ def gen_elements(element):
 
 
 def gen_attributes(attributes):
-    for attribute in attributes.split(";"):
+    for attribute in attributes.strip(string.whitespace + ";").split(";"):
         attr = attribute.strip("*").strip()
 
         if attr == "globals":
@@ -111,7 +111,7 @@ def gen_attributes(attributes):
 
 
 def gen_categories(categories):
-    for category in categories.split(";"):
+    for category in categories.strip(string.whitespace + ";").split(";"):
         category = category.strip().strip("*")
         if category == "empty":
             continue
