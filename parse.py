@@ -95,13 +95,7 @@ def gen_attributes(attributes):
     for attribute in attributes.split(";"):
         attr = attribute.strip("*").strip()
 
-        if attr == "type\nsrcset":
-            # Fix a bug in the spec formatting
-            # https://github.com/whatwg/html/pull/4543
-            yield "type"
-            yield "srcset"
-
-        elif attr == "globals":
+        if attr == "globals":
             yield from global_attributes
         else:
             yield attr
