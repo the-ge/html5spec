@@ -124,7 +124,7 @@ def gen_keywords(keywords):
 
 def parse_index_elements(soup):
 
-    rows = soup.find("h3", {"id": "elements-3"}).findNext("tbody").find_all("tr")
+    rows = soup.find("h3", {"id": "elements-3"}).find_next("tbody").find_all("tr")
 
     for row in rows:
         cells = row.find_all(["th", "td"])
@@ -144,7 +144,7 @@ def parse_index_elements(soup):
 
 def parse_index_categories(soup):
 
-    rows = soup.find("h3", {"id": "element-content-categories"}).findNext("tbody").find_all("tr")
+    rows = soup.find("h3", {"id": "element-content-categories"}).find_next("tbody").find_all("tr")
 
     for row in rows:
         cells = row.find_all(["th", "td"])
@@ -169,7 +169,7 @@ def parse_index_categories(soup):
 
 
 def parse_index_attributes(soup):
-    rows = soup.find("h3", {"id": "attributes-3"}).findNext("tbody").find_all("tr")
+    rows = soup.find("h3", {"id": "attributes-3"}).find_next("tbody").find_all("tr")
 
     for row in rows:
         cells = row.find_all(["th", "td"])
@@ -190,7 +190,7 @@ def parse_index_attributes(soup):
 
 
 def parse_index_event_handlers(soup):
-    rows = soup.find("table", {"id": "ix-event-handlers"}).findNext("tbody").find_all("tr")
+    rows = soup.find("table", {"id": "ix-event-handlers"}).find_next("tbody").find_all("tr")
 
     for row in rows:
         cells = row.find_all(["th", "td"])
@@ -203,7 +203,7 @@ def parse_index_event_handlers(soup):
 
 
 def parse_input_type_keywords(soup):
-    rows = soup.find("table", {"id": "attr-input-type-keywords"}).findNext("tbody").find_all("tr")
+    rows = soup.find("table", {"id": "attr-input-type-keywords"}).find_next("tbody").find_all("tr")
 
     for row in rows:
         cells = row.find_all(["th", "td"])
@@ -223,7 +223,7 @@ def parse_aria_roles(soup):
     }
 
     for role in concrete_roles:
-        rows = soup.find("section", {"id": role}).findNext("ul").find_all("li")
+        rows = soup.find("section", {"id": role}).find_next("ul").find_all("li")
 
         for row in rows:
             keyword = row.find("code").get_text()
@@ -247,7 +247,7 @@ def parse_element_exceptions_string(xs):
 
 
 def parse_element_types(soup):
-    rows = soup.find("h4", {"id": "elements-2"}).findNext("dl")
+    rows = soup.find("h4", {"id": "elements-2"}).find_next("dl")
     result = {}
 
     for dt, dd in grouper(rows, 2):
