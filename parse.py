@@ -71,7 +71,7 @@ global_attributes = \
 
 t_element       = namedtuple("Element",       ["name", "description", "categories", "attributes", "children"])
 t_category      = namedtuple("Category",      ["name", "elements", "elements_maybe", "exceptions"])
-t_attribute     = namedtuple("Attributes",    ["name", "elements", "desc", "value_type", "value_keywords"])
+t_attribute     = namedtuple("Attributes",    ["name", "tag_scope", "description", "value_type", "value_keywords", "value_type_description", "separator"])
 t_event_handler = namedtuple("EventHandlers", ["name", "applies_to"])
 
 
@@ -192,18 +192,26 @@ def parse_index_attributes(soup):
         cells = [x.get_text().strip() for x in cells]
         assert len(cells) == 4
 
-        attribute, elements, desc, value = cells
-        print(f" + attribute: {attribute}")
-        value_desc = " ".join([x.strip().strip("*") for x in value.split("\n")])
-        value_desc = value_desc.strip()
-        if value.strip().endswith("*"):
-            value_desc += ". The actual rules are more complicated than indicated"
-        value_keywords = set(gen_keywords(value_desc))
+        attribute_name, tag_scope, attribute_description, value_info = cells
+        print(f" + attribute: {attribute_name}")
+        value_type = " ".join([x.strip().strip("*") for x in value_info.split("\n")])
+        value_type = value_type.strip()
+        if value_info.strip().endswith("*"):
+            value_type += ". The actual rules are more complicated than indicated"
+        value_keywords = set(gen_keywords(value_type))
         if value_keywords:
-            value_desc = "Keywords"
+            value_type = "Keywords"
 
-        elements = set(map(lambda x: x.strip(";\n "), gen_elements(elements)))
-        yield t_attribute(attribute.strip(), elements, desc.strip(), value_desc, value_keywords)
+        tag_scope = set(map(lambda x: x.strip(";\n "), gen_elements(tag_scope)))
+        yield t_attribute(
+            attribute_name,
+            tag_scope,
+            attribute_description,
+            value_type,
+            value_keywords,
+            '',
+            '',
+        )
 
 
 def parse_index_event_handlers(soup):
@@ -302,15 +310,29 @@ g_event_handlers = list(parse_index_event_handlers(g_soup))
 with (specdir / "input.html").open("r") as fp:
     g_soup = BeautifulSoup(fp, "lxml")
 
-g_attributes.append(t_attribute("type", set(["input"]),
-    "Type of form control", "An input type e.g. \"text\"", set(parse_input_type_keywords(g_soup))))
+g_attributes.append(t_attribute(
+    "type",
+    set(["input"]),
+    "Type of form control",
+    'An input type e.g. "text"',
+    set(parse_input_type_keywords(g_soup)),
+    "Type of form control",
+    '',
+))
 
 
 with (specdir / "aria.html").open("r") as fp:
     g_soup = BeautifulSoup(fp, "lxml")
 
-g_attributes.append(t_attribute("role", set(["HTML"]),
-    "ARIA semantic role", "A concrete ARIA role", set(parse_aria_roles(g_soup))))
+g_attributes.append(t_attribute(
+    "role",
+    set(["HTML"]),
+    "ARIA semantic role",
+    "A concrete ARIA role",
+    set(parse_aria_roles(g_soup)),
+    "ARIA semantic role",
+    '',
+))
 
 
 with (specdir / "syntax.html").open("r") as fp:
