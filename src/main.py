@@ -18,31 +18,32 @@ def read_timestamp(path: Path) -> tuple[str, datetime]:
     return raw, parsedate_to_datetime(raw)
 
 
-# Read NOTICE and update with timestamps
-NOTICE = NOTICE_FILE.read_text().split("\n\n")
+def load_notice() -> dict:
+    # Read the licenses/NOTICE file and update with timestamps
+    notice = NOTICE_FILE.read_text().split("\n\n")
 
-whatwg_times = [
-    read_timestamp(SPEC_DIR / f"{stem}.time")
-    for stem in HTML_STEMS
-]
-whatwg_time = max(whatwg_times, key=lambda pair: pair[1])[0]
-aria_time = read_timestamp(SPEC_DIR / f"{ARIA_STEM}.time")[0]
+    whatwg_times = [
+        read_timestamp(SPEC_DIR / f"{stem}.time")
+        for stem in HTML_STEMS
+    ]
+    whatwg_time = max(whatwg_times, key=lambda pair: pair[1])[0]
+    aria_time = read_timestamp(SPEC_DIR / f"{ARIA_STEM}.time")[0]
 
-updates = {
-    "The HTML Living Standard": whatwg_time,
-    "Accessible Rich Internet Applications (WAI-ARIA)": aria_time,
-}
+    updates = {
+        "The HTML Living Standard": whatwg_time,
+        "Accessible Rich Internet Applications (WAI-ARIA)": aria_time,
+    }
 
-for prefix, published in updates.items():
-    for i, paragraph in enumerate(NOTICE):
-        if paragraph.startswith(prefix):
-            NOTICE[i] = f"{paragraph} (as last published at {published})"
-            break
-    else:
-        raise ValueError(f"licenses/NOTICE: no paragraph found starting with {prefix!r}")
+    for prefix, published in updates.items():
+        for i, paragraph in enumerate(notice):
+            if paragraph.startswith(prefix):
+                notice[i] = f"{paragraph} (as last published at {published})"
+                break
+        else:
+            raise ValueError(f"licenses/notice: no paragraph found starting with {prefix!r}")
 
-NOTICE = [x.replace("\n", " ").strip() for x in NOTICE]
-META = {"copyright": NOTICE}
+    notice = [x.replace("\n", " ").strip() for x in notice]
+    return {"copyright": notice}
 
 
 def write_output(data: dict, path: Path, fmt: str) -> None:
@@ -71,7 +72,7 @@ def main():
         spec_dir=SPEC_DIR,
         cache_dir=CACHE_DIR,
         global_attrs_file=GLOBAL_ATTRS_FILE,
-        meta=META,
+        meta=load_notice(),
     )
 
     # Parse everything
