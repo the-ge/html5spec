@@ -371,66 +371,67 @@ def parse_element_types(soup):
     return result
 
 
-with (specdir / "indices.html").open("r") as fp:
-    g_soup = BeautifulSoup(fp, "lxml")
+
+def main():
+    with (specdir / "indices.html").open("r") as fp:
+        g_soup = BeautifulSoup(fp, "lxml")
 
 
-g_elements = parse_index_elements(g_soup)
-g_categories = parse_index_categories(g_soup)
-g_attributes = list(parse_index_attributes(g_soup)) # excl. event handlers
-g_event_handlers = list(parse_index_event_handlers(g_soup))
+    g_elements = parse_index_elements(g_soup)
+    g_categories = parse_index_categories(g_soup)
+    g_attributes = list(parse_index_attributes(g_soup)) # excl. event handlers
+    g_event_handlers = list(parse_index_event_handlers(g_soup))
 
-with (specdir / "input.html").open("r") as fp:
-    g_soup = BeautifulSoup(fp, "lxml")
-
-g_attributes.append(t_attribute(
-    "type",
-    set(["input"]),
-    "Type of form control",
-    'An input type e.g. "text"',
-    set(parse_input_type_keywords(g_soup)),
-    "Type of form control",
-    '',
-))
-
-
-with (specdir / "aria.html").open("r") as fp:
-    g_soup = BeautifulSoup(fp, "lxml")
-
-g_attributes.append(t_attribute(
-    "role",
-    set(["HTML"]),
-    "ARIA semantic role",
-    "A concrete ARIA role",
-    set(parse_aria_roles(g_soup)),
-    "ARIA semantic role",
-    '',
-))
+    with (specdir / "input.html").open("r") as fp:
+        g_soup = BeautifulSoup(fp, "lxml")
+    g_attributes.append(t_attribute(
+        "type",
+        set(["input"]),
+        "Type of form control",
+        'An input type e.g. "text"',
+        set(parse_input_type_keywords(g_soup)),
+        "Type of form control",
+        '',
+    ))
 
 
-with (specdir / "syntax.html").open("r") as fp:
-    g_soup = BeautifulSoup(fp, "lxml")
+    with (specdir / "aria.html").open("r") as fp:
+        g_soup = BeautifulSoup(fp, "lxml")
+    g_attributes.append(t_attribute(
+        "role",
+        set(["HTML"]),
+        "ARIA semantic role",
+        "A concrete ARIA role",
+        set(parse_aria_roles(g_soup)),
+        "ARIA semantic role",
+        '',
+    ))
 
-g_element_types = parse_element_types(g_soup)
+    with (specdir / "syntax.html").open("r") as fp:
+        g_soup = BeautifulSoup(fp, "lxml")
+
+    g_element_types = parse_element_types(g_soup)
 
 
-META={
-    "copyright": NOTICE
-}
+    META = {"copyright": NOTICE}
 
-g_elements = dictify_namedtuples(g_elements, meta=META)
-g_categories = dictify_namedtuples(g_categories, meta=META)
-g_attributes = dictify_namedtuples(g_attributes, merge=False, meta=META)
-g_event_handlers = dictify_namedtuples(g_event_handlers, meta=META)
+    g_elements = dictify_namedtuples(g_elements, meta=META)
+    g_categories = dictify_namedtuples(g_categories, meta=META)
+    g_attributes = dictify_namedtuples(g_attributes, merge=False, meta=META)
+    g_event_handlers = dictify_namedtuples(g_event_handlers, meta=META)
 
 
-outputs = [
-    ("elements", g_elements),
-    ("categories", g_categories),
-    ("attributes", g_attributes),
-    ("event-handlers", g_event_handlers),
-    ("element-types", g_element_types),
-]
+    outputs = [
+        ("elements", g_elements),
+        ("categories", g_categories),
+        ("attributes", g_attributes),
+        ("event-handlers", g_event_handlers),
+        ("element-types", g_element_types),
+    ]
 
-for k, v in outputs:
-    (output_json / f"{k}.json").write_text("".join(pformat(v)), encoding="utf-8")
+    for k, v in outputs:
+        (output_json / f"{k}.json").write_text("".join(pformat(v)), encoding="utf-8")
+
+
+if __name__ == "__main__":
+    main()
