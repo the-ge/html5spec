@@ -243,11 +243,11 @@ def parse_index_attributes(soup):
             if value_type == "Text":
                 value_type = 'string'
             elif value_type == "Boolean attribute":
-                value_type = 'float'
+                value_type = 'bool'
             elif value_type == "Valid integer":
                 value_type = 'int'
             elif value_type == "Valid floating-point number":
-                value_type = 'string'
+                value_type = 'float'
             elif value_type == "Valid non-negative integer":
                 value_type = 'int'
             elif value_type == "Valid date string with optional time":
