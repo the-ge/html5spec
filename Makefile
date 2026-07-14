@@ -3,7 +3,7 @@ default: all ;
 
 clean:
 	make -C contrib clean
-	rm -f bin/*.json
+	rm -f spec-json/*.json
 
 _contrib:
 	make -C contrib
