@@ -406,7 +406,7 @@ class SpecParser:
             entries.append(
                 Attribute(
                     name="role",
-                    tag_scope={"HTML"},
+                    tag_scope=[],
                     description="ARIA semantic role",
                     value_type="A concrete ARIA role",
                     value_keywords=set(parse_aria_roles(aria_soup)),

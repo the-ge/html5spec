@@ -1469,9 +1469,7 @@
   "role": {
     "description": "ARIA semantic role",
     "separator": "",
-    "tag_scope": [
-      "HTML"
-    ],
+    "tag_scope": [],
     "value_keywords": [
       "alert",
       "alertdialog",
