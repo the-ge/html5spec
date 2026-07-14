@@ -5,8 +5,7 @@ import dataclasses
 import itertools
 import json
 
-
-CACHE_DIR = Path(".dev/cache")
+import config
 
 
 def pairwise(iterable):
@@ -122,16 +121,16 @@ def make_serializable(obj):
 
 def cache_save(name: str, data: Any) -> None:
     """Save a Python object to a JSON cache file."""
-    CACHE_DIR.mkdir(parents=True, exist_ok=True)
+    config.CACHE_DIR.mkdir(parents=True, exist_ok=True)
     serialized = make_serializable(data)
-    (CACHE_DIR / f"{name}.json").write_text(
+    (config.CACHE_DIR / f"{name}.json").write_text(
         json.dumps(serialized, indent=2, sort_keys=True, ensure_ascii=False),
         encoding="utf-8"
     )
 
 def cache_load(name: str) -> Any:
     """Load a Python object from a JSON cache file. Returns None if missing."""
-    path = CACHE_DIR / f"{name}.json"
+    path = config.CACHE_DIR / f"{name}.json"
     if not path.exists():
         return None
     return json.loads(path.read_text(encoding="utf-8"))

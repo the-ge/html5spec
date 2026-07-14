@@ -17,11 +17,11 @@ from datetime import datetime
 import logging
 import json
 
-# Set up logging
-logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
+from constants import HTML_STEMS, ARIA_STEM
+import config
 
-specdir = Path(".dev/state")
-output_json = Path("spec-json")
+
+logging.basicConfig(level=config.LOG_LEVEL, format="%(levelname)s: %(message)s")
 
 
 def read_timestamp(path: Path) -> tuple[str, datetime]:
@@ -33,11 +33,11 @@ def read_timestamp(path: Path) -> tuple[str, datetime]:
 NOTICE = Path("licenses/NOTICE").read_text().split("\n\n")
 
 whatwg_times = [
-    read_timestamp(specdir / f"{stem}.time")
-    for stem in ("indices", "dom", "input", "syntax")
+    read_timestamp(config.SPEC_DIR / f"{stem}.time")
+    for stem in (HTML_STEMS)
 ]
 whatwg_time = max(whatwg_times, key=lambda pair: pair[1])[0]
-aria_time = read_timestamp(specdir / "aria.time")[0]
+aria_time = read_timestamp(config.SPEC_DIR / "aria.time")[0]
 
 updates = {
     "The HTML Living Standard": whatwg_time,
@@ -56,15 +56,15 @@ NOTICE = [x.replace("\n", " ").strip() for x in NOTICE]
 
 
 def main() -> None:
-    output_json.mkdir(parents=True, exist_ok=True)
+    config.JSON_DIR.mkdir(parents=True, exist_ok=True)
 
     # --- 1. DOM: global attributes (already has its own cache) ---
-    with (specdir / "dom.html").open("r") as fp:
+    with (config.SPEC_DIR / "dom.html").open("r") as fp:
         dom_soup = BeautifulSoup(fp, "lxml")
     global_attributes = parse_global_attributes(dom_soup)
 
     # --- 2. Parse indices.html ---
-    with (specdir / "indices.html").open("r") as fp:
+    with (config.SPEC_DIR / "indices.html").open("r") as fp:
         indices_soup = BeautifulSoup(fp, "lxml")
 
     META = {"copyright": NOTICE}
@@ -109,7 +109,7 @@ def main() -> None:
         raw_attributes = list(parse_index_attributes(indices_soup))
 
         # Append "type" from input.html
-        with (specdir / "input.html").open("r") as fp:
+        with (config.SPEC_DIR / "input.html").open("r") as fp:
             input_soup = BeautifulSoup(fp, "lxml")
         raw_attributes.append(t_attribute(
             name="type",
@@ -122,7 +122,7 @@ def main() -> None:
         ))
 
         # Append "role" from aria.html
-        with (specdir / "aria.html").open("r") as fp:
+        with (config.SPEC_DIR / "aria.html").open("r") as fp:
             aria_soup = BeautifulSoup(fp, "lxml")
         raw_attributes.append(t_attribute(
             name="role",
@@ -167,7 +167,7 @@ def main() -> None:
     # -------- 3. Syntax: element types --------
     CACHE_KEY_ELEMENT_TYPES = "element-types"
     try:
-        with (specdir / "syntax.html").open("r") as fp:
+        with (config.SPEC_DIR / "syntax.html").open("r") as fp:
             syntax_soup = BeautifulSoup(fp, "lxml")
         raw_types = parse_element_types(syntax_soup)
         if len(raw_types) < 4:
@@ -195,7 +195,7 @@ def main() -> None:
     ]
 
     for k, v in outputs:
-        (output_json / f"{k}.json").write_text(
+        (config.JSON_DIR / f"{k}.json").write_text(
             json.dumps(make_serializable(v), indent=4, sort_keys=True, ensure_ascii=False),
             encoding="utf-8"
         )

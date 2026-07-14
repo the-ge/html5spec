@@ -12,8 +12,9 @@ from util import grouper
 from models import t_element, t_category, t_attribute, t_event_handler
 from constants import KEYWORDS_PATTERN, EXCEPTION_PATTERN
 
+import config
 
-GLOBAL_ATTRS_FILE = Path(".dev/state") / "global_attributes"
+
 # Special cases: phrase -> list of yielded tokens (empty list yields nothing)
 SPECIAL_ELEMENTS = {
     "autonomous custom elements": [],
@@ -22,6 +23,7 @@ SPECIAL_ELEMENTS = {
     "MathML math": ["math"],
     "SVG svg": ["svg"],
 }
+
 
 # ---- Generators for splitting spec strings ----
 
@@ -96,7 +98,7 @@ def parse_global_attributes(soup: BeautifulSoup) -> Set[str]:
                       .find_next("ul", {"class": "brief"}) \
                       .find_all("a")
         parsed = default.union({a.get_text().strip() for a in anchors})
-        with GLOBAL_ATTRS_FILE.open("w", encoding="utf-8") as f:
+        with config.GLOBAL_ATTRS_FILE.open("w", encoding="utf-8") as f:
             json.dump(sorted(parsed), f)   # sorted for deterministic output
 
         return parsed
@@ -104,7 +106,7 @@ def parse_global_attributes(soup: BeautifulSoup) -> Set[str]:
     except AttributeError:
         logging.error("Could not parse global attributes from spec. Trying the fallback.")
         try:
-            with GLOBAL_ATTRS_FILE.open("r", encoding="utf-8") as f:
+            with config.GLOBAL_ATTRS_FILE.open("r", encoding="utf-8") as f:
                 data = json.load(f)
                 return set(data)
         except (FileNotFoundError, json.JSONDecodeError):
