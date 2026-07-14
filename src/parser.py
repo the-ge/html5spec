@@ -253,9 +253,9 @@ def parse_aria_roles(soup: BeautifulSoup) -> Iterator[str]:
             yield keyword.strip()
 
 
-def parse_element_types(soup: BeautifulSoup) -> Dict[str, List[str]]:
+def parse_element_types(soup: BeautifulSoup, meta: Optional[Dict[str, Any]]) -> Dict[str, List[str]]:
     rows = soup.find("h4", {"id": "elements-2"}).find_next("dl").find_all(["dt", "dd"], recursive=False)
-    result: Dict[str, List[str]] = {}
+    result: Dict[str, List[str]] = {"__META__": meta}
     for dt, dd in grouper(rows, 2):
         elements = dd.find_all("code")
         if not elements:
@@ -329,70 +329,22 @@ class SpecParser:
 
     def get_global_attributes(self) -> Set[str]:
         """Parse or load cached global attributes."""
-        if self._global_attributes is not None:
-            return self._global_attributes
-
-        key = "global-attributes"
-        default = {"class", "id", "role", "slot"}
-        try:
-            soup = self._load_soup("dom")
-            anchors = (
-                soup.find("h4", {"id": "global-attributes"})
-                .find_next("ul", {"class": "brief"})
-                .find_all("a")
-            )
-            parsed = default.union({a.get_text().strip() for a in anchors})
-            if len(entries) < MIN_COUNT[key]:
-                raise ValueError(f"Expected >=50 elements, got {len(entries)}")
-            # persist to dedicated file
-            self.global_attrs_file.parent.mkdir(parents=True, exist_ok=True)
-            with self.global_attrs_file.open("w", encoding="utf-8") as f:
-                json.dump(sorted(parsed), f)
-            self._global_attributes = parsed
-            return parsed
-        except Exception as e:
-            self._log_parse_error(e, "global-attributes")
-            try:
-                logging.warning("Trying to use the fallback")
-                with self.global_attrs_file.open("r", encoding="utf-8") as f:
-                    data = json.load(f)
-                    self._global_attributes = set(data)
-                    return self._global_attributes
-            except (FileNotFoundError, json.JSONDecodeError):
-                logging.error("No valid fallback found. Using default set.")
-                self._global_attributes = default
-                return default
+        entries = self._get_entries("dom", "global-attributes", parse_global_attributes)
+        self._global_attributes = entries
+        return entries
 
     def parse_elements(self) -> Dict[str, Any]:
         """Parse elements with caching and validation."""
-        key = "elements"
-        try:
-            soup = self._load_soup("indices")
-            global_attrs = self.get_global_attributes()
-            entries = list(parse_index_elements(soup, global_attrs))
-            if len(entries) < MIN_COUNT[key]:
-                raise ValueError(f"Expected >=50 elements, got {len(entries)}")
-            result = dictify(entries, meta=self.meta)
-            self._save_cache(key, result)
-            logging.info(f"✅ Parsed and cached {len(entries)} elements")
-            return result
-        except Exception as e:
-            return self._log_parse_error_and_fallback(e, key)
+        return self._get_dictified(
+            "indices",
+            "elements",
+            parse_index_elements,
+            global_attributes = self.get_global_attributes(),
+        )
 
     def parse_categories(self) -> Dict[str, Any]:
         """Parse categories with caching and validation."""
-        key = "categories"
-        try:
-            soup = self._load_soup("indices")
-            entries = list(parse_index_categories(soup))
-            if len(entries) < MIN_COUNT[key]:
-                raise ValueError(f"Expected >=5 categories, got {len(entries)}")
-            result = dictify(entries, meta=self.meta)
-            self._save_cache(key, result)
-            logging.info(f"✅ Parsed and cached {len(entries)} categories")
-            return result
-        except Exception as e:
-            return self._log_parse_error_and_fallback(e, key)
+        return self._get_dictified("indices", "categories", parse_index_categories)
 
     def parse_attributes(self) -> Dict[str, Any]:
         """Parse attributes (including type & role) with caching and validation."""
@@ -429,46 +381,30 @@ class SpecParser:
                 )
             )
 
-            if len(entries) < MIN_COUNT[key]:
-                raise ValueError(f"Expected >=50 attributes, got {len(entries)}")
+            count = len(entries)
+            if count < MIN_COUNT[key]:
+                raise ValueError(f"Expected >=50 attributes, got {count}")
             # Note: merge=False for attributes
             result = dictify(entries, merge=False, meta=self.meta)
             self._save_cache(key, result)
-            logging.info(f"✅ Parsed and cached {len(entries)} attributes")
+            logging.info(f"✅ Parsed and cached {count} attributes")
             return result
         except Exception as e:
             return self._log_parse_error_and_fallback(e, key)
 
     def parse_event_handlers(self) -> Dict[str, Any]:
         """Parse event handlers with caching and validation."""
-        key = "event-handlers"
-        try:
-            soup = self._load_soup("indices")
-            entries = list(parse_index_event_handlers(soup))
-            if len(entries) < MIN_COUNT[key]:
-                raise ValueError(f"Expected >=50 event handlers, got {len(entries)}")
-            result = dictify(entries, meta=self.meta)
-            self._save_cache(key, result)
-            logging.info(f"✅ Parsed and cached {len(entries)} event handlers")
-            return result
-        except Exception as e:
-            return self._log_parse_error_and_fallback(e, key)
+        #key = "event_handlers"
+        return self._get_dictified("indices", "event-handlers", parse_index_event_handlers)
 
     def parse_element_types(self) -> Dict[str, Any]:
         """Parse element types with caching and validation."""
-        key = "element-types"
-        try:
-            soup = self._load_soup("syntax")
-            entries = parse_element_types(soup)
-            if len(entries) < MIN_COUNT[key]:
-                raise ValueError(f"Expected >=4 element types, got {len(entries)}")
-            # entries is already a dict; add meta
-            entries["__META__"] = self.meta
-            self._save_cache(key, entries)
-            logging.info(f"✅ Parsed and cached {len(entries)} element types")
-            return entries
-        except Exception as e:
-            return self._log_parse_error_and_fallback(e, key)
+        return self._get_entries(
+            "syntax",
+            "element-types",
+            parse_element_types,
+            meta=self.meta,
+        )
 
     def parse_all(self) -> Dict[str, Any]:
         """Convenience method to run all parsers and return a dict of results."""
