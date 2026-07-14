@@ -8,7 +8,7 @@ from slugify import slugify
 import re
 import string
 
-specdir = Path("contrib")
+specdir = Path(".state")
 output_json = Path("spec-json")
 
 
