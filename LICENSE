@@ -1,6 +1,12 @@
 MIT License
 
+Copyright (c) 2019 Ben Golightly <ben@tawesoft.co.uk>
+Copyright (c) 2019 Tawesoft Ltd <opensource@tawesoft.co.uk>
 Copyright (c) 2026 Gabriel Tenita
+
+This license applies to the source code in this repository.
+Generated specification data (spec-json/) incorporates third-party
+content under separate licenses — see licenses/NOTICE.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

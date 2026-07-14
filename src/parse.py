@@ -20,7 +20,7 @@ KEYWORDS_PATTERN = re.compile(r'^(?:"[a-zA-Z0-9/-]*"|the empty string)(?:; (?:"[
 EXCEPTION_PATTERN = re.compile(r'([a-zA-Z0-9-]+) \(if [a-zA-Z0-9\' -]+\)')
 
 
-with Path("COPYING.txt").open("r") as fp:
+with Path("licenses/NOTICE").open("r") as fp:
     COPYING = fp.read().split("\n\n")
 
 with (specdir / "timestamp").open("r") as fp:
