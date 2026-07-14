@@ -8,8 +8,7 @@ import re
 import string
 
 from util import grouper, dictify, make_serializable, Attribute, Category, Element, EventHandler
-from config import KEYWORDS_PATTERN, EXCEPTION_PATTERN
-
+from config import KEYWORDS_PATTERN, EXCEPTION_PATTERN, MIN_ELEMENTS, MIN_CATEGORIES, MIN_ATTRIBUTES, MIN_EVENT_HANDLERS, MIN_ELEMENT_TYPES
 
 # Special cases: phrase -> list of yielded tokens (empty list yields nothing)
 SPECIAL_ELEMENTS = {
@@ -361,7 +360,7 @@ class SpecParser:
             soup = self._load_soup("indices")
             global_attrs = self.get_global_attributes()
             entries = list(parse_index_elements(soup, global_attrs))
-            if len(entries) < 50:
+            if len(entries) < MIN_ELEMENTS:
                 raise ValueError(f"Expected >=50 elements, got {len(entries)}")
             result = dictify(entries, meta=self.meta)
             self._save_cache(key, result)
@@ -376,7 +375,7 @@ class SpecParser:
         try:
             soup = self._load_soup("indices")
             entries = list(parse_index_categories(soup))
-            if len(entries) < 5:
+            if len(entries) < MIN_CATEGORIES:
                 raise ValueError(f"Expected >=5 categories, got {len(entries)}")
             result = dictify(entries, meta=self.meta)
             self._save_cache(key, result)
@@ -420,7 +419,7 @@ class SpecParser:
                 )
             )
 
-            if len(entries) < 50:
+            if len(entries) < MIN_ATTRIBUTES:
                 raise ValueError(f"Expected >=50 attributes, got {len(entries)}")
             # Note: merge=False for attributes
             result = dictify(entries, merge=False, meta=self.meta)
@@ -436,7 +435,7 @@ class SpecParser:
         try:
             soup = self._load_soup("indices")
             entries = list(parse_index_event_handlers(soup))
-            if len(entries) < 50:
+            if len(entries) < MIN_EVENT_HANDLERS:
                 raise ValueError(f"Expected >=50 event handlers, got {len(entries)}")
             result = dictify(entries, meta=self.meta)
             self._save_cache(key, result)
@@ -451,7 +450,7 @@ class SpecParser:
         try:
             soup = self._load_soup("syntax")
             entries = parse_element_types(soup)
-            if len(entries) < 4:
+            if len(entries) < MIN_ELEMENT_TYPES:
                 raise ValueError(f"Expected >=4 element types, got {len(entries)}")
             # entries is already a dict; add meta
             entries["__META__"] = self.meta

@@ -29,3 +29,10 @@ EXCEPTION_PATTERN = re.compile(r'([a-zA-Z0-9-]+) \(if [a-zA-Z0-9\' -]+\)')
 # ---- Timestamp stems ----
 HTML_STEMS = ["indices", "dom", "input", "syntax"]
 ARIA_STEM = "aria"
+
+# ---- html.spec.whatwg.org elements minimum counts ----
+MIN_ELEMENTS = 50
+MIN_CATEGORIES = 5
+MIN_ATTRIBUTES = 50
+MIN_EVENT_HANDLERS = 50
+MIN_ELEMENT_TYPES = 4
