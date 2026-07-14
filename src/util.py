@@ -1,11 +1,47 @@
 from collections import namedtuple
+from dataclasses import dataclass
 from pathlib import Path
 from typing import List, Any, Dict, Union, Iterator, Optional
+from typing import Set, List
 import dataclasses
 import itertools
 import json
 
 import config
+
+
+@dataclass(frozen=True, slots=True)
+class t_element:
+    name: str
+    description: str
+    categories: Set[str]
+    attributes: Set[str]
+    children: Set[str]
+
+
+@dataclass
+class t_category:
+    name: str
+    elements: Set[str]
+    elements_maybe: List[str]
+    exceptions: str
+
+
+@dataclass
+class t_attribute:
+    name: str
+    tag_scope: Set[str]
+    description: str
+    value_type: str
+    value_keywords: Set[str]
+    value_type_description: str
+    separator: str
+
+
+@dataclass
+class t_event_handler:
+    name: str
+    applies_to: str
 
 
 def pairwise(iterable):
@@ -42,11 +78,11 @@ def grouper(iterable, n, fillvalue=None):
 
 
 def dictify_namedtuples(
-    xs: Iterator[Any],  # list/generator of namedtuple or dataclass objects
+    xs: Iterator[Any],  # list/generator of dataclass objects
     merge: bool = True,
     meta: Optional[Dict] = None
 ) -> Dict[str, Any]:
-    """Convert a list of named tuples or dataclasses to a dict where the key is the first
+    """Convert a list of dataclasses to a dict where the key is the first
     field in each object and each key is unique."""
 
     result = {}
@@ -55,24 +91,13 @@ def dictify_namedtuples(
         result["__META__"] = meta
 
     for x in xs:
-        # Determine if x is a dataclass or namedtuple
-        if dataclasses.is_dataclass(x):
-            # Get field names and values using dataclasses
-            fields = dataclasses.fields(x)
-            key_field = fields[0].name
-            key = getattr(x, key_field)
-            r = dataclasses.asdict(x)
-            del r[key_field]  # remove the key field from the value dict
-            keyname = key_field
-        else:
-            # Assume namedtuple
-            key = x[0]
-            keyname = x._fields[0]
-            r = {}
-            for k, v in sorted(x._asdict().items()):
-                if keyname == k:
-                    continue
-                r[k] = v
+        # Get field names and values using dataclasses
+        fields = dataclasses.fields(x)
+        key_field = fields[0].name
+        key = getattr(x, key_field)
+        r = dataclasses.asdict(x)
+        del r[key_field]  # remove the key field from the value dict
+        keyname = key_field
 
         if key in result:
             # Existing entry

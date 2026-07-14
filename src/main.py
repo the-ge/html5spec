@@ -1,17 +1,17 @@
-from util import make_serializable
 from bs4 import BeautifulSoup
 from email.utils import parsedate_to_datetime
 from datetime import datetime
+from pathlib import Path
 import logging
 import json
 import yaml
 
-from constants import HTML_STEMS, ARIA_STEM
-import config
-from spec_parser import SpecParser
+from config import HTML_STEMS, ARIA_STEM, LOG_LEVEL, OUTPUT_FORMAT, NOTICE_FILE, SPEC_DIR, JSON_DIR, CACHE_DIR, GLOBAL_ATTRS_FILE
+from util import make_serializable
+from parser import SpecParser
 
 
-logging.basicConfig(level=config.LOG_LEVEL, format="%(levelname)s: %(message)s")
+logging.basicConfig(level=LOG_LEVEL, format="%(levelname)s: %(message)s")
 
 
 def read_timestamp(path: Path) -> tuple[str, datetime]:
@@ -20,14 +20,14 @@ def read_timestamp(path: Path) -> tuple[str, datetime]:
 
 
 # Read NOTICE and update with timestamps
-NOTICE = config.NOTICE_FILE.read_text().split("\n\n")
+NOTICE = NOTICE_FILE.read_text().split("\n\n")
 
 whatwg_times = [
-    read_timestamp(config.SPEC_DIR / f"{stem}.time")
+    read_timestamp(SPEC_DIR / f"{stem}.time")
     for stem in HTML_STEMS
 ]
 whatwg_time = max(whatwg_times, key=lambda pair: pair[1])[0]
-aria_time = read_timestamp(config.SPEC_DIR / f"{ARIA_STEM}.time")[0]
+aria_time = read_timestamp(SPEC_DIR / f"{ARIA_STEM}.time")[0]
 
 updates = {
     "The HTML Living Standard": whatwg_time,
@@ -65,13 +65,13 @@ def write_output(data: dict, path: Path, fmt: str) -> None:
 
 def main():
     # Prepare output directory
-    config.JSON_DIR.mkdir(parents=True, exist_ok=True)
+    JSON_DIR.mkdir(parents=True, exist_ok=True)
 
     # Instantiate the parser
     parser = SpecParser(
-        spec_dir=config.SPEC_DIR,
-        cache_dir=config.CACHE_DIR,
-        global_attrs_file=config.GLOBAL_ATTRS_FILE,
+        spec_dir=SPEC_DIR,
+        cache_dir=CACHE_DIR,
+        global_attrs_file=GLOBAL_ATTRS_FILE,
         meta=META,
     )
 
@@ -79,12 +79,12 @@ def main():
     results = parser.parse_all()
 
     # Determine file extension
-    ext = "json" if config.OUTPUT_FORMAT == "json" else "yaml"
+    ext = "json" if OUTPUT_FORMAT == "json" else "yaml"
 
     # Write each result
     for name, data in results.items():
-        output_path = config.JSON_DIR / f"{name}.{ext}"
-        write_output(data, output_path, config.OUTPUT_FORMAT)
+        output_path = JSON_DIR / f"{name}.{ext}"
+        write_output(data, output_path, OUTPUT_FORMAT)
         logging.info(f"📝 Wrote {output_path}")
 
 
