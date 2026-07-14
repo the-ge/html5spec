@@ -1,13 +1,13 @@
 from util import grouper, dictify_namedtuples
 from fmt import pformat
 
-from collections import namedtuple
+from dataclasses import dataclass
 from bs4 import BeautifulSoup
 from pathlib import Path
 from slugify import slugify
 from email.utils import parsedate_to_datetime
 from datetime import datetime
-from typing import Iterator, Set, List, Dict, Optional, Tuple, Any
+from typing import Iterator, Set, List, Dict, Tuple, Any
 import re
 import string
 import logging
@@ -98,10 +98,38 @@ global_attributes: List[str] = [
 ]
 
 
-t_element       = namedtuple("Element",       ["name", "description", "categories", "attributes", "children"])
-t_category      = namedtuple("Category",      ["name", "elements", "elements_maybe", "exceptions"])
-t_attribute     = namedtuple("Attributes",    ["name", "tag_scope", "description", "value_type", "value_keywords", "value_type_description", "separator"])
-t_event_handler = namedtuple("EventHandlers", ["name", "applies_to"])
+@dataclass
+class t_element:
+    name: str
+    description: str
+    categories: Set[str]
+    attributes: Set[str]
+    children: Set[str]
+
+
+@dataclass
+class t_category:
+    name: str
+    elements: Set[str]
+    elements_maybe: List[str]   # now a list, not a generator
+    exceptions: str
+
+
+@dataclass
+class t_attribute:
+    name: str
+    tag_scope: Set[str]
+    description: str
+    value_type: str
+    value_keywords: Set[str]
+    value_type_description: str
+    separator: str
+
+
+@dataclass
+class t_event_handler:
+    name: str
+    applies_to: str
 
 
 def gen_elements(element: str) -> Iterator[str]:
@@ -134,7 +162,6 @@ def gen_elements(element: str) -> Iterator[str]:
 def gen_attributes(attributes: str) -> Iterator[str]:
     for attribute in attributes.strip(string.whitespace + ";").split(";"):
         attr = attribute.strip("*").strip()
-
         if attr == "globals":
             yield from global_attributes
         else:
@@ -143,37 +170,28 @@ def gen_attributes(attributes: str) -> Iterator[str]:
 
 def gen_categories(categories: str) -> Iterator[str]:
     for category in categories.strip(string.whitespace + ";").split(";"):
-        category = category.strip().strip("*")
-        if category == "empty":
-            continue
-        yield category
+        cat = category.strip().strip("*")
+        if cat != "empty":
+            yield cat
 
 
 def gen_keywords(keywords: str) -> Iterator[str]:
     """Given a `keywords` string such as `"foo"; "bar"`, yield each keyword.
     Otherwise, yield nothing."""
     if KEYWORDS_PATTERN.fullmatch(keywords):
-        # Check for the literal phrase and return an empty string,
-        # otherwise strip the quotes as before.
         def process_token(token: str) -> str:
             token = token.strip()
-            if token == 'the empty string':
-                return ''
-            return token.strip('"')
-
+            return '' if token == 'the empty string' else token.strip('"')
         yield from map(process_token, keywords.split(";"))
 
 
 def parse_index_elements(soup: BeautifulSoup) -> Iterator[t_element]:
     rows = soup.find("h3", {"id": "elements-3"}).find_next("tbody").find_all("tr")
-
     for row in rows:
-        cells = row.find_all(["th", "td"])
-        cells = [x.get_text().strip() for x in cells]
+        cells = [x.get_text().strip() for x in row.find_all(["th", "td"])]
         if len(cells) != 7:
             logging.error(f"Expected 7 cells, got {len(cells)}. Skipping row: {row}")
             continue
-
         element, desc, categories, _, children, attributes, _ = cells
 
         elements = gen_elements(element)
@@ -181,20 +199,23 @@ def parse_index_elements(soup: BeautifulSoup) -> Iterator[t_element]:
         attributes_set: Set[str] = set(gen_attributes(attributes))
         children_set: Set[str] = set(gen_categories(children))
 
-        for i in sorted(elements):
-            yield t_element(i, desc.strip(), categories_set, attributes_set, children_set)
+        for e in sorted(elements):
+            yield t_element(
+                name=e,
+                description=desc.strip(),
+                categories=categories_set,
+                attributes=attributes_set,
+                children=children_set,
+            )
 
 
 def parse_index_categories(soup: BeautifulSoup) -> Iterator[t_category]:
     rows = soup.find("h3", {"id": "element-content-categories"}).find_next("tbody").find_all("tr")
-
     for row in rows:
-        cells = row.find_all(["th", "td"])
-        cells = [x.get_text().strip() for x in cells]
+        cells = [x.get_text().strip() for x in row.find_all(["th", "td"])]
         if len(cells) != 3:
             logging.error(f"Expected 3 cells, got {len(cells)}. Skipping row: {row}")
             continue
-
         category, elements, exceptions = cells
         category = " ".join(category.split())
 
@@ -208,21 +229,24 @@ def parse_index_categories(soup: BeautifulSoup) -> Iterator[t_category]:
         if exceptions == "—":
             exceptions = ""
 
-        elements_maybe = parse_element_exceptions_string(exceptions)
+        # Convert generator to list to avoid issues with dataclasses.asdict
+        elements_maybe: List[str] = list(parse_element_exceptions_string(exceptions))
 
-        yield t_category(category, elements_set, elements_maybe, exceptions)
+        yield t_category(
+            name=category,
+            elements=elements_set,
+            elements_maybe=elements_maybe,
+            exceptions=exceptions,
+        )
 
 
 def parse_index_attributes(soup: BeautifulSoup) -> Iterator[t_attribute]:
     rows = soup.find("h3", {"id": "attributes-3"}).find_next("tbody").find_all("tr")
-
     for row in rows:
-        cells = row.find_all(["th", "td"])
-        cells = [x.get_text().strip() for x in cells]
+        cells = [x.get_text().strip() for x in row.find_all(["th", "td"])]
         if len(cells) != 4:
             logging.error(f"Expected 4 cells, got {len(cells)}. Skipping row: {row}")
             continue
-
         attribute_name, tag_scope_description, attribute_description, value_info = cells
 
         is_value_complicated: bool = value_info.endswith("*")
@@ -283,39 +307,35 @@ def parse_index_attributes(soup: BeautifulSoup) -> Iterator[t_attribute]:
             value_type_description += f".{tag_notes_str} *Incomplete description. See the full specification."
 
         yield t_attribute(
-            attribute_name,
-            tag_scope,
-            attribute_description,
-            value_type,
-            value_keywords,
-            value_type_description,
-            separator,
+            name=attribute_name,
+            tag_scope=tag_scope,
+            description=attribute_description,
+            value_type=value_type,
+            value_keywords=value_keywords,
+            value_type_description=value_type_description,
+            separator=separator,
         )
 
 
 def parse_index_event_handlers(soup: BeautifulSoup) -> Iterator[t_event_handler]:
     rows = soup.find("table", {"id": "ix-event-handlers"}).find_next("tbody").find_all("tr")
-
     for row in rows:
-        cells = row.find_all(["th", "td"])
-        cells = [x.get_text() for x in cells]
+        cells = [x.get_text() for x in row.find_all(["th", "td"])]
         if len(cells) != 4:
             logging.error(f"Expected 4 cells, got {len(cells)}. Skipping row: {row}")
             continue
-
         attribute, elements, _, _ = cells
-
-        yield t_event_handler(attribute.strip(), elements.strip())
+        yield t_event_handler(
+            name=attribute.strip(),
+            applies_to=elements.strip(),
+        )
 
 
 def parse_input_type_keywords(soup: BeautifulSoup) -> Iterator[str]:
     rows = soup.find("table", {"id": "attr-input-type-keywords"}).find_next("tbody").find_all("tr")
-
     for row in rows:
-        cells = row.find_all(["th", "td"])
-        cells = [x.get_text() for x in cells]
+        cells = [x.get_text() for x in row.find_all(["th", "td"])]
         keyword, *_ = cells
-
         yield keyword.strip()
 
 
@@ -327,10 +347,8 @@ def parse_aria_roles(soup: BeautifulSoup) -> Iterator[str]:
         "live_region_roles",
         "window_roles",
     }
-
     for role in concrete_roles:
         rows = soup.find("section", {"id": role}).find_next("ul").find_all("li")
-
         for row in rows:
             keyword = row.find("code").get_text()
             yield keyword.strip()
@@ -340,12 +358,10 @@ def parse_element_exceptions_string(xs: str) -> Iterator[str]:
     # e.g. "element (if ...); ...' -> [element, ...]
     if not xs:
         return
-
     if ";" in xs:
         parts = xs.split(";")
     else:
         parts = [xs]
-
     for x in parts:
         x = x.strip()
         matches = EXCEPTION_PATTERN.fullmatch(x)
@@ -356,21 +372,17 @@ def parse_element_exceptions_string(xs: str) -> Iterator[str]:
 def parse_element_types(soup: BeautifulSoup) -> Dict[str, List[str]]:
     rows = soup.find("h4", {"id": "elements-2"}).find_next("dl")
     result: Dict[str, List[str]] = {}
-
     for dt, dd in grouper(rows, 2):
         elements = dd.find_all("code")
         if not elements:
             continue
-
         dfn = dt.find("dfn").get_text()
         dfn_slug: str = slugify(dfn)
         if dfn_slug not in result:
             result[dfn_slug] = []
-
         for element in elements:
             name = element.get_text()
             result[dfn_slug].append(name)
-
     return result
 
 
@@ -383,33 +395,35 @@ def main() -> None:
     g_attributes: List[t_attribute] = list(parse_index_attributes(g_soup))  # excl. event handlers
     g_event_handlers: List[t_event_handler] = list(parse_index_event_handlers(g_soup))
 
+    # input.html – add type attribute keywords
     with (specdir / "input.html").open("r") as fp:
         g_soup = BeautifulSoup(fp, "lxml")
     g_attributes.append(t_attribute(
-        "type",
-        {"input"},
-        "Type of form control",
-        'An input type e.g. "text"',
-        set(parse_input_type_keywords(g_soup)),
-        "Type of form control",
-        '',
+        name="type",
+        tag_scope={"input"},
+        description="Type of form control",
+        value_type='An input type e.g. "text"',
+        value_keywords=set(parse_input_type_keywords(g_soup)),
+        value_type_description="Type of form control",
+        separator="",
     ))
 
+    # aria.html – add role attribute keywords
     with (specdir / "aria.html").open("r") as fp:
         g_soup = BeautifulSoup(fp, "lxml")
     g_attributes.append(t_attribute(
-        "role",
-        {"HTML"},
-        "ARIA semantic role",
-        "A concrete ARIA role",
-        set(parse_aria_roles(g_soup)),
-        "ARIA semantic role",
-        '',
+        name="role",
+        tag_scope={"HTML"},
+        description="ARIA semantic role",
+        value_type="A concrete ARIA role",
+        value_keywords=set(parse_aria_roles(g_soup)),
+        value_type_description="ARIA semantic role",
+        separator="",
     ))
 
+    # syntax.html – element types
     with (specdir / "syntax.html").open("r") as fp:
         g_soup = BeautifulSoup(fp, "lxml")
-
     g_element_types: Dict[str, List[str]] = parse_element_types(g_soup)
 
     META: Dict[str, List[str]] = {"copyright": NOTICE}

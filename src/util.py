@@ -1,7 +1,7 @@
 import itertools
 from collections import namedtuple
-from typing import List
-
+from typing import List, Any, Dict, Union, Iterator, Optional
+import dataclasses
 
 def pairwise(iterable):
     """s -> (s0,s1), (s1,s2), (s2, s3), ..., (sLast, None)"""
@@ -30,36 +30,49 @@ def list_lastitems(xs):
 
 
 def grouper(iterable, n, fillvalue=None):
-    "Collect data into fixed-length chunks or blocks"
+    """Collect data into fixed-length chunks or blocks"""
     # grouper('ABCDEFG', 3, 'x') --> ABC DEF Gxx"
     args = [iter(iterable)] * n
     return itertools.zip_longest(*args, fillvalue=fillvalue)
 
 
-def dictify_namedtuples(xs: List[namedtuple], merge=True, meta=None):
-    """Convert a list of named tuples do a dict where the key is the first
-    item in each tuple and each tuple has a unique key."""
+def dictify_namedtuples(
+    xs: Iterator[Any],  # list/generator of namedtuple or dataclass objects
+    merge: bool = True,
+    meta: Optional[Dict] = None
+) -> Dict[str, Any]:
+    """Convert a list of named tuples or dataclasses to a dict where the key is the first
+    field in each object and each key is unique."""
 
     result = {}
 
     if meta:
         result["__META__"] = meta
 
-
     for x in xs:
-        key = x[0]
-        keyname = x._fields[0]
-        r = {}
-
-        for k, v in sorted(x._asdict().items()):
-            if keyname == k:
-                continue
-            r[k] = v
+        # Determine if x is a dataclass or namedtuple
+        if dataclasses.is_dataclass(x):
+            # Get field names and values using dataclasses
+            fields = dataclasses.fields(x)
+            key_field = fields[0].name
+            key = getattr(x, key_field)
+            r = dataclasses.asdict(x)
+            del r[key_field]  # remove the key field from the value dict
+            keyname = key_field
+        else:
+            # Assume namedtuple
+            key = x[0]
+            keyname = x._fields[0]
+            r = {}
+            for k, v in sorted(x._asdict().items()):
+                if keyname == k:
+                    continue
+                r[k] = v
 
         if key in result:
             # Existing entry
             if merge is None:
-                raise KeyError("Duplicate key %s" % repr(key))
+                raise KeyError(f"Duplicate key {key!r}")
 
             if merge:
                 # Merge each value with existing entry
@@ -72,7 +85,9 @@ def dictify_namedtuples(xs: List[namedtuple], merge=True, meta=None):
                     elif isinstance(t[subkey], list):
                         t[subkey].extend(r[subkey])
                     else:
-                        raise NotImplemented
+                        raise NotImplementedError(
+                            f"Don't know how to merge type {type(t[subkey]).__name__} for key {subkey!r}"
+                        )
             else:
                 # Create a linked-list
                 tail = key
@@ -80,15 +95,11 @@ def dictify_namedtuples(xs: List[namedtuple], merge=True, meta=None):
                 while result[tail].get("next"):
                     tail = result[tail].get("next")
                     count += 1
-                newkey = "%s(%d)" % (key, count)
+                newkey = f"{key}({count})"
                 result[tail]["next"] = newkey
                 result[newkey] = r
-
-
         else:
             result[key] = r
 
     return result
-
-
 
