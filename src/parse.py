@@ -33,10 +33,19 @@ whatwg_times = [
     for stem in ("indices", "dom", "input", "syntax")
 ]
 whatwg_time, _ = max(whatwg_times, key=lambda pair: pair[1])
-COPYING.append("HTML Living Standard as published " + whatwg_time)
-
 aria_time, _ = read_timestamp(specdir / "aria.time")
-COPYING.append("WAI-ARIA as published " + aria_time)
+updates = {
+    "The HTML Living Standard": whatwg_time,
+    "Accessible Rich Internet Applications (WAI-ARIA)": aria_time,
+}
+
+for prefix, published in updates.items():
+    for i, paragraph in enumerate(COPYING):
+        if paragraph.startswith(prefix):
+            COPYING[i] = f"{paragraph} (as published {published})"
+            break
+    else:
+        raise ValueError(f"licenses/COPYING: no paragraph found starting with {prefix!r}")
 
 COPYING = [x.replace("\n", " ").strip() for x in COPYING]
 
