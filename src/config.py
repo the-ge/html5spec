@@ -15,3 +15,6 @@ NOTICE_FILE = LICENSES_DIR / "NOTICE"
 
 # ---- Logging ----
 LOG_LEVEL = "INFO"
+
+# ---- Output format ----
+OUTPUT_FORMAT = "json"
