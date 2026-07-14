@@ -103,3 +103,13 @@ def dictify_namedtuples(
 
     return result
 
+def make_serializable(obj):
+    """Recursively convert sets to sorted lists for JSON serialization."""
+    if isinstance(obj, set):
+        return sorted(make_serializable(v) for v in obj)
+    elif isinstance(obj, list):
+        return [make_serializable(v) for v in obj]
+    elif isinstance(obj, dict):
+        return {k: make_serializable(v) for k, v in obj.items()}
+    else:
+        return obj

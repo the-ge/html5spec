@@ -1,5 +1,4 @@
-from util import dictify_namedtuples
-from fmt import pformat
+from util import dictify_namedtuples, make_serializable
 from parsers import (
     parse_global_attributes,
     parse_index_elements,
@@ -17,7 +16,7 @@ from email.utils import parsedate_to_datetime
 from datetime import datetime
 from typing import List, Dict, Tuple, Any
 import logging
-
+import json
 
 # Set up logging
 logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
@@ -58,6 +57,9 @@ NOTICE = [x.replace("\n", " ").strip() for x in NOTICE]
 
 
 def main() -> None:
+    # Ensure output directory exists
+    output_json.mkdir(parents=True, exist_ok=True)
+
     # dom.html - get global attributes list
     with (specdir / "dom.html").open("r") as fp:
         g_soup = BeautifulSoup(fp, "lxml")
@@ -119,7 +121,12 @@ def main() -> None:
     ]
 
     for k, v in outputs:
-        (output_json / f"{k}.json").write_text("".join(pformat(v)), encoding="utf-8")
+        # Convert sets to lists (JSON can't serialize sets)
+        serialized = make_serializable(v)
+        (output_json / f"{k}.json").write_text(
+            json.dumps(serialized, indent=4, sort_keys=True, ensure_ascii=False),
+            encoding="utf-8"
+        )
 
 
 if __name__ == "__main__":
