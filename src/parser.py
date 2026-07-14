@@ -341,11 +341,10 @@ class SpecParser:
                 json.dump(sorted(parsed), f)
             self._global_attributes = parsed
             return parsed
-        except (AttributeError, ValueError) as e:
-            logging.error(f"Spec structure may have changed: {e}")
-        except Exception:
-            logging.error("Could not parse global attributes from spec. Trying fallback.")
+        except Exception as e:
+            self._log_parse_error(e, "global-attributes")
             try:
+                logging.warning("Trying to use the fallback")
                 with self.global_attrs_file.open("r", encoding="utf-8") as f:
                     data = json.load(f)
                     self._global_attributes = set(data)
@@ -442,15 +441,8 @@ class SpecParser:
             self._save_cache(key, result)
             logging.info(f"✅ Parsed and cached {len(raw)} attributes")
             return result
-        except (AttributeError, ValueError) as e:
-            logging.error(f"Spec structure may have changed: {e}")
         except Exception as e:
-            logging.error(f"Failed to parse attributes: {e}")
-            cached = self._load_cache(key)
-            if cached is None:
-                raise RuntimeError("No cache available for attributes") from e
-            logging.info("📦 Loaded attributes from cache")
-            return cached
+            return self._log_parse_error_and_fallback(e, key)
 
     def parse_event_handlers(self) -> Dict[str, Any]:
         """Parse event handlers with caching and validation."""
@@ -464,15 +456,8 @@ class SpecParser:
             self._save_cache(key, result)
             logging.info(f"✅ Parsed and cached {len(raw)} event handlers")
             return result
-        except (AttributeError, ValueError) as e:
-            logging.error(f"Spec structure may have changed: {e}")
         except Exception as e:
-            logging.error(f"Failed to parse event handlers: {e}")
-            cached = self._load_cache(key)
-            if cached is None:
-                raise RuntimeError("No cache available for event handlers") from e
-            logging.info("📦 Loaded event handlers from cache")
-            return cached
+            return self._log_parse_error_and_fallback(e, key)
 
     def parse_element_types(self) -> Dict[str, Any]:
         """Parse element types with caching and validation."""
@@ -490,12 +475,7 @@ class SpecParser:
         except (AttributeError, ValueError) as e:
             logging.error(f"Spec structure may have changed: {e}")
         except Exception as e:
-            logging.error(f"Failed to parse element types: {e}")
-            cached = self._load_cache(key)
-            if cached is None:
-                raise RuntimeError("No cache available for element types") from e
-            logging.info("📦 Loaded element types from cache")
-            return cached
+            return self._log_parse_error_and_fallback(e, key)
 
     def parse_all(self) -> Dict[str, Any]:
         """Convenience method to run all parsers and return a dict of results."""
