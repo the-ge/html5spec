@@ -5,7 +5,7 @@ import logging
 import json
 import yaml
 
-from config import HTML_STEMS, ARIA_STEM, LOG_LEVEL, OUTPUT_FORMAT, NOTICE_FILE, SPEC_DIR, JSON_DIR, CACHE_DIR, GLOBAL_ATTRS_FILE
+from config import HTML_STEMS, ARIA_STEM, LOG_LEVEL, OUTPUT_FORMAT, NOTICE_FILE, SPEC_DIR, JSON_DIR, CACHE_DIR
 from util import make_serializable
 from parser import SpecParser
 
@@ -71,7 +71,6 @@ def main():
     parser = SpecParser(
         spec_dir=SPEC_DIR,
         cache_dir=CACHE_DIR,
-        global_attrs_file=GLOBAL_ATTRS_FILE,
         meta=load_notice(),
     )
 

@@ -275,12 +275,10 @@ class SpecParser:
         self,
         spec_dir: Path,
         cache_dir: Path,
-        global_attrs_file: Path,
         meta: Optional[Dict[str, Any]] = None,
     ):
         self.spec_dir = spec_dir
         self.cache_dir = cache_dir
-        self.global_attrs_file = global_attrs_file
         self.meta = meta or {}
         self._soups: Dict[str, BeautifulSoup] = {}
         self._global_attributes: Optional[Set[str]] = None
