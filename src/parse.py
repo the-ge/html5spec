@@ -9,6 +9,7 @@ from email.utils import parsedate_to_datetime
 import re
 import string
 
+
 specdir = Path(".state")
 output_json = Path("spec-json")
 
@@ -355,13 +356,6 @@ def parse_element_types(soup):
             result[dfn].append(name)
 
     return result
-
-
-def element_wrapper(element_name):
-    """NOTE: Not injection safe"""
-    def f(content):
-        return "<%s>%s</%s>" % (element_name, content, element_name)
-    return f
 
 
 with (specdir / "indices.html").open("r") as fp:
