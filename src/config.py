@@ -34,7 +34,7 @@ MIN_COUNT = {
 	"elements": 50,
 	"categories": 5,
 	"attributes": 50,
-	"event-handlers": 50,
-	"element-types": 4,
-	"global-attributes": 32,
+	"event_handlers": 50,
+	"element_types": 4,
+	"global_attributes": 32,
 }

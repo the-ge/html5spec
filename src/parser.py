@@ -363,7 +363,7 @@ class SpecParser:
 
     def get_global_attributes(self) -> Set[str]:
         """Parse or load cached global attributes."""
-        entries = self._get_entries("dom", "global-attributes", parse_global_attributes)
+        entries = self._get_entries("dom", "global_attributes", parse_global_attributes)
         self._global_attributes = entries
         return entries
 
@@ -429,13 +429,13 @@ class SpecParser:
     def parse_event_handlers(self) -> Dict[str, Any]:
         """Parse event handlers with caching and validation."""
         #key = "event_handlers"
-        return self._get_dictified("indices", "event-handlers", parse_index_event_handlers)
+        return self._get_dictified("indices", "event_handlers", parse_index_event_handlers)
 
     def parse_element_types(self) -> Dict[str, Any]:
         """Parse element types with caching and validation."""
         return self._get_entries(
             "syntax",
-            "element-types",
+            "element_types",
             parse_element_types,
             meta=self.meta,
         )
