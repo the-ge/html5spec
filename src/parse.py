@@ -25,8 +25,7 @@ def read_timestamp(path):
     raw = path.read_text().strip()
     return raw, parsedate_to_datetime(raw)
 
-with open("licenses/NOTICE") as fp:
-    NOTICE = fp.read().split("\n\n")
+NOTICE = Path("licenses/NOTICE").read_text().split("\n\n")
 
 whatwg_times = [
     read_timestamp(specdir / f"{stem}.time")
@@ -427,6 +426,4 @@ outputs = [
 ]
 
 for k, v in outputs:
-    with (output_json / (k + ".json")).open("wb") as fp:
-        fp.write("".join(pformat(v)).encode("utf-8"))
-
+    (output_json / f"{k}.json").write_text("".join(pformat(v)), encoding="utf-8")
