@@ -1,5 +1,5 @@
-from util import *
-from fmt import *
+from util import grouper, dictify_namedtuples
+from fmt import pformat
 
 from collections import namedtuple
 from bs4 import BeautifulSoup
