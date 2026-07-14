@@ -35,10 +35,10 @@ def gen_elements(elements: str) -> Iterator[str]:
 
     if ", " in elements:
         for e in elements.strip(string.whitespace + ",").split(", "):
-            yield from gen_elementss(e)
+            yield from gen_elements(e)
     elif ";" in elements:
         for e in re.split(r'[;\r\n]+', elements.strip(string.whitespace + ";")):
-            yield from gen_elementss(e.strip())
+            yield from gen_elements(e.strip())
     elif "(" in elements or ")" in elements:
         yield elements
     else:
@@ -90,7 +90,7 @@ def parse_global_attributes(soup: BeautifulSoup) -> Set[str]:
     return entries
 
 
-def parse_index_elements(soup: BeautifulSoup, global_attributes: Set[str]) -> Iterator[Element]:
+def parse_elements(soup: BeautifulSoup, global_attributes: Set[str]) -> Iterator[Element]:
     rows = soup.find("h3", {"id": "elements-3"}).find_next("tbody").find_all("tr")
     for row in rows:
         cells = [x.get_text().strip() for x in row.find_all(["th", "td"])]
@@ -114,7 +114,7 @@ def parse_index_elements(soup: BeautifulSoup, global_attributes: Set[str]) -> It
             )
 
 
-def parse_index_categories(soup: BeautifulSoup) -> Iterator[Category]:
+def parse_categories(soup: BeautifulSoup) -> Iterator[Category]:
     rows = soup.find("h3", {"id": "element-content-categories"}).find_next("tbody").find_all("tr")
     for row in rows:
         cells = [x.get_text().strip() for x in row.find_all(["th", "td"])]
@@ -142,7 +142,7 @@ def parse_index_categories(soup: BeautifulSoup) -> Iterator[Category]:
         )
 
 
-def parse_index_attributes(soup: BeautifulSoup) -> Iterator[Attribute]:
+def parse_attributes(soup: BeautifulSoup) -> Iterator[Attribute]:
     rows = soup.find("h3", {"id": "attributes-3"}).find_next("tbody").find_all("tr")
     for row in rows:
         cells = [x.get_text().strip() for x in row.find_all(["th", "td"])]
@@ -216,7 +216,7 @@ def parse_index_attributes(soup: BeautifulSoup) -> Iterator[Attribute]:
         )
 
 
-def parse_index_event_handlers(soup: BeautifulSoup) -> Iterator[EventHandler]:
+def parse_event_handlers(soup: BeautifulSoup) -> Iterator[EventHandler]:
     rows = soup.find("table", {"id": "ix-event-handlers"}).find_next("tbody").find_all("tr")
     for row in rows:
         cells = [x.get_text() for x in row.find_all(["th", "td"])]
@@ -372,20 +372,20 @@ class SpecParser:
         return self._get_dictified(
             "indices",
             "elements",
-            parse_index_elements,
+            parse_elements,
             global_attributes = self.get_global_attributes(),
         )
 
     def parse_categories(self) -> Dict[str, Any]:
         """Parse categories with caching and validation."""
-        return self._get_dictified("indices", "categories", parse_index_categories)
+        return self._get_dictified("indices", "categories", parse_categories)
 
     def parse_attributes(self) -> Dict[str, Any]:
         """Parse attributes (including type & role) with caching and validation."""
         key = "attributes"
         try:
             indices_soup = self._load_soup("indices")
-            entries = list(parse_index_attributes(indices_soup))
+            entries = list(parse_attributes(indices_soup))
 
             # Append "type" from input.html
             input_soup = self._load_soup("input")
@@ -429,7 +429,7 @@ class SpecParser:
     def parse_event_handlers(self) -> Dict[str, Any]:
         """Parse event handlers with caching and validation."""
         #key = "event_handlers"
-        return self._get_dictified("indices", "event_handlers", parse_index_event_handlers)
+        return self._get_dictified("indices", "event_handlers", parse_event_handlers)
 
     def parse_element_types(self) -> Dict[str, Any]:
         """Parse element types with caching and validation."""
