@@ -5,7 +5,7 @@ import re
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
 # ---- Directories ----
-SPEC_DIR = PROJECT_ROOT / ".dev/state"             # raw spec HTML files
+STATE_DIR = PROJECT_ROOT / ".dev/state"             # raw spec HTML files
 JSON_DIR = PROJECT_ROOT / "spec-json"       # final JSON output
 CACHE_DIR = PROJECT_ROOT / ".dev" / "cache"        # cached parsed data
 

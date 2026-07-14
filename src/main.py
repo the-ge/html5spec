@@ -5,7 +5,7 @@ import logging
 import json
 import yaml
 
-from config import HTML_STEMS, ARIA_STEM, LOG_LEVEL, OUTPUT_FORMAT, NOTICE_FILE, SPEC_DIR, JSON_DIR, CACHE_DIR
+from config import HTML_STEMS, ARIA_STEM, LOG_LEVEL, OUTPUT_FORMAT, NOTICE_FILE, STATE_DIR, JSON_DIR, CACHE_DIR
 from util import make_serializable
 from parser import SpecParser
 
@@ -23,11 +23,11 @@ def load_notice() -> dict:
     notice = NOTICE_FILE.read_text().split("\n\n")
 
     whatwg_times = [
-        read_timestamp(SPEC_DIR / f"{stem}.time")
+        read_timestamp(STATE_DIR / f"{stem}.time")
         for stem in HTML_STEMS
     ]
     whatwg_time = max(whatwg_times, key=lambda pair: pair[1])[0]
-    aria_time = read_timestamp(SPEC_DIR / f"{ARIA_STEM}.time")[0]
+    aria_time = read_timestamp(STATE_DIR / f"{ARIA_STEM}.time")[0]
 
     updates = {
         "The HTML Living Standard": whatwg_time,
@@ -69,7 +69,7 @@ def main():
 
     # Instantiate the parser
     parser = SpecParser(
-        spec_dir=SPEC_DIR,
+        state_dir=STATE_DIR,
         cache_dir=CACHE_DIR,
         meta=load_notice(),
     )
