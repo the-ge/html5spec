@@ -2,10 +2,10 @@
 default: all ;
 
 _state:
-	make -C .state
+	make -C .dev/state
 
 clean:
-	make -C .state clean
+	make -C .dev/state clean
 	rm -f spec-json/*.json
 
 install:

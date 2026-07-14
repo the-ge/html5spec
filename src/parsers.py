@@ -13,7 +13,7 @@ from models import t_element, t_category, t_attribute, t_event_handler
 from constants import KEYWORDS_PATTERN, EXCEPTION_PATTERN
 
 
-GLOBAL_ATTRS_FILE = Path(".state") / "global_attributes"
+GLOBAL_ATTRS_FILE = Path(".dev/state") / "global_attributes"
 
 
 # ---- Generators for splitting spec strings ----
