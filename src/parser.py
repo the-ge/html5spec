@@ -33,14 +33,19 @@ def gen_elements(elements: str) -> Iterator[str]:
         yield from SPECIAL_ELEMENTS[elements]
         return
 
-    if ", " in elements:
-        for e in elements.strip(string.whitespace + ",").split(", "):
-            yield from gen_elements(e)
-    elif ";" in elements:
-        for e in re.split(r'[;\r\n]+', elements.strip(string.whitespace + ";")):
+    if ";" in elements:
+        for e in re.split(r'\s*;\s*', elements.strip(string.whitespace + ";")):
             yield from gen_elements(e.strip())
+    elif "," in elements:
+        for e in re.split(r'\s*,\s*', elements.strip(string.whitespace + ",")):
+            yield from gen_elements(e)
     elif "(" in elements or ")" in elements:
         yield elements
+    # bug @ https://html.spec.whatwg.org/multipage/indices.html#attributes-3:attr-media-controls
+    # `controls` "Element(s)" cell has no semicolon between 'video' and 'img' <code> elements
+    elif elements == "video\nimg":
+        for e in elements.split("\n"):
+            yield from gen_elements(e)
     else:
         yield elements
 
