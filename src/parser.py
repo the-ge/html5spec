@@ -160,7 +160,7 @@ def parse_attributes(soup: BeautifulSoup) -> Iterator[Attribute]:
         if is_complicated:
             value_info = value_info[:-1]
         value_type = " ".join(x.strip().strip("*") for x in value_info.split("\n")).strip()
-        value_type_desc = value_type
+        value_info = value_type
         separator = ""
 
         tag_scope: Set[str] = set()
@@ -176,10 +176,10 @@ def parse_attributes(soup: BeautifulSoup) -> Iterator[Attribute]:
                 tag_scope.add(tmp)
         tag_notes = '' if tag_notes == [] else f'Special tag scope: {', '.join(tag_notes)}'
 
-        value_keywords = set(gen_keywords(value_type))
-        if value_keywords:
+        value_enum = set(gen_keywords(value_type))
+        if value_enum:
             value_type = "enum"
-            value_type_desc = ""
+            value_info = ""
         else:
             match value_type:
                 case "Text":                                            value_type = "string"
@@ -205,8 +205,8 @@ def parse_attributes(soup: BeautifulSoup) -> Iterator[Attribute]:
                     separator = ","
                 case _:                                                 value_type = "string"
 
-        value_type_desc = '. '.join([v for v in [
-            value_type_desc,
+        value_info = '. '.join([v for v in [
+            value_info,
             tag_notes,
             f"*Incomplete description. See the full specification." if is_complicated else'',
         ] if v])
@@ -216,8 +216,8 @@ def parse_attributes(soup: BeautifulSoup) -> Iterator[Attribute]:
             tag_scope=tag_scope,
             description=attr_desc,
             value_type=value_type,
-            value_keywords=value_keywords,
-            value_type_description=value_type_desc,
+            value_enum=value_enum,
+            value_info=value_info,
             separator=separator,
         )
 
@@ -401,8 +401,8 @@ class SpecParser:
                     tag_scope={"input"},
                     description="Type of form control",
                     value_type='An input type e.g. "text"',
-                    value_keywords=set(parse_input_types(input_soup)),
-                    value_type_description="Type of form control",
+                    value_enum=set(parse_input_types(input_soup)),
+                    value_info="Type of form control",
                     separator="",
                 )
             )
@@ -415,8 +415,8 @@ class SpecParser:
                     tag_scope=[],
                     description="ARIA semantic role",
                     value_type="A concrete ARIA role",
-                    value_keywords=set(parse_aria_roles(aria_soup)),
-                    value_type_description="ARIA semantic role",
+                    value_enum=set(parse_aria_roles(aria_soup)),
+                    value_info="ARIA semantic role",
                     separator="",
                 )
             )

@@ -27,8 +27,8 @@ class Attribute:
     tag_scope: Set[str]
     description: str
     value_type: str
-    value_keywords: Set[str]
-    value_type_description: str
+    value_enum: Set[str]
+    value_info: str
     separator: str
 
 
