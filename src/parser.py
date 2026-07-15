@@ -156,26 +156,25 @@ def parse_attributes(soup: BeautifulSoup) -> Iterator[Attribute]:
             continue
         attr_name, tag_scope_desc, attr_desc, value_info = cells
 
-        is_value_complicated = value_info.endswith("*")
-        if is_value_complicated:
+        is_complicated = value_info.endswith("*")
+        if is_complicated:
             value_info = value_info[:-1]
         value_type = " ".join(x.strip().strip("*") for x in value_info.split("\n")).strip()
         value_type_desc = value_type
         separator = ""
 
-        is_tag_complicated = False
         tag_scope: Set[str] = set()
         tag_notes: List[str] = []
         for token in gen_elements(tag_scope_desc):
             tmp = token.strip()
             idx = tmp.find('(')
             if idx != -1:
-                is_tag_complicated = True
+                is_complicated = True
                 tag_scope.add(tmp[:idx].strip())
                 tag_notes.append(token)
             else:
                 tag_scope.add(tmp)
-        tag_notes_str = f' Special tag scope: {", ".join(tag_notes)}.' if is_tag_complicated else ""
+        tag_notes = '' if tag_notes == [] else f'Special tag scope: {', '.join(tag_notes)}'
 
         value_keywords = set(gen_keywords(value_type))
         if value_keywords:
@@ -206,9 +205,11 @@ def parse_attributes(soup: BeautifulSoup) -> Iterator[Attribute]:
                     separator = ","
                 case _:                                                 value_type = "string"
 
-
-        if is_value_complicated or is_tag_complicated:
-            value_type_desc += f".{tag_notes_str} *Incomplete description. See the full specification."
+        value_type_desc = '. '.join([v for v in [
+            value_type_desc,
+            tag_notes,
+            f"*Incomplete description. See the full specification." if is_complicated else'',
+        ] if v])
 
         yield Attribute(
             name=attr_name,
