@@ -46,13 +46,6 @@ class ElementType:
     info: str
 
 
-def grouper(iterable, n, fillvalue=None):
-    """Collect data into fixed-length chunks or blocks"""
-    # grouper('ABCDEFG', 3, 'x') --> ABC DEF Gxx"
-    args = [iter(iterable)] * n
-    return itertools.zip_longest(*args, fillvalue=fillvalue)
-
-
 def dictify(
     xs: Iterator[Any],  # list/generator of dataclass objects
     merge: bool = True,
