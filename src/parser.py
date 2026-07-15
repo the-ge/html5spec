@@ -162,12 +162,12 @@ def parse_attributes(soup: BeautifulSoup) -> Iterator[Attribute]:
         if len(cells) != 4:
             logging.error(f'Expected 4 cells, got {len(cells)}. Skipping row: {row}')
             continue
-        attr_name, tag_scope_desc, attr_desc, value_info = cells
+        attr_name, tag_scope_info, attr_desc, value_info = cells
 
         if attr_name == 'controls':
-            video_idx = tag_scope_desc.find('video')
-            img_idx = tag_scope_desc.find('img', video_idx + len('video')) if video_idx != -1 else -1
-            if img_idx != -1 and ';' in tag_scope_desc[video_idx + len('video'):img_idx]:
+            video_idx = tag_scope_info.find('video')
+            img_idx = tag_scope_info.find('img', video_idx + len('video')) if video_idx != -1 else -1
+            if img_idx != -1 and ';' in tag_scope_info[video_idx + len('video'):img_idx]:
                 logging.warning("gen_elements()'s 'video\\nimg' workaround may no longer be needed. Check!")
 
         is_complicated = value_info.endswith('*')
@@ -179,7 +179,7 @@ def parse_attributes(soup: BeautifulSoup) -> Iterator[Attribute]:
 
         tag_scope: set[str] = set()
         tag_notes: list[str] = []
-        for token in gen_elements(tag_scope_desc):
+        for token in gen_elements(tag_scope_info):
             tmp = token.strip()
             idx = tmp.find('(')
             if idx != -1:
