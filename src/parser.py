@@ -445,7 +445,6 @@ class SpecParser:
 
     def get_event_handlers(self) -> dict[str, Any]:
         """Parse event handlers with caching and validation."""
-        # key = "event_handlers"
         return self._get_dictified('indices', 'event_handlers', parse_event_handlers)
 
     def get_element_types(self) -> dict[str, Any]:
