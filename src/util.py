@@ -39,6 +39,13 @@ class EventHandler:
     applies_to: str
 
 
+@dataclass(frozen=True, slots=True)
+class ElementType:
+    name: str
+    tags: set[str]
+    info: str
+
+
 def grouper(iterable, n, fillvalue=None):
     """Collect data into fixed-length chunks or blocks"""
     # grouper('ABCDEFG', 3, 'x') --> ABC DEF Gxx"
@@ -49,15 +56,11 @@ def grouper(iterable, n, fillvalue=None):
 def dictify(
     xs: Iterator[Any],  # list/generator of dataclass objects
     merge: bool = True,
-    meta: dict | None = None,
 ) -> dict[str, Any]:
     """Convert a list of dataclasses to a dict where the key is the first
     field in each object and each key is unique."""
 
     result = {}
-
-    if meta:
-        result['__META__'] = meta
 
     for x in xs:
         # Get field names and values using dataclasses

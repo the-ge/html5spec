@@ -10,7 +10,7 @@ from bs4 import BeautifulSoup
 from slugify import slugify
 
 from config import EXCEPTION_PATTERN, KEYWORDS_PATTERN, MIN_COUNT
-from util import Attribute, Category, Element, EventHandler, dictify, grouper, make_serializable
+from util import Attribute, Category, Element, ElementType, EventHandler, dictify, make_serializable
 
 # Special cases: phrase -> list of yielded tokens (empty list yields nothing)
 SPECIAL_ELEMENTS = {
@@ -281,20 +281,27 @@ def parse_aria_roles(soup: BeautifulSoup) -> Iterator[str]:
             yield keyword.strip()
 
 
-def parse_element_types(soup: BeautifulSoup, meta: dict[str, Any] | None) -> dict[str, list[str]]:
+def parse_element_types(soup: BeautifulSoup) -> Iterator[ElementType]:
     # https://html.spec.whatwg.org/dev/syntax.html#elements-2
     rows = soup.find('h4', {'id': 'elements-2'}).find_next('dl').find_all(['dt', 'dd'], recursive=False)
-    result: dict[str, list[str]] = {'__META__': meta}
-    for dt, dd in grouper(rows, 2):
-        elements = dd.find_all('code')
-        if not elements:
-            continue
-        dfn = dt.find('dfn').get_text()
-        dfn_slug = slugify(dfn)
-        result.setdefault(dfn_slug, [])
-        for element in elements:
-            result[dfn_slug].append(element.get_text())
-    return result
+    prev = None  # tag name of the last row seen: None, 'dt', or 'dd'
+    name = None
+    for row in rows:
+        if row.name == 'dt':
+            if prev not in (None, 'dd'):
+                logging.error(f'<dt> not preceded by a <dd>: {row}')
+            name = slugify(row.dfn.get_text())
+            prev = 'dt'
+        elif row.name == 'dd':
+            if prev != 'dt':
+                logging.error(f'<dd> not preceded by a <dt>: {row}')
+                continue
+            tags = {tag.get_text().strip() for tag in row.find_all('code')}
+            info = '' if tags else row.get_text().strip()
+            prev = 'dd'
+            yield ElementType(name=name, tags=tags, info=info)
+    if prev == 'dt':
+        logging.error(f'Trailing <dt> with no following <dd>: {name!r}')
 
 
 class SpecParser:
@@ -338,6 +345,11 @@ class SpecParser:
             return None
         return json.loads(path.read_text(encoding='utf-8'))
 
+    def _add_meta(self, entries: dict[str, Any]) -> dict[str, Any]:
+        """Attach NOTICE metadata to a dict-shaped result. The single place
+        where meta gets injected, always immediately before caching."""
+        return {'__META__': self.meta, **entries} if self.meta else entries
+
     def _log_parse_error_and_fallback(self, e: Exception, cache_key: str):
         if isinstance(e, (AttributeError, ValueError)):
             logging.error(f'Spec structure may have changed: {e}')
@@ -349,18 +361,27 @@ class SpecParser:
         logging.info(f'📦 Loaded {cache_key} from cache')
         return cached
 
-    def _get_entries(self, source: str, key: str, parser: Callable, **parser_kwargs):
+    def _get_result(
+        self, source: str, key: str, parser: Callable, with_meta: bool = False, **parser_kwargs
+    ) -> set[str] | dict[str, Any]:
+        """Parse a section (returning a Set or a Dict, either is fine — both support
+        len()), validate, optionally attach meta, cache, and return it."""
         try:
             soup = self._load_soup(source)
             entries = parser(soup, **parser_kwargs)
             count = len(entries)
             if count < MIN_COUNT[key]:
                 raise ValueError(f'Expected >={MIN_COUNT[key]} {key}, got {count}')
+            if with_meta:
+                entries = self._add_meta(entries)
             self._save_cache(key, entries)
             logging.info(f'✅ Parsed and cached {count} {key}')
             return entries
         except Exception as e:
-            return self._log_parse_error_and_fallback(e, key)
+            cached = self._log_parse_error_and_fallback(e, key)
+            if isinstance(cached, list):
+                cached = set(cached)
+            return cached
 
     def _get_dictified(self, source: str, key: str, parser: Callable, **parser_kwargs) -> dict[str, Any]:
         try:
@@ -369,7 +390,7 @@ class SpecParser:
             count = len(entries)
             if count < MIN_COUNT[key]:
                 raise ValueError(f'Expected >={MIN_COUNT[key]} {key}, got {count}')
-            result = dictify(entries, meta=self.meta)
+            result = self._add_meta(dictify(entries))
             self._save_cache(key, result)
             logging.info(f'✅ Parsed and cached {count} {key}')
             return result
@@ -380,7 +401,7 @@ class SpecParser:
 
     def get_global_attributes(self) -> set[str]:
         """Parse or load cached global attributes."""
-        entries = self._get_entries('dom', 'global_attributes', parse_global_attributes)
+        entries = self._get_result('dom', 'global_attributes', parse_global_attributes)
         self._global_attributes = entries
         return entries
 
@@ -436,7 +457,7 @@ class SpecParser:
             if count < MIN_COUNT[key]:
                 raise ValueError(f'Expected >=50 attributes, got {count}')
             # Note: merge=False for attributes
-            result = dictify(entries, merge=False, meta=self.meta)
+            result = self._add_meta(dictify(entries, merge=False))
             self._save_cache(key, result)
             logging.info(f'✅ Parsed and cached {count} attributes')
             return result
@@ -449,12 +470,7 @@ class SpecParser:
 
     def get_element_types(self) -> dict[str, Any]:
         """Parse element types with caching and validation."""
-        return self._get_entries(
-            'syntax',
-            'element_types',
-            parse_element_types,
-            meta=self.meta,
-        )
+        return self._get_dictified('syntax', 'element_types', parse_element_types)
 
     def get_all(self) -> dict[str, Any]:
         """Convenience method to run all parsers and return a dict of results."""
