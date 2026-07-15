@@ -1,0 +1,10 @@
+attributes:
+- per [MATHML]
+categories:
+- embedded
+- flow
+- palpable
+- phrasing
+children:
+- per [MATHML]
+description: MathML root

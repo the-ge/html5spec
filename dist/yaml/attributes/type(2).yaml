@@ -1,0 +1,11 @@
+description: Type of button
+next: type(3)
+separator: ''
+tag_scope:
+- button
+value_enum:
+- button
+- reset
+- submit
+value_info: ''
+value_type: enum

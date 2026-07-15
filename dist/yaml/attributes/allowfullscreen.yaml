@@ -1,0 +1,7 @@
+description: Whether to allow the iframe's contents to use requestFullscreen()
+separator: ''
+tag_scope:
+- iframe
+value_enum: []
+value_info: Boolean attribute
+value_type: bool

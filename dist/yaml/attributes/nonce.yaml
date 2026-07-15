@@ -1,0 +1,6 @@
+description: Cryptographic nonce used in Content Security Policy checks [CSP]
+separator: ''
+tag_scope: []
+value_enum: []
+value_info: Text
+value_type: string

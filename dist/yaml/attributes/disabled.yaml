@@ -1,0 +1,14 @@
+description: Whether the form control is disabled
+next: disabled(2)
+separator: ''
+tag_scope:
+- button
+- custom
+- input
+- optgroup
+- option
+- select
+- textarea
+value_enum: []
+value_info: Boolean attribute
+value_type: bool

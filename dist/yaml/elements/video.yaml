@@ -1,0 +1,56 @@
+attributes:
+- accesskey
+- autocapitalize
+- autocorrect
+- autofocus
+- autoplay
+- class
+- contenteditable
+- controls
+- crossorigin
+- dir
+- draggable
+- enterkeyhint
+- headingoffset
+- headingreset
+- height
+- hidden
+- id
+- inert
+- inputmode
+- is
+- itemid
+- itemprop
+- itemref
+- itemscope
+- itemtype
+- lang
+- loading
+- loop
+- muted
+- nonce
+- playsinline
+- popover
+- poster
+- preload
+- role
+- slot
+- spellcheck
+- src
+- style
+- tabindex
+- title
+- translate
+- width
+- writingsuggestions
+categories:
+- embedded
+- flow
+- interactive
+- palpable
+- phrasing
+children:
+- source
+- track
+- transparent
+description: Video player

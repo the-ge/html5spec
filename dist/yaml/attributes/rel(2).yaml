@@ -1,0 +1,7 @@
+description: Relationship between the document containing the hyperlink and the destination resource
+separator: ' '
+tag_scope:
+- link
+value_enum: []
+value_info: Unordered set of unique space-separated tokens. *Incomplete description. See the full specification.
+value_type: string

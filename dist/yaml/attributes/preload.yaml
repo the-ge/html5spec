@@ -1,0 +1,12 @@
+description: Hints how much buffering the media resource will likely need
+separator: ''
+tag_scope:
+- audio
+- video
+value_enum:
+- ''
+- auto
+- metadata
+- none
+value_info: ''
+value_type: enum

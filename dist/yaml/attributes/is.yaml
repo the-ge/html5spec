@@ -1,0 +1,6 @@
+description: Creates a customized built-in element
+separator: ''
+tag_scope: []
+value_enum: []
+value_info: Valid custom element name of a defined customized built-in element
+value_type: string

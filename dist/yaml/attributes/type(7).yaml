@@ -1,0 +1,29 @@
+description: Type of form control
+separator: ''
+tag_scope:
+- input
+value_enum:
+- button
+- checkbox
+- color
+- date
+- datetime-local
+- email
+- file
+- hidden
+- image
+- month
+- number
+- password
+- radio
+- range
+- reset
+- search
+- submit
+- tel
+- text
+- time
+- url
+- week
+value_info: Type of form control
+value_type: An input type e.g. "text"

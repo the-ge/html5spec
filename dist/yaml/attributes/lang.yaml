@@ -1,0 +1,6 @@
+description: Language of the element
+separator: ''
+tag_scope: []
+value_enum: []
+value_info: Valid BCP 47 language tag or the empty string
+value_type: string

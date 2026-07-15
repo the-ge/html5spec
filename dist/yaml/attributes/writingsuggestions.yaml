@@ -1,0 +1,9 @@
+description: Whether the element can offer writing suggestions or not.
+separator: ''
+tag_scope: []
+value_enum:
+- ''
+- 'false'
+- 'true'
+value_info: ''
+value_type: enum

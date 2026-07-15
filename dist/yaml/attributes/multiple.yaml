@@ -1,0 +1,8 @@
+description: Whether to allow multiple values
+separator: ''
+tag_scope:
+- input
+- select
+value_enum: []
+value_info: Boolean attribute
+value_type: bool

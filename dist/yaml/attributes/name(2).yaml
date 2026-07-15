@@ -1,0 +1,8 @@
+description: Name of group of mutually-exclusive details elements
+next: name(3)
+separator: ''
+tag_scope:
+- details
+value_enum: []
+value_info: Text. *Incomplete description. See the full specification.
+value_type: string

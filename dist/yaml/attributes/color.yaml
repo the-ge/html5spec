@@ -1,0 +1,7 @@
+description: Color to use when customizing a site's icon (for rel="mask-icon")
+separator: ''
+tag_scope:
+- link
+value_enum: []
+value_info: CSS <color>
+value_type: string

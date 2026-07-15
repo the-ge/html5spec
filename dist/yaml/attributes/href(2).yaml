@@ -1,0 +1,8 @@
+description: Address of the hyperlink
+next: href(3)
+separator: ''
+tag_scope:
+- link
+value_enum: []
+value_info: Valid non-empty URL potentially surrounded by spaces
+value_type: string

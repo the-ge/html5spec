@@ -1,0 +1,7 @@
+description: Address of the resource
+separator: ''
+tag_scope:
+- object
+value_enum: []
+value_info: Valid non-empty URL potentially surrounded by spaces
+value_type: string

@@ -1,0 +1,41 @@
+attributes:
+- accesskey
+- autocapitalize
+- autocorrect
+- autofocus
+- class
+- colspan
+- contenteditable
+- dir
+- draggable
+- enterkeyhint
+- headers
+- headingoffset
+- headingreset
+- hidden
+- id
+- inert
+- inputmode
+- is
+- itemid
+- itemprop
+- itemref
+- itemscope
+- itemtype
+- lang
+- nonce
+- popover
+- role
+- rowspan
+- slot
+- spellcheck
+- style
+- tabindex
+- title
+- translate
+- writingsuggestions
+categories:
+- none
+children:
+- flow
+description: Table cell

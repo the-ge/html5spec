@@ -1,0 +1,10 @@
+description: The text directionality of the element
+next: dir(2)
+separator: ''
+tag_scope: []
+value_enum:
+- auto
+- ltr
+- rtl
+value_info: ''
+value_type: enum

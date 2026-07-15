@@ -1,0 +1,7 @@
+description: Permissions policy to be applied to the iframe's contents
+separator: ''
+tag_scope:
+- iframe
+value_enum: []
+value_info: Serialized permissions policy
+value_type: string

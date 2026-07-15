@@ -1,0 +1,10 @@
+description: Type of embedded resource
+next: type(4)
+separator: ''
+tag_scope:
+- embed
+- object
+- source
+value_enum: []
+value_info: Valid MIME type string
+value_type: string

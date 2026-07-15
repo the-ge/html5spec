@@ -1,0 +1,7 @@
+description: Prevents execution in user agents that support module scripts
+separator: ''
+tag_scope:
+- script
+value_enum: []
+value_info: Boolean attribute
+value_type: bool

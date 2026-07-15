@@ -1,0 +1,11 @@
+description: Indicates whether a targeted popover element is to be toggled, shown, or hidden
+separator: ''
+tag_scope:
+- button
+- input
+value_enum:
+- hide
+- show
+- toggle
+value_info: ''
+value_type: enum

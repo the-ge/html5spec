@@ -1,0 +1,8 @@
+description: Minimum length of value
+separator: ''
+tag_scope:
+- input
+- textarea
+value_enum: []
+value_info: Valid non-negative integer
+value_type: int

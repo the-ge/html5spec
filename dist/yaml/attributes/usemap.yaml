@@ -1,0 +1,7 @@
+description: Name of image map to use
+separator: ''
+tag_scope:
+- img
+value_enum: []
+value_info: Valid hash-name reference. *Incomplete description. See the full specification.
+value_type: string

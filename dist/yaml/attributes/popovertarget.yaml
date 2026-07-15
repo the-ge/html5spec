@@ -1,0 +1,8 @@
+description: Targets a popover element to toggle, show, or hide
+separator: ''
+tag_scope:
+- button
+- input
+value_enum: []
+value_info: ID. *Incomplete description. See the full specification.
+value_type: string

@@ -1,0 +1,7 @@
+description: List of autocomplete options
+separator: ''
+tag_scope:
+- input
+value_enum: []
+value_info: ID. *Incomplete description. See the full specification.
+value_type: string

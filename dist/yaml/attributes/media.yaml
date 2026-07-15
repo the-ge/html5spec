@@ -1,0 +1,10 @@
+description: Applicable media
+separator: ''
+tag_scope:
+- link
+- meta
+- source
+- style
+value_enum: []
+value_info: Valid media query list
+value_type: string

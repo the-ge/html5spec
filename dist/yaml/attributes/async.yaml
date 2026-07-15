@@ -1,0 +1,7 @@
+description: Execute script when available, without blocking while fetching
+separator: ''
+tag_scope:
+- script
+value_enum: []
+value_info: Boolean attribute
+value_type: bool

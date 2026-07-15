@@ -1,0 +1,9 @@
+description: Enables streaming declarative shadow roots
+separator: ''
+tag_scope:
+- template
+value_enum:
+- closed
+- open
+value_info: ''
+value_type: enum

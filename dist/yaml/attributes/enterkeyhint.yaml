@@ -1,0 +1,13 @@
+description: Hint for selecting an enter key action
+separator: ''
+tag_scope: []
+value_enum:
+- done
+- enter
+- go
+- next
+- previous
+- search
+- send
+value_info: ''
+value_type: enum

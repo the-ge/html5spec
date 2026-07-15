@@ -1,0 +1,8 @@
+description: Size of the control
+separator: ''
+tag_scope:
+- input
+- select
+value_enum: []
+value_info: Valid non-negative integer greater than zero
+value_type: int

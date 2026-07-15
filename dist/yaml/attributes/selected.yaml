@@ -1,0 +1,7 @@
+description: Whether the option is selected by default
+separator: ''
+tag_scope:
+- option
+value_enum: []
+value_info: Boolean attribute
+value_type: bool

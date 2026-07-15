@@ -1,0 +1,7 @@
+description: Images to use in different situations, e.g., high-resolution displays, small monitors, etc. (for rel="preload")
+separator: ','
+tag_scope:
+- link
+value_enum: []
+value_info: Comma-separated list of image candidate strings
+value_type: string

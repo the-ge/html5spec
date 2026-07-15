@@ -1,0 +1,6 @@
+description: Global identifier for a microdata item
+separator: ''
+tag_scope: []
+value_enum: []
+value_info: Valid URL potentially surrounded by spaces
+value_type: string

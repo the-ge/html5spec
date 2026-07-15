@@ -1,0 +1,7 @@
+description: Hint for expected file type in file upload controls
+separator: ','
+tag_scope:
+- input
+value_enum: []
+value_info: Set of comma-separated tokens* consisting of valid MIME type strings with no parameters or audio/*, video/*, or image/. *Incomplete description. See the full specification.
+value_type: string

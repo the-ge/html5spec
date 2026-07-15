@@ -1,0 +1,9 @@
+description: User-visible label
+separator: ''
+tag_scope:
+- optgroup
+- option
+- track
+value_enum: []
+value_info: Text
+value_type: string

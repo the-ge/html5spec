@@ -1,0 +1,8 @@
+description: Language of the linked resource
+separator: ''
+tag_scope:
+- a
+- link
+value_enum: []
+value_info: Valid BCP 47 language tag
+value_type: string

@@ -1,0 +1,7 @@
+description: Whether the dialog box is showing
+separator: ''
+tag_scope:
+- dialog
+value_enum: []
+value_info: Boolean attribute
+value_type: bool

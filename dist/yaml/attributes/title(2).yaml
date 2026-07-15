@@ -1,0 +1,9 @@
+description: Full term or expansion of abbreviation
+next: title(3)
+separator: ''
+tag_scope:
+- abbr
+- dfn
+value_enum: []
+value_info: Text
+value_type: string

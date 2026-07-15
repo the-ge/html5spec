@@ -1,0 +1,9 @@
+description: Date and (optionally) time of the change
+next: datetime(2)
+separator: ''
+tag_scope:
+- del
+- ins
+value_enum: []
+value_info: Valid date string with optional time
+value_type: datetime

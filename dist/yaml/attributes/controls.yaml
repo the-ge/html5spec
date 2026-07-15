@@ -1,0 +1,9 @@
+description: Show user agent controls
+separator: ''
+tag_scope:
+- audio
+- img
+- video
+value_enum: []
+value_info: Boolean attribute
+value_type: bool

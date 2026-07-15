@@ -1,0 +1,10 @@
+description: Variant to use for form submission
+separator: ''
+tag_scope:
+- form
+value_enum:
+- dialog
+- get
+- post
+value_info: ''
+value_type: enum

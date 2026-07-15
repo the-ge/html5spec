@@ -1,0 +1,8 @@
+description: Default navigable for hyperlink navigation and form submission
+next: target(3)
+separator: ''
+tag_scope:
+- base
+value_enum: []
+value_info: Valid navigable target name or keyword
+value_type: string

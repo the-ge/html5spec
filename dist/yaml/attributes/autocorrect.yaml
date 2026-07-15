@@ -1,0 +1,9 @@
+description: Recommended autocorrection behavior (for supported input methods)
+separator: ''
+tag_scope: []
+value_enum:
+- ''
+- 'off'
+- 'on'
+value_info: ''
+value_type: enum

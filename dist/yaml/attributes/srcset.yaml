@@ -1,0 +1,8 @@
+description: Images to use in different situations, e.g., high-resolution displays, small monitors, etc.
+separator: ','
+tag_scope:
+- img
+- source
+value_enum: []
+value_info: Comma-separated list of image candidate strings
+value_type: string

@@ -1,0 +1,13 @@
+description: Kind of list marker
+next: type(6)
+separator: ''
+tag_scope:
+- ol
+value_enum:
+- '1'
+- A
+- I
+- a
+- i
+value_info: ''
+value_type: enum

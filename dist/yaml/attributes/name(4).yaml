@@ -1,0 +1,9 @@
+description: Name of content navigable
+next: name(5)
+separator: ''
+tag_scope:
+- iframe
+- object
+value_enum: []
+value_info: Valid navigable target name or keyword
+value_type: string

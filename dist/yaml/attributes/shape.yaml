@@ -1,0 +1,11 @@
+description: The kind of shape to be created in an image map
+separator: ''
+tag_scope:
+- area
+value_enum:
+- circle
+- default
+- poly
+- rect
+value_info: ''
+value_type: enum

@@ -1,0 +1,12 @@
+description: The type of text track
+separator: ''
+tag_scope:
+- track
+value_enum:
+- captions
+- chapters
+- descriptions
+- metadata
+- subtitles
+value_info: ''
+value_type: enum

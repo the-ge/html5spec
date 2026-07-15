@@ -1,0 +1,8 @@
+description: Navigable for form submission
+separator: ''
+tag_scope:
+- button
+- input
+value_enum: []
+value_info: Valid navigable target name or keyword
+value_type: string

@@ -1,0 +1,8 @@
+description: The header cells for this cell
+separator: ' '
+tag_scope:
+- td
+- th
+value_enum: []
+value_info: Unordered set of unique space-separated tokens consisting of IDs. *Incomplete description. See the full specification.
+value_type: string

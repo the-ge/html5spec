@@ -1,0 +1,9 @@
+description: The text directionality of the element
+separator: ''
+tag_scope:
+- bdo
+value_enum:
+- ltr
+- rtl
+value_info: ''
+value_type: enum

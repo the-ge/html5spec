@@ -1,0 +1,8 @@
+description: Whether to download the resource instead of navigating to it, and its filename if so
+separator: ''
+tag_scope:
+- a
+- area
+value_enum: []
+value_info: Text
+value_type: string

@@ -1,0 +1,8 @@
+description: Title of the link
+next: title(5)
+separator: ''
+tag_scope:
+- link
+value_enum: []
+value_info: Text
+value_type: string

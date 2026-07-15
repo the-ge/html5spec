@@ -1,0 +1,10 @@
+description: Default setting for autofill feature for controls in the form
+next: autocomplete(2)
+separator: ''
+tag_scope:
+- form
+value_enum:
+- 'off'
+- 'on'
+value_info: ''
+value_type: enum

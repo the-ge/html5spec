@@ -1,0 +1,8 @@
+description: Type of form control
+next: type(5)
+separator: ''
+tag_scope:
+- input
+value_enum: []
+value_info: input type keyword
+value_type: string

@@ -1,0 +1,9 @@
+description: Whether to allow the value to be edited by the user
+next: readonly(2)
+separator: ''
+tag_scope:
+- input
+- textarea
+value_enum: []
+value_info: Boolean attribute
+value_type: bool

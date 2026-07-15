@@ -1,0 +1,8 @@
+description: Upper bound of range
+separator: ''
+tag_scope:
+- meter
+- progress
+value_enum: []
+value_info: Valid floating-point number. *Incomplete description. See the full specification.
+value_type: float

@@ -1,0 +1,7 @@
+description: Bypass form control validation for form submission
+separator: ''
+tag_scope:
+- form
+value_enum: []
+value_info: Boolean attribute
+value_type: bool

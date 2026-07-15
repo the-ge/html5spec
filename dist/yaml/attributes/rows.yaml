@@ -1,0 +1,7 @@
+description: Number of lines to show
+separator: ''
+tag_scope:
+- textarea
+value_enum: []
+value_info: Valid non-negative integer greater than zero
+value_type: int

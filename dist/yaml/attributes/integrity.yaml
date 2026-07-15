@@ -1,0 +1,8 @@
+description: Integrity metadata used in Subresource Integrity checks [SRI]
+separator: ''
+tag_scope:
+- link
+- script
+value_enum: []
+value_info: Text
+value_type: string

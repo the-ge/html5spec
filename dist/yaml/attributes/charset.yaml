@@ -1,0 +1,8 @@
+description: Character encoding declaration
+separator: ''
+tag_scope:
+- meta
+value_enum:
+- utf-8
+value_info: ''
+value_type: enum

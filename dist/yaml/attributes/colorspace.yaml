@@ -1,0 +1,9 @@
+description: The color space of the serialized color
+separator: ''
+tag_scope:
+- input
+value_enum:
+- display-p3
+- limited-srgb
+value_info: ''
+value_type: enum

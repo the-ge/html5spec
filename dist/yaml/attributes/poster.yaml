@@ -1,0 +1,7 @@
+description: Poster frame to show prior to video playback
+separator: ''
+tag_scope:
+- video
+value_enum: []
+value_info: Valid non-empty URL potentially surrounded by spaces
+value_type: string

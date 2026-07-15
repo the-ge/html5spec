@@ -1,0 +1,8 @@
+description: Machine-readable value
+next: value(3)
+separator: ''
+tag_scope:
+- data
+value_enum: []
+value_info: Text. *Incomplete description. See the full specification.
+value_type: string

@@ -1,0 +1,8 @@
+description: Whether to loop the media resource
+separator: ''
+tag_scope:
+- audio
+- video
+value_enum: []
+value_info: Boolean attribute
+value_type: bool

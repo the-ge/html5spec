@@ -1,0 +1,8 @@
+description: URLs to ping
+separator: ' '
+tag_scope:
+- a
+- area
+value_enum: []
+value_info: Set of space-separated tokens consisting of valid non-empty URLs
+value_type: string

@@ -1,0 +1,7 @@
+description: Image sizes for different page layouts (for rel="preload")
+separator: ','
+tag_scope:
+- link
+value_enum: []
+value_info: Valid source size list
+value_type: string

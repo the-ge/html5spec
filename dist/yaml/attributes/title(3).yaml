@@ -1,0 +1,8 @@
+description: Description of pattern (when used with pattern attribute)
+next: title(4)
+separator: ''
+tag_scope:
+- input
+value_enum: []
+value_info: Text
+value_type: string

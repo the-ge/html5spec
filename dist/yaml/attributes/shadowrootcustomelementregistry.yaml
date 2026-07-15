@@ -1,0 +1,7 @@
+description: Enables declarative shadow roots to indicate they will use a custom element registry
+separator: ''
+tag_scope:
+- template
+value_enum: []
+value_info: Boolean attribute
+value_type: bool

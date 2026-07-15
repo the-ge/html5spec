@@ -1,0 +1,10 @@
+attributes:
+- per [SVG]
+categories:
+- embedded
+- flow
+- palpable
+- phrasing
+children:
+- per [SVG]
+description: SVG root

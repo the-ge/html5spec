@@ -1,0 +1,12 @@
+description: Used when determining loading deferral
+separator: ''
+tag_scope:
+- audio
+- iframe
+- img
+- video
+value_enum:
+- eager
+- lazy
+value_info: ''
+value_type: enum

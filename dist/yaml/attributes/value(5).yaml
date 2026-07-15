@@ -1,0 +1,8 @@
+description: Current value of the element
+separator: ''
+tag_scope:
+- meter
+- progress
+value_enum: []
+value_info: Valid floating-point number
+value_type: float

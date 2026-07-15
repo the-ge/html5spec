@@ -1,0 +1,8 @@
+description: Sizes of the icons (for rel="icon")
+next: sizes(2)
+separator: ' '
+tag_scope:
+- link
+value_enum: []
+value_info: Unordered set of unique space-separated tokens, ASCII case-insensitive, consisting of sizes. *Incomplete description. See the full specification.
+value_type: string

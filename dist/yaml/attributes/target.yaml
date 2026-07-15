@@ -1,0 +1,9 @@
+description: Navigable for hyperlink navigation
+next: target(2)
+separator: ''
+tag_scope:
+- a
+- area
+value_enum: []
+value_info: Valid navigable target name or keyword
+value_type: string
