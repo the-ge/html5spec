@@ -4,5 +4,4 @@ __pycache__
 /contrib/timestamp
 !.gitignore
 venv
-start
-.runrc
+venv-start
