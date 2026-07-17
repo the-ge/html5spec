@@ -22,9 +22,6 @@ MANIFEST_FILE = PROJECT_ROOT / 'dist/manifest.json'
 # ---- Logging ----
 LOG_LEVEL = 'DEBUG'
 
-# ---- Output format ----
-OUTPUT_FORMAT = 'json'
-
 # Match a list of one-or-more keywords such as `"foo"; "bar"; "the empty string"`
 KEYWORDS_PATTERN = re.compile(r'^(?:"[a-zA-Z0-9/-]*"|the empty string)(?:; (?:"[a-zA-Z0-9/-]*"|the empty string))*$')
 

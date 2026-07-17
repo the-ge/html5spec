@@ -14,7 +14,6 @@ from config import (
     LOG_LEVEL,
     MANIFEST_FILE,
     NOTICE_FILE,
-    OUTPUT_FORMAT,
     STATE_DIR,
     STATE_MANIFEST_FILE,
     YAML_DIR,
@@ -86,14 +85,11 @@ def main():
     # Parse everything
     results = parser.get_all()
 
-    # Determine file extension
-    ext = 'json' if OUTPUT_FORMAT == 'json' else 'yaml'
-
     # Write each result
     counts = {}
     for name, data in results.items():
-        output_path = JSON_DIR / f'{name}.{ext}'
-        write_output(data, output_path, OUTPUT_FORMAT)
+        output_path = JSON_DIR / f'{name}.json'
+        write_output(data, output_path)
         logging.info(f'📝 Wrote {output_path}')
 
         yaml_subdir = YAML_DIR / name
