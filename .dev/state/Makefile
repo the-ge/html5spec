@@ -1,4 +1,4 @@
-.PHONY: default clear
+.PHONY: default clear all
 default: all ;
 
 specs=indices.html dom.html input.html syntax.html

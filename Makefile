@@ -1,4 +1,4 @@
-.PHONY: default clear
+.PHONY: default clear dist all install
 default: all ;
 
 _state:
@@ -13,8 +13,7 @@ install:
 
 dist:
 	python3 src/main.py
-	# generates `dist/json/*.json`, etc.
-	# run `make -B dist` to force this to update
+	# generates dist/json/*.json, dist/yaml/**/*.yaml, dist/NOTICE, dist/manifest.json
 
 all: _state dist
 
