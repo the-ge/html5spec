@@ -6,7 +6,7 @@ _state:
 
 clear:
 	make -C .dev/state clear
-	rm -f dist/json/*.json
+	rm -f dist/*
 
 install:
 	python3 -m pip install -r requirements.txt
