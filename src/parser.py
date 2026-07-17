@@ -326,11 +326,9 @@ class SpecParser:
         self,
         state_dir: Path,
         cache_dir: Path,
-        meta: dict[str, Any] | None = None,
     ):
         self.state_dir = state_dir
         self.cache_dir = cache_dir
-        self.meta = meta or {}
         self._soups: dict[str, BeautifulSoup] = {}
 
     # ---- internal helpers ----
@@ -358,11 +356,6 @@ class SpecParser:
         if not path.exists():
             return None
         return json.loads(path.read_text(encoding='utf-8'))
-
-    def _add_meta(self, entries: dict[str, Any]) -> dict[str, Any]:
-        """Attach NOTICE metadata to a dict-shaped result. The single place
-        where meta gets injected, always immediately before caching."""
-        return {'__META__': self.meta, **entries} if self.meta else entries
 
     def _log_parse_error_and_fallback(self, e: Exception, cache_key: str):
         if isinstance(e, (AttributeError, ValueError)):
