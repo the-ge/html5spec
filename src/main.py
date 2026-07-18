@@ -4,20 +4,20 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import yaml
-from parser import SpecParser
-from util import make_serializable
 
 from config import (
     CACHE_DIR,
-    DIST_NOTICE_FILE,
-    DIST_JSON_DATA_DIR,
-    LOG_LEVEL,
     DIST_DATA_MANIFEST_FILE,
+    DIST_JSON_DATA_DIR,
+    DIST_NOTICE_FILE,
+    DIST_YAML_DATA_DIR,
+    LOG_LEVEL,
     NORMALIZED_DATA_DIR,
     NOTICE_FILE,
     RAW_DATA_MANIFEST_FILE,
-    DIST_YAML_DATA_DIR,
 )
+from parser import SpecParser
+from util import make_serializable
 
 logging.basicConfig(level=LOG_LEVEL, format='%(levelname)s: %(message)s')
 logger = logging.getLogger(__name__)

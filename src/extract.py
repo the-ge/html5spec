@@ -35,7 +35,9 @@ def extract_elements(soup: BeautifulSoup) -> Iterator[RawElement]:
             logger.error(f'Expected 7 cells, got {len(cells)}. Skipping row: {row}')
             continue
         element, desc, categories, _, children, attributes, _ = cells
-        yield RawElement(element=element, description=desc, categories=categories, children=children, attributes=attributes)
+        yield RawElement(
+            element=element, description=desc, categories=categories, children=children, attributes=attributes
+        )
 
 
 def extract_categories(soup: BeautifulSoup) -> Iterator[RawCategory]:
@@ -59,7 +61,9 @@ def extract_attributes(soup: BeautifulSoup) -> Iterator[RawAttribute]:
             logger.error(f'Expected 4 cells, got {len(cells)}. Skipping row: {row}')
             continue
         attr_name, tag_scope_info, attr_desc, value_info = cells
-        yield RawAttribute(attr_name=attr_name, tag_scope_info=tag_scope_info, attr_desc=attr_desc, value_info=value_info)
+        yield RawAttribute(
+            attr_name=attr_name, tag_scope_info=tag_scope_info, attr_desc=attr_desc, value_info=value_info
+        )
 
 
 def extract_event_handlers(soup: BeautifulSoup) -> Iterator[RawEventHandler]:

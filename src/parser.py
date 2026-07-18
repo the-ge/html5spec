@@ -117,7 +117,9 @@ def warn_if_unseparated_tokens(text: str, context: str) -> None:
     known 'video\\nimg' spec bug (see gen_elements())."""
     for segment in re.split(r'[;,]', text):
         if _ADJACENT_TOKENS_PATTERN.search(segment):
-            logger.warning(f'‼️ {context}: missing separator between \'{"' and '".join(segment.strip().split())}\'. Confirm workaround state (find it by "bug @").')
+            logger.warning(
+                f'‼️ {context}: missing separator between \'{"' and '".join(segment.strip().split())}\'. Confirm workaround state (find it by "bug @").'
+            )
 
 
 # ---- Parsers for each section ----
@@ -172,7 +174,12 @@ def parse_categories(rows: Iterator[RawCategory]) -> Iterator[Category]:
 
 def parse_attributes(rows: Iterator[RawAttribute]) -> Iterator[Attribute]:
     for raw in rows:
-        attr_name, tag_scope_info, attr_desc, value_info = raw.attr_name, raw.tag_scope_info, raw.attr_desc, raw.value_info
+        attr_name, tag_scope_info, attr_desc, value_info = (
+            raw.attr_name,
+            raw.tag_scope_info,
+            raw.attr_desc,
+            raw.value_info,
+        )
 
         warn_if_unseparated_tokens(tag_scope_info, f'Attribute {attr_name!r} tag scope')
 
@@ -232,11 +239,15 @@ def parse_attributes(rows: Iterator[RawAttribute]) -> Iterator[Attribute]:
                 case _:
                     value_type = 'string'
 
-        value_info = '. '.join([v for v in [
-            value_info,
-            tag_notes,
-            '*Incomplete description. See the full specification.' if is_complicated else '',
-        ] if v])
+        value_info = '. '.join([
+            v
+            for v in [
+                value_info,
+                tag_notes,
+                '*Incomplete description. See the full specification.' if is_complicated else '',
+            ]
+            if v
+        ])
 
         yield Attribute(
             name=attr_name,
@@ -329,7 +340,9 @@ class SpecParser:
         logger.info(f'✅ Built and cached {count} {key}')
         return result
 
-    def _get_dictified(self, page: str, section: str, cls: type, key: str, parser: Callable, **parser_kwargs) -> dict[str, Any]:
+    def _get_dictified(
+        self, page: str, section: str, cls: type, key: str, parser: Callable, **parser_kwargs
+    ) -> dict[str, Any]:
         try:
             rows = self._load_section(page, section, cls)
             entries = list(parser(rows, **parser_kwargs))
@@ -359,7 +372,11 @@ class SpecParser:
     def get_elements(self) -> dict[str, Any]:
         """Build elements with caching and validation."""
         return self._get_dictified(
-            'indices', 'elements', RawElement, 'elements', parse_elements,
+            'indices',
+            'elements',
+            RawElement,
+            'elements',
+            parse_elements,
             global_attributes=self.get_global_attributes(),
         )
 
