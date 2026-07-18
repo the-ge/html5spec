@@ -3,7 +3,7 @@ name: Update README
 on:
   push:
     paths:
-      - ".dev/state/*.time"
+      - ".dev/data/raw/*.time"
 
   workflow_dispatch:
 
@@ -22,7 +22,7 @@ jobs:
           node-version: 26
 
       - name: Update README
-        run: ./.dev/bin/update-readme-state-last-updated.js
+        run: ./.dev/bin/update-readme-source-last-updated.js
 
       - name: Commit changes
         run: |
