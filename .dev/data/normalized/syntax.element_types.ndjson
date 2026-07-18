@@ -1,0 +1,6 @@
+{"info": "", "name": "Void elements", "tags": ["area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source", "track", "wbr"]}
+{"info": "", "name": "The template element", "tags": ["template"]}
+{"info": "", "name": "Raw text elements", "tags": ["script", "style"]}
+{"info": "", "name": "Escapable raw text elements", "tags": ["textarea", "title"]}
+{"info": "Elements from the MathML namespace and the SVG namespace.", "name": "Foreign elements", "tags": []}
+{"info": "All other allowed HTML elements are normal elements.", "name": "Normal elements", "tags": []}

@@ -1,0 +1,179 @@
+{"attr_desc": "Alternative label to use for the header cell when referencing the cell in other contexts", "attr_name": "abbr", "tag_scope_info": "th", "value_info": "Text*"}
+{"attr_desc": "Hint for expected file type in file upload controls", "attr_name": "accept", "tag_scope_info": "input", "value_info": "Set of comma-separated tokens* consisting of valid MIME type strings with no parameters or audio/*, video/*, or image/*"}
+{"attr_desc": "Character encodings to use for form submission", "attr_name": "accept-charset", "tag_scope_info": "form", "value_info": "ASCII case-insensitive match for \"UTF-8\""}
+{"attr_desc": "Keyboard shortcut to activate or focus element", "attr_name": "accesskey", "tag_scope_info": "HTML elements", "value_info": "Ordered set of unique space-separated tokens, none of which are identical to another, each consisting of one code point in length"}
+{"attr_desc": "URL to use for form submission", "attr_name": "action", "tag_scope_info": "form", "value_info": "Valid non-empty URL potentially surrounded by spaces"}
+{"attr_desc": "Permissions policy to be applied to the iframe's contents", "attr_name": "allow", "tag_scope_info": "iframe", "value_info": "Serialized permissions policy"}
+{"attr_desc": "Whether to allow the iframe's contents to use requestFullscreen()", "attr_name": "allowfullscreen", "tag_scope_info": "iframe", "value_info": "Boolean attribute"}
+{"attr_desc": "Allow the color's alpha component to be set", "attr_name": "alpha", "tag_scope_info": "input", "value_info": "Boolean attribute"}
+{"attr_desc": "Replacement text for use when images are not available", "attr_name": "alt", "tag_scope_info": "area;\n          img;\n          input", "value_info": "Text*"}
+{"attr_desc": "Destination for a preload request (for rel=\"preload\" and rel=\"modulepreload\")", "attr_name": "as", "tag_scope_info": "link", "value_info": "Preload destination, for rel=\"preload\"; module preload destination, for rel=\"modulepreload\""}
+{"attr_desc": "Execute script when available, without blocking while fetching", "attr_name": "async", "tag_scope_info": "script", "value_info": "Boolean attribute"}
+{"attr_desc": "Recommended autocapitalization behavior (for supported input methods)", "attr_name": "autocapitalize", "tag_scope_info": "HTML elements", "value_info": "\"on\";\n          \"off\";\n          \"none\";\n          \"sentences\";\n          \"words\";\n          \"characters\""}
+{"attr_desc": "Default setting for autofill feature for controls in the form", "attr_name": "autocomplete", "tag_scope_info": "form", "value_info": "\"on\"; \"off\""}
+{"attr_desc": "Hint for form autofill feature", "attr_name": "autocomplete", "tag_scope_info": "input;\n          select;\n          textarea", "value_info": "Autofill field name and related tokens*"}
+{"attr_desc": "Recommended autocorrection behavior (for supported input methods)", "attr_name": "autocorrect", "tag_scope_info": "HTML elements", "value_info": "\"on\";\n          \"off\";\n          the empty string"}
+{"attr_desc": "Automatically focus the element when the page is loaded", "attr_name": "autofocus", "tag_scope_info": "HTML elements", "value_info": "Boolean attribute"}
+{"attr_desc": "Hint that the media resource can be started automatically when the page is loaded", "attr_name": "autoplay", "tag_scope_info": "audio;\n          video", "value_info": "Boolean attribute"}
+{"attr_desc": "Whether the element is potentially render-blocking", "attr_name": "blocking", "tag_scope_info": "link;\n          script;\n          style", "value_info": "Unordered set of unique space-separated tokens*"}
+{"attr_desc": "Character encoding declaration", "attr_name": "charset", "tag_scope_info": "meta", "value_info": "\"utf-8\""}
+{"attr_desc": "Whether the control is checked", "attr_name": "checked", "tag_scope_info": "input", "value_info": "Boolean attribute"}
+{"attr_desc": "Link to the source of the quotation or more information about the edit", "attr_name": "cite", "tag_scope_info": "blockquote;\n          del;\n          ins;\n          q", "value_info": "Valid URL potentially surrounded by spaces"}
+{"attr_desc": "Classes to which the element belongs", "attr_name": "class", "tag_scope_info": "HTML elements", "value_info": "Set of space-separated tokens"}
+{"attr_desc": "Which user actions will close the dialog", "attr_name": "closedby", "tag_scope_info": "dialog", "value_info": "\"any\";\n          \"closerequest\";\n          \"none\";"}
+{"attr_desc": "Color to use when customizing a site's icon (for rel=\"mask-icon\")", "attr_name": "color", "tag_scope_info": "link", "value_info": "CSS <color>"}
+{"attr_desc": "The color space of the serialized color", "attr_name": "colorspace", "tag_scope_info": "input", "value_info": "\"limited-srgb\";\n          \"display-p3\""}
+{"attr_desc": "Maximum number of characters per line", "attr_name": "cols", "tag_scope_info": "textarea", "value_info": "Valid non-negative integer greater than zero"}
+{"attr_desc": "Number of columns that the cell is to span", "attr_name": "colspan", "tag_scope_info": "td;\n          th", "value_info": "Valid non-negative integer greater than zero"}
+{"attr_desc": "Indicates to the targeted element which action to take.", "attr_name": "command", "tag_scope_info": "button", "value_info": "\"toggle-popover\";\n          \"show-popover\";\n          \"hide-popover\";\n          \"close\";\n          \"request-close\";\n          \"show-modal\";\n          a custom command keyword"}
+{"attr_desc": "Targets another element to be invoked.", "attr_name": "commandfor", "tag_scope_info": "button", "value_info": "ID*"}
+{"attr_desc": "Value of the element", "attr_name": "content", "tag_scope_info": "meta", "value_info": "Text*"}
+{"attr_desc": "Whether the element is editable", "attr_name": "contenteditable", "tag_scope_info": "HTML elements", "value_info": "\"true\";\n          \"false\";\n          \"plaintext-only\";\n          the empty string"}
+{"attr_desc": "Show user agent controls", "attr_name": "controls", "tag_scope_info": "audio;\n          video\nimg;", "value_info": "Boolean attribute"}
+{"attr_desc": "Coordinates for the shape to be created in an image map", "attr_name": "coords", "tag_scope_info": "area", "value_info": "Valid list of floating-point numbers*"}
+{"attr_desc": "How the element handles crossorigin requests", "attr_name": "crossorigin", "tag_scope_info": "audio;\n          img;\n          link;\n          script;\n          video", "value_info": "\"anonymous\";\n          \"use-credentials\";\n          the empty string"}
+{"attr_desc": "Address of the resource", "attr_name": "data", "tag_scope_info": "object", "value_info": "Valid non-empty URL potentially surrounded by spaces"}
+{"attr_desc": "Date and (optionally) time of the change", "attr_name": "datetime", "tag_scope_info": "del;\n          ins", "value_info": "Valid date string with optional time"}
+{"attr_desc": "Machine-readable value", "attr_name": "datetime", "tag_scope_info": "time", "value_info": "Valid month string,\n          valid date string,\n          valid yearless date string,\n          valid time string,\n          valid local date and time string,\n          valid time-zone offset string,\n          valid global date and time string,\n          valid week string,\n          valid non-negative integer, or\n          valid duration string"}
+{"attr_desc": "Decoding hint to use when processing this image for presentation", "attr_name": "decoding", "tag_scope_info": "img", "value_info": "\"sync\";\n          \"async\";\n          \"auto\""}
+{"attr_desc": "Enable the track if no other text track is more suitable", "attr_name": "default", "tag_scope_info": "track", "value_info": "Boolean attribute"}
+{"attr_desc": "Defer script execution", "attr_name": "defer", "tag_scope_info": "script", "value_info": "Boolean attribute"}
+{"attr_desc": "The text directionality of the element", "attr_name": "dir", "tag_scope_info": "HTML elements", "value_info": "\"ltr\"; \"rtl\"; \"auto\""}
+{"attr_desc": "The text directionality of the element", "attr_name": "dir", "tag_scope_info": "bdo", "value_info": "\"ltr\"; \"rtl\""}
+{"attr_desc": "Name of form control to use for sending the element's directionality in form submission", "attr_name": "dirname", "tag_scope_info": "input;\n          textarea", "value_info": "Text*"}
+{"attr_desc": "Whether the form control is disabled", "attr_name": "disabled", "tag_scope_info": "button;\n          input;\n          optgroup;\n          option;\n          select;\n          textarea;\n          form-associated custom elements", "value_info": "Boolean attribute"}
+{"attr_desc": "Whether the descendant form controls, except any inside legend, are disabled", "attr_name": "disabled", "tag_scope_info": "fieldset", "value_info": "Boolean attribute"}
+{"attr_desc": "Whether the link is disabled", "attr_name": "disabled", "tag_scope_info": "link", "value_info": "Boolean attribute"}
+{"attr_desc": "Whether to download the resource instead of navigating to it, and its filename if so", "attr_name": "download", "tag_scope_info": "a;\n          area", "value_info": "Text"}
+{"attr_desc": "Whether the element is draggable", "attr_name": "draggable", "tag_scope_info": "HTML elements", "value_info": "\"true\"; \"false\""}
+{"attr_desc": "Entry list encoding type to use for form submission", "attr_name": "enctype", "tag_scope_info": "form", "value_info": "\"application/x-www-form-urlencoded\"; \"multipart/form-data\"; \"text/plain\""}
+{"attr_desc": "Hint for selecting an enter key action", "attr_name": "enterkeyhint", "tag_scope_info": "HTML elements", "value_info": "\"enter\";\n          \"done\";\n          \"go\";\n          \"next\";\n          \"previous\";\n          \"search\";\n          \"send\""}
+{"attr_desc": "Sets the priority for fetches initiated by the element", "attr_name": "fetchpriority", "tag_scope_info": "img;\n          link;\n          script", "value_info": "\"auto\";\n          \"high\";\n          \"low\""}
+{"attr_desc": "Associate the label with form control", "attr_name": "for", "tag_scope_info": "label", "value_info": "ID*"}
+{"attr_desc": "Specifies controls from which the output was calculated", "attr_name": "for", "tag_scope_info": "output", "value_info": "Unordered set of unique space-separated tokens consisting of IDs*"}
+{"attr_desc": "Associates the element with a form element", "attr_name": "form", "tag_scope_info": "button;\n          fieldset;\n          input;\n          object;\n          output;\n          select;\n          textarea;\n          form-associated custom elements", "value_info": "ID*"}
+{"attr_desc": "URL to use for form submission", "attr_name": "formaction", "tag_scope_info": "button;\n          input", "value_info": "Valid non-empty URL potentially surrounded by spaces"}
+{"attr_desc": "Entry list encoding type to use for form submission", "attr_name": "formenctype", "tag_scope_info": "button;\n          input", "value_info": "\"application/x-www-form-urlencoded\"; \"multipart/form-data\"; \"text/plain\""}
+{"attr_desc": "Variant to use for form submission", "attr_name": "formmethod", "tag_scope_info": "button;\n          input", "value_info": "\"get\";\n          \"post\";\n          \"dialog\""}
+{"attr_desc": "Bypass form control validation for form submission", "attr_name": "formnovalidate", "tag_scope_info": "button;\n          input", "value_info": "Boolean attribute"}
+{"attr_desc": "Navigable for form submission", "attr_name": "formtarget", "tag_scope_info": "button;\n          input", "value_info": "Valid navigable target name or keyword"}
+{"attr_desc": "The header cells for this cell", "attr_name": "headers", "tag_scope_info": "td;\n          th", "value_info": "Unordered set of unique space-separated tokens consisting of IDs*"}
+{"attr_desc": "Offsets heading levels for descendants", "attr_name": "headingoffset", "tag_scope_info": "HTML elements", "value_info": "Valid non-negative integer between 0 and 8"}
+{"attr_desc": "Prevents a heading offset computation from traversing beyond the element with the attribute", "attr_name": "headingreset", "tag_scope_info": "HTML elements", "value_info": "Boolean attribute"}
+{"attr_desc": "Vertical dimension", "attr_name": "height", "tag_scope_info": "canvas;\n          embed;\n          iframe;\n          img;\n          input;\n          object;\n          source (in picture);\n          video", "value_info": "Valid non-negative integer"}
+{"attr_desc": "Whether the element is relevant", "attr_name": "hidden", "tag_scope_info": "HTML elements", "value_info": "\"until-found\";\n          \"hidden\";\n          the empty string"}
+{"attr_desc": "Low limit of high range", "attr_name": "high", "tag_scope_info": "meter", "value_info": "Valid floating-point number*"}
+{"attr_desc": "Address of the hyperlink", "attr_name": "href", "tag_scope_info": "a;\n          area", "value_info": "Valid URL potentially surrounded by spaces"}
+{"attr_desc": "Address of the hyperlink", "attr_name": "href", "tag_scope_info": "link", "value_info": "Valid non-empty URL potentially surrounded by spaces"}
+{"attr_desc": "Document base URL", "attr_name": "href", "tag_scope_info": "base", "value_info": "Valid URL potentially surrounded by spaces"}
+{"attr_desc": "Language of the linked resource", "attr_name": "hreflang", "tag_scope_info": "a;\n          link", "value_info": "Valid BCP 47 language tag"}
+{"attr_desc": "Pragma directive", "attr_name": "http-equiv", "tag_scope_info": "meta", "value_info": "\"content-type\";\n          \"default-style\";\n          \"refresh\";\n          \"x-ua-compatible\";\n          \"content-security-policy\""}
+{"attr_desc": "The element's ID", "attr_name": "id", "tag_scope_info": "HTML elements", "value_info": "Text*"}
+{"attr_desc": "Image sizes for different page layouts (for rel=\"preload\")", "attr_name": "imagesizes", "tag_scope_info": "link", "value_info": "Valid source size list"}
+{"attr_desc": "Images to use in different situations, e.g., high-resolution displays, small monitors, etc. (for rel=\"preload\")", "attr_name": "imagesrcset", "tag_scope_info": "link", "value_info": "Comma-separated list of image candidate strings"}
+{"attr_desc": "Whether the element is inert.", "attr_name": "inert", "tag_scope_info": "HTML elements", "value_info": "Boolean attribute"}
+{"attr_desc": "Hint for selecting an input modality", "attr_name": "inputmode", "tag_scope_info": "HTML elements", "value_info": "\"none\";\n          \"text\";\n          \"tel\";\n          \"email\";\n          \"url\";\n          \"numeric\";\n          \"decimal\";\n          \"search\""}
+{"attr_desc": "Integrity metadata used in Subresource Integrity checks [SRI]", "attr_name": "integrity", "tag_scope_info": "link;\n          script", "value_info": "Text"}
+{"attr_desc": "Creates a customized built-in element", "attr_name": "is", "tag_scope_info": "HTML elements", "value_info": "Valid custom element name of a defined customized built-in element"}
+{"attr_desc": "Whether the image is a server-side image map", "attr_name": "ismap", "tag_scope_info": "img", "value_info": "Boolean attribute"}
+{"attr_desc": "Global identifier for a microdata item", "attr_name": "itemid", "tag_scope_info": "HTML elements", "value_info": "Valid URL potentially surrounded by spaces"}
+{"attr_desc": "Property names of a microdata item", "attr_name": "itemprop", "tag_scope_info": "HTML elements", "value_info": "Unordered set of unique space-separated tokens consisting of valid absolute URLs, defined property names, or text*"}
+{"attr_desc": "Referenced elements", "attr_name": "itemref", "tag_scope_info": "HTML elements", "value_info": "Unordered set of unique space-separated tokens consisting of IDs*"}
+{"attr_desc": "Introduces a microdata item", "attr_name": "itemscope", "tag_scope_info": "HTML elements", "value_info": "Boolean attribute"}
+{"attr_desc": "Item types of a microdata item", "attr_name": "itemtype", "tag_scope_info": "HTML elements", "value_info": "Unordered set of unique space-separated tokens consisting of valid absolute URLs*"}
+{"attr_desc": "The type of text track", "attr_name": "kind", "tag_scope_info": "track", "value_info": "\"subtitles\";\n          \"captions\";\n          \"descriptions\";\n          \"chapters\";\n          \"metadata\""}
+{"attr_desc": "User-visible label", "attr_name": "label", "tag_scope_info": "optgroup;\n          option;\n          track", "value_info": "Text"}
+{"attr_desc": "Language of the element", "attr_name": "lang", "tag_scope_info": "HTML elements", "value_info": "Valid BCP 47 language tag or the empty string"}
+{"attr_desc": "List of autocomplete options", "attr_name": "list", "tag_scope_info": "input", "value_info": "ID*"}
+{"attr_desc": "Used when determining loading deferral", "attr_name": "loading", "tag_scope_info": "iframe;\n          img;\n          audio;\n          video", "value_info": "\"lazy\";\n          \"eager\""}
+{"attr_desc": "Whether to loop the media resource", "attr_name": "loop", "tag_scope_info": "audio;\n          video", "value_info": "Boolean attribute"}
+{"attr_desc": "High limit of low range", "attr_name": "low", "tag_scope_info": "meter", "value_info": "Valid floating-point number*"}
+{"attr_desc": "Maximum value", "attr_name": "max", "tag_scope_info": "input", "value_info": "Varies*"}
+{"attr_desc": "Upper bound of range", "attr_name": "max", "tag_scope_info": "meter;\n          progress", "value_info": "Valid floating-point number*"}
+{"attr_desc": "Maximum length of value", "attr_name": "maxlength", "tag_scope_info": "input;\n          textarea", "value_info": "Valid non-negative integer"}
+{"attr_desc": "Applicable media", "attr_name": "media", "tag_scope_info": "link;\n          meta;\n          source;\n          style", "value_info": "Valid media query list"}
+{"attr_desc": "Variant to use for form submission", "attr_name": "method", "tag_scope_info": "form", "value_info": "\"get\";\n          \"post\";\n          \"dialog\""}
+{"attr_desc": "Minimum value", "attr_name": "min", "tag_scope_info": "input", "value_info": "Varies*"}
+{"attr_desc": "Lower bound of range", "attr_name": "min", "tag_scope_info": "meter", "value_info": "Valid floating-point number*"}
+{"attr_desc": "Minimum length of value", "attr_name": "minlength", "tag_scope_info": "input;\n          textarea", "value_info": "Valid non-negative integer"}
+{"attr_desc": "Whether to allow multiple values", "attr_name": "multiple", "tag_scope_info": "input;\n          select", "value_info": "Boolean attribute"}
+{"attr_desc": "Whether to mute the media resource by default", "attr_name": "muted", "tag_scope_info": "audio;\n          video", "value_info": "Boolean attribute"}
+{"attr_desc": "Name of the element to use for form submission and in the form.elements API", "attr_name": "name", "tag_scope_info": "button;\n          fieldset;\n          input;\n          output;\n          select;\n          textarea;\n          form-associated custom elements", "value_info": "Text*"}
+{"attr_desc": "Name of group of mutually-exclusive details elements", "attr_name": "name", "tag_scope_info": "details", "value_info": "Text*"}
+{"attr_desc": "Name of form to use in the document.forms API", "attr_name": "name", "tag_scope_info": "form", "value_info": "Text*"}
+{"attr_desc": "Name of content navigable", "attr_name": "name", "tag_scope_info": "iframe;\n          object", "value_info": "Valid navigable target name or keyword"}
+{"attr_desc": "Name of image map to reference from the usemap attribute", "attr_name": "name", "tag_scope_info": "map", "value_info": "Text*"}
+{"attr_desc": "Metadata name", "attr_name": "name", "tag_scope_info": "meta", "value_info": "Text*"}
+{"attr_desc": "Name of shadow tree slot", "attr_name": "name", "tag_scope_info": "slot", "value_info": "Text"}
+{"attr_desc": "Prevents execution in user agents that support module scripts", "attr_name": "nomodule", "tag_scope_info": "script", "value_info": "Boolean attribute"}
+{"attr_desc": "Cryptographic nonce used in Content Security Policy checks [CSP]", "attr_name": "nonce", "tag_scope_info": "HTML elements", "value_info": "Text"}
+{"attr_desc": "Bypass form control validation for form submission", "attr_name": "novalidate", "tag_scope_info": "form", "value_info": "Boolean attribute"}
+{"attr_desc": "Whether the details are visible", "attr_name": "open", "tag_scope_info": "details", "value_info": "Boolean attribute"}
+{"attr_desc": "Whether the dialog box is showing", "attr_name": "open", "tag_scope_info": "dialog", "value_info": "Boolean attribute"}
+{"attr_desc": "Optimum value in gauge", "attr_name": "optimum", "tag_scope_info": "meter", "value_info": "Valid floating-point number*"}
+{"attr_desc": "Pattern to be matched by the form control's value", "attr_name": "pattern", "tag_scope_info": "input", "value_info": "Regular expression matching the JavaScript Pattern production"}
+{"attr_desc": "URLs to ping", "attr_name": "ping", "tag_scope_info": "a;\n          area", "value_info": "Set of space-separated tokens consisting of valid non-empty URLs"}
+{"attr_desc": "User-visible label to be placed within the form control", "attr_name": "placeholder", "tag_scope_info": "input;\n          textarea", "value_info": "Text*"}
+{"attr_desc": "Encourage the user agent to display video content within the element's playback area", "attr_name": "playsinline", "tag_scope_info": "video", "value_info": "Boolean attribute"}
+{"attr_desc": "Makes the element a popover element", "attr_name": "popover", "tag_scope_info": "HTML elements", "value_info": "\"auto\";\n          \"manual\";\n          \"hint\";\n          the empty string"}
+{"attr_desc": "Targets a popover element to toggle, show, or hide", "attr_name": "popovertarget", "tag_scope_info": "button;\n          input", "value_info": "ID*"}
+{"attr_desc": "Indicates whether a targeted popover element is to be toggled, shown, or hidden", "attr_name": "popovertargetaction", "tag_scope_info": "button;\n          input", "value_info": "\"toggle\";\n          \"show\";\n          \"hide\""}
+{"attr_desc": "Poster frame to show prior to video playback", "attr_name": "poster", "tag_scope_info": "video", "value_info": "Valid non-empty URL potentially surrounded by spaces"}
+{"attr_desc": "Hints how much buffering the media resource will likely need", "attr_name": "preload", "tag_scope_info": "audio;\n          video", "value_info": "\"none\";\n          \"metadata\";\n          \"auto\";\n          the empty string"}
+{"attr_desc": "Whether to allow the value to be edited by the user", "attr_name": "readonly", "tag_scope_info": "input;\n          textarea", "value_info": "Boolean attribute"}
+{"attr_desc": "Affects willValidate, plus any behavior added by the custom element author", "attr_name": "readonly", "tag_scope_info": "form-associated custom elements", "value_info": "Boolean attribute"}
+{"attr_desc": "Referrer policy for fetches initiated by the element", "attr_name": "referrerpolicy", "tag_scope_info": "a;\n          area;\n          iframe;\n          img;\n          link;\n          script", "value_info": "Referrer policy"}
+{"attr_desc": "Relationship between the location in the document containing the hyperlink and the destination resource", "attr_name": "rel", "tag_scope_info": "a;\n          area", "value_info": "Unordered set of unique space-separated tokens*"}
+{"attr_desc": "Relationship between the document containing the hyperlink and the destination resource", "attr_name": "rel", "tag_scope_info": "link", "value_info": "Unordered set of unique space-separated tokens*"}
+{"attr_desc": "Whether the control is required for form submission", "attr_name": "required", "tag_scope_info": "input;\n          select;\n          textarea", "value_info": "Boolean attribute"}
+{"attr_desc": "Number the list backwards", "attr_name": "reversed", "tag_scope_info": "ol", "value_info": "Boolean attribute"}
+{"attr_desc": "Number of lines to show", "attr_name": "rows", "tag_scope_info": "textarea", "value_info": "Valid non-negative integer greater than zero"}
+{"attr_desc": "Number of rows that the cell is to span", "attr_name": "rowspan", "tag_scope_info": "td;\n          th", "value_info": "Valid non-negative integer"}
+{"attr_desc": "Security rules for nested content", "attr_name": "sandbox", "tag_scope_info": "iframe", "value_info": "Unordered set of unique space-separated tokens, ASCII case-insensitive, consisting of\n      \"allow-downloads\"\"allow-forms\"\"allow-modals\"\"allow-orientation-lock\"\"allow-pointer-lock\"\"allow-popups\"\"allow-popups-to-escape-sandbox\"\"allow-presentation\"\"allow-same-origin\"\"allow-scripts\"\"allow-top-navigation\"\"allow-top-navigation-by-user-activation\"\"allow-top-navigation-to-custom-protocols\""}
+{"attr_desc": "Specifies which cells the header cell applies to", "attr_name": "scope", "tag_scope_info": "th", "value_info": "\"row\";\n          \"col\";\n          \"rowgroup\";\n          \"colgroup\""}
+{"attr_desc": "Whether the option is selected by default", "attr_name": "selected", "tag_scope_info": "option", "value_info": "Boolean attribute"}
+{"attr_desc": "Sets clonable on a declarative shadow root", "attr_name": "shadowrootclonable", "tag_scope_info": "template", "value_info": "Boolean attribute"}
+{"attr_desc": "Enables declarative shadow roots to indicate they will use a custom element registry", "attr_name": "shadowrootcustomelementregistry", "tag_scope_info": "template", "value_info": "Boolean attribute"}
+{"attr_desc": "Sets delegates focus on a declarative shadow root", "attr_name": "shadowrootdelegatesfocus", "tag_scope_info": "template", "value_info": "Boolean attribute"}
+{"attr_desc": "Enables streaming declarative shadow roots", "attr_name": "shadowrootmode", "tag_scope_info": "template", "value_info": "\"open\";\n          \"closed\""}
+{"attr_desc": "Sets serializable on a declarative shadow root", "attr_name": "shadowrootserializable", "tag_scope_info": "template", "value_info": "Boolean attribute"}
+{"attr_desc": "Sets slot assignment on a declarative shadow root", "attr_name": "shadowrootslotassignment", "tag_scope_info": "template", "value_info": "\"named\";\n          \"manual\""}
+{"attr_desc": "The kind of shape to be created in an image map", "attr_name": "shape", "tag_scope_info": "area", "value_info": "\"circle\";\n          \"default\";\n          \"poly\";\n          \"rect\""}
+{"attr_desc": "Size of the control", "attr_name": "size", "tag_scope_info": "input;\n          select", "value_info": "Valid non-negative integer greater than zero"}
+{"attr_desc": "Sizes of the icons (for rel=\"icon\")", "attr_name": "sizes", "tag_scope_info": "link", "value_info": "Unordered set of unique space-separated tokens, ASCII case-insensitive, consisting of sizes*"}
+{"attr_desc": "Image sizes for different page layouts", "attr_name": "sizes", "tag_scope_info": "img;\n          source", "value_info": "Valid source size list"}
+{"attr_desc": "The element's desired slot", "attr_name": "slot", "tag_scope_info": "HTML elements", "value_info": "Text"}
+{"attr_desc": "Number of columns spanned by the element", "attr_name": "span", "tag_scope_info": "col;\n          colgroup", "value_info": "Valid non-negative integer greater than zero"}
+{"attr_desc": "Whether the element is to have its spelling and grammar checked", "attr_name": "spellcheck", "tag_scope_info": "HTML elements", "value_info": "\"true\";\n          \"false\";\n          the empty string"}
+{"attr_desc": "Address of the resource", "attr_name": "src", "tag_scope_info": "audio;\n          embed;\n          iframe;\n          img;\n          input;\n          script;\n          source (in video or audio);\n          track;\n          video", "value_info": "Valid non-empty URL potentially surrounded by spaces"}
+{"attr_desc": "A document to render in the iframe", "attr_name": "srcdoc", "tag_scope_info": "iframe", "value_info": "The source of an iframe srcdoc document*"}
+{"attr_desc": "Language of the text track", "attr_name": "srclang", "tag_scope_info": "track", "value_info": "Valid BCP 47 language tag"}
+{"attr_desc": "Images to use in different situations, e.g., high-resolution displays, small monitors, etc.", "attr_name": "srcset", "tag_scope_info": "img;\n          source", "value_info": "Comma-separated list of image candidate strings"}
+{"attr_desc": "Starting value of the list", "attr_name": "start", "tag_scope_info": "ol", "value_info": "Valid integer"}
+{"attr_desc": "Granularity to be matched by the form control's value", "attr_name": "step", "tag_scope_info": "input", "value_info": "Valid floating-point number greater than zero, or \"any\""}
+{"attr_desc": "Presentational and formatting instructions", "attr_name": "style", "tag_scope_info": "HTML elements", "value_info": "CSS declarations*"}
+{"attr_desc": "Whether the element is focusable and sequentially focusable, and\n     the relative order of the element for the purposes of sequential focus navigation", "attr_name": "tabindex", "tag_scope_info": "HTML elements", "value_info": "Valid integer"}
+{"attr_desc": "Navigable for hyperlink navigation", "attr_name": "target", "tag_scope_info": "a;\n          area", "value_info": "Valid navigable target name or keyword"}
+{"attr_desc": "Default navigable for hyperlink navigation and form submission", "attr_name": "target", "tag_scope_info": "base", "value_info": "Valid navigable target name or keyword"}
+{"attr_desc": "Navigable for form submission", "attr_name": "target", "tag_scope_info": "form", "value_info": "Valid navigable target name or keyword"}
+{"attr_desc": "Advisory information for the element", "attr_name": "title", "tag_scope_info": "HTML elements", "value_info": "Text"}
+{"attr_desc": "Full term or expansion of abbreviation", "attr_name": "title", "tag_scope_info": "abbr;\n          dfn", "value_info": "Text"}
+{"attr_desc": "Description of pattern (when used with pattern attribute)", "attr_name": "title", "tag_scope_info": "input", "value_info": "Text"}
+{"attr_desc": "Title of the link", "attr_name": "title", "tag_scope_info": "link", "value_info": "Text"}
+{"attr_desc": "CSS style sheet set name", "attr_name": "title", "tag_scope_info": "link;\n          style", "value_info": "Text"}
+{"attr_desc": "Whether the element is to be translated when the page is localized", "attr_name": "translate", "tag_scope_info": "HTML elements", "value_info": "\"yes\"; \"no\"; the empty string"}
+{"attr_desc": "Hint for the type of the referenced resource", "attr_name": "type", "tag_scope_info": "a;\n          link", "value_info": "Valid MIME type string"}
+{"attr_desc": "Type of button", "attr_name": "type", "tag_scope_info": "button", "value_info": "\"submit\";\n          \"reset\";\n          \"button\""}
+{"attr_desc": "Type of embedded resource", "attr_name": "type", "tag_scope_info": "embed;\n          object;\n          source", "value_info": "Valid MIME type string"}
+{"attr_desc": "Type of form control", "attr_name": "type", "tag_scope_info": "input", "value_info": "input type keyword"}
+{"attr_desc": "Kind of list marker", "attr_name": "type", "tag_scope_info": "ol", "value_info": "\"1\";\n          \"a\";\n          \"A\";\n          \"i\";\n          \"I\""}
+{"attr_desc": "Type of script", "attr_name": "type", "tag_scope_info": "script", "value_info": "\"module\"; \"importmap\"; \"speculationrules\"; a valid MIME type string that is not a JavaScript MIME type essence match"}
+{"attr_desc": "Name of image map to use", "attr_name": "usemap", "tag_scope_info": "img", "value_info": "Valid hash-name reference*"}
+{"attr_desc": "Value to be used for form submission", "attr_name": "value", "tag_scope_info": "button;\n          option", "value_info": "Text"}
+{"attr_desc": "Machine-readable value", "attr_name": "value", "tag_scope_info": "data", "value_info": "Text*"}
+{"attr_desc": "Value of the form control", "attr_name": "value", "tag_scope_info": "input", "value_info": "Varies*"}
+{"attr_desc": "Ordinal value of the list item", "attr_name": "value", "tag_scope_info": "li", "value_info": "Valid integer"}
+{"attr_desc": "Current value of the element", "attr_name": "value", "tag_scope_info": "meter;\n          progress", "value_info": "Valid floating-point number"}
+{"attr_desc": "Horizontal dimension", "attr_name": "width", "tag_scope_info": "canvas;\n          embed;\n          iframe;\n          img;\n          input;\n          object;\n          source (in picture);\n          video", "value_info": "Valid non-negative integer"}
+{"attr_desc": "How the value of the form control is to be wrapped for form submission", "attr_name": "wrap", "tag_scope_info": "textarea", "value_info": "\"soft\";\n          \"hard\""}
+{"attr_desc": "Whether the element can offer writing suggestions or not.", "attr_name": "writingsuggestions", "tag_scope_info": "HTML elements", "value_info": "\"true\";\n          \"false\";\n          the empty string"}

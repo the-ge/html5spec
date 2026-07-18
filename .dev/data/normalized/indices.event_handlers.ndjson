@@ -1,0 +1,89 @@
+{"attribute": "onafterprint", "elements": "body"}
+{"attribute": "onauxclick", "elements": "HTML elements"}
+{"attribute": "onbeforeinput", "elements": "HTML elements"}
+{"attribute": "onbeforematch", "elements": "HTML elements"}
+{"attribute": "onbeforeprint", "elements": "body"}
+{"attribute": "onbeforeunload", "elements": "body"}
+{"attribute": "onbeforetoggle", "elements": "HTML elements"}
+{"attribute": "onblur", "elements": "HTML elements"}
+{"attribute": "oncancel", "elements": "HTML elements"}
+{"attribute": "oncanplay", "elements": "HTML elements"}
+{"attribute": "oncanplaythrough", "elements": "HTML elements"}
+{"attribute": "onchange", "elements": "HTML elements"}
+{"attribute": "onclick", "elements": "HTML elements"}
+{"attribute": "onclose", "elements": "HTML elements"}
+{"attribute": "oncommand", "elements": "HTML elements"}
+{"attribute": "oncontextlost", "elements": "HTML elements"}
+{"attribute": "oncontextmenu", "elements": "HTML elements"}
+{"attribute": "oncontextrestored", "elements": "HTML elements"}
+{"attribute": "oncopy", "elements": "HTML elements"}
+{"attribute": "oncuechange", "elements": "HTML elements"}
+{"attribute": "oncut", "elements": "HTML elements"}
+{"attribute": "ondblclick", "elements": "HTML elements"}
+{"attribute": "ondrag", "elements": "HTML elements"}
+{"attribute": "ondragend", "elements": "HTML elements"}
+{"attribute": "ondragenter", "elements": "HTML elements"}
+{"attribute": "ondragleave", "elements": "HTML elements"}
+{"attribute": "ondragover", "elements": "HTML elements"}
+{"attribute": "ondragstart", "elements": "HTML elements"}
+{"attribute": "ondrop", "elements": "HTML elements"}
+{"attribute": "ondurationchange", "elements": "HTML elements"}
+{"attribute": "onemptied", "elements": "HTML elements"}
+{"attribute": "onended", "elements": "HTML elements"}
+{"attribute": "onerror", "elements": "HTML elements"}
+{"attribute": "onfocus", "elements": "HTML elements"}
+{"attribute": "onformdata", "elements": "HTML elements"}
+{"attribute": "onhashchange", "elements": "body"}
+{"attribute": "oninput", "elements": "HTML elements"}
+{"attribute": "oninvalid", "elements": "HTML elements"}
+{"attribute": "onkeydown", "elements": "HTML elements"}
+{"attribute": "onkeypress", "elements": "HTML elements"}
+{"attribute": "onkeyup", "elements": "HTML elements"}
+{"attribute": "onlanguagechange", "elements": "body"}
+{"attribute": "onload", "elements": "HTML elements"}
+{"attribute": "onloadeddata", "elements": "HTML elements"}
+{"attribute": "onloadedmetadata", "elements": "HTML elements"}
+{"attribute": "onloadstart", "elements": "HTML elements"}
+{"attribute": "onmessage", "elements": "body"}
+{"attribute": "onmessageerror", "elements": "body"}
+{"attribute": "onmousedown", "elements": "HTML elements"}
+{"attribute": "onmouseenter", "elements": "HTML elements"}
+{"attribute": "onmouseleave", "elements": "HTML elements"}
+{"attribute": "onmousemove", "elements": "HTML elements"}
+{"attribute": "onmouseout", "elements": "HTML elements"}
+{"attribute": "onmouseover", "elements": "HTML elements"}
+{"attribute": "onmouseup", "elements": "HTML elements"}
+{"attribute": "onoffline", "elements": "body"}
+{"attribute": "ononline", "elements": "body"}
+{"attribute": "onpagehide", "elements": "body"}
+{"attribute": "onpagereveal", "elements": "body"}
+{"attribute": "onpageshow", "elements": "body"}
+{"attribute": "onpageswap", "elements": "body"}
+{"attribute": "onpaste", "elements": "HTML elements"}
+{"attribute": "onpause", "elements": "HTML elements"}
+{"attribute": "onplay", "elements": "HTML elements"}
+{"attribute": "onplaying", "elements": "HTML elements"}
+{"attribute": "onpopstate", "elements": "body"}
+{"attribute": "onprogress", "elements": "HTML elements"}
+{"attribute": "onratechange", "elements": "HTML elements"}
+{"attribute": "onreset", "elements": "HTML elements"}
+{"attribute": "onresize", "elements": "HTML elements"}
+{"attribute": "onrejectionhandled", "elements": "body"}
+{"attribute": "onscroll", "elements": "HTML elements"}
+{"attribute": "onscrollend", "elements": "HTML elements"}
+{"attribute": "onsecuritypolicyviolation", "elements": "HTML elements"}
+{"attribute": "onseeked", "elements": "HTML elements"}
+{"attribute": "onseeking", "elements": "HTML elements"}
+{"attribute": "onselect", "elements": "HTML elements"}
+{"attribute": "onslotchange", "elements": "HTML elements"}
+{"attribute": "onstalled", "elements": "HTML elements"}
+{"attribute": "onstorage", "elements": "body"}
+{"attribute": "onsubmit", "elements": "HTML elements"}
+{"attribute": "onsuspend", "elements": "HTML elements"}
+{"attribute": "ontimeupdate", "elements": "HTML elements"}
+{"attribute": "ontoggle", "elements": "HTML elements"}
+{"attribute": "onunhandledrejection", "elements": "body"}
+{"attribute": "onunload", "elements": "body"}
+{"attribute": "onvolumechange", "elements": "HTML elements"}
+{"attribute": "onwaiting", "elements": "HTML elements"}
+{"attribute": "onwheel", "elements": "HTML elements"}
