@@ -8,7 +8,7 @@ from typing import Any
 
 from slugify import slugify
 
-from config import EXCEPTION_PATTERN, KEYWORDS_PATTERN, MIN_COUNT
+from config import DUMP_JSON_KWARGS, EXCEPTION_PATTERN, KEYWORDS_PATTERN, MIN_COUNT
 from util import (
     Attribute,
     Category,
@@ -307,7 +307,7 @@ class SpecParser:
         self.cache_dir.mkdir(parents=True, exist_ok=True)
         serialized = make_serializable(data)
         (self.cache_dir / f'{key}.json').write_text(
-            json.dumps(serialized, indent=2, sort_keys=True, ensure_ascii=False),
+            json.dumps(serialized, **DUMP_JSON_KWARGS),
             encoding='utf-8',
         )
 

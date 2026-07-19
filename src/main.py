@@ -11,6 +11,8 @@ from config import (
     DIST_JSON_DATA_DIR,
     DIST_NOTICE_FILE,
     DIST_YAML_DATA_DIR,
+    DUMP_JSON_KWARGS,
+    DUMP_YAML_KWARGS,
     LOG_LEVEL,
     NORMALIZED_DATA_DIR,
     NOTICE_FILE,
@@ -52,7 +54,7 @@ def write_output(data: dict, path: Path) -> None:
     """Write the aggregate result for one category to path as JSON."""
     serializable = make_serializable(data)
     path.write_text(
-        json.dumps(serializable, indent=4, sort_keys=True, ensure_ascii=False),
+        json.dumps(serializable, **DUMP_JSON_KWARGS),
         encoding='utf-8',
     )
 
@@ -62,7 +64,7 @@ def write_yaml_file(data: list, path: Path) -> None:
     breakdown — used for categories like global_attributes that are just
     a list of names, not records worth splitting into their own files."""
     path.write_text(
-        yaml.dump(make_serializable(data), indent=2, sort_keys=True, allow_unicode=True, width=float('inf')),
+        yaml.dump(make_serializable(data), **DUMP_YAML_KWARGS),
         encoding='utf-8',
     )
 
@@ -75,7 +77,7 @@ def write_yaml_items(data: dict, dir_path: Path) -> int:
     for key, value in data.items():
         filename = key.replace('/', '_')  # guard against path traversal via item keys
         (dir_path / f'{filename}.yaml').write_text(
-            yaml.dump(make_serializable(value), indent=2, sort_keys=True, allow_unicode=True, width=float('inf')),
+            yaml.dump(make_serializable(value), **DUMP_YAML_KWARGS),
             encoding='utf-8',
         )
         count += 1
@@ -121,7 +123,7 @@ def main():
 
     # Single manifest capturing per-source fetch times, generation time, and item counts
     manifest = build_manifest(counts)
-    DIST_DATA_MANIFEST_FILE.write_text(json.dumps(manifest, indent=2, sort_keys=True), encoding='utf-8')
+    DIST_DATA_MANIFEST_FILE.write_text(json.dumps(manifest, **DUMP_JSON_KWARGS), encoding='utf-8')
     logger.info(f'📋 Saved {DIST_DATA_MANIFEST_FILE}')
 
 

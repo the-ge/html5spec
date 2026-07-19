@@ -2,7 +2,7 @@ import json
 import logging
 from datetime import datetime, timezone
 
-from config import LOG_LEVEL, NORMALIZED_DATA_DIR, NORMALIZED_DATA_MANIFEST_FILE, PAGE_SECTIONS, RAW_DATA_DIR
+from config import DUMP_JSON_KWARGS, LOG_LEVEL, NORMALIZED_DATA_DIR, NORMALIZED_DATA_MANIFEST_FILE, PAGE_SECTIONS, RAW_DATA_DIR
 from extract import Extractor
 
 logging.basicConfig(level=LOG_LEVEL, format='%(levelname)s: %(message)s')
@@ -20,7 +20,7 @@ def main():
         'sections': sections,
     }
     NORMALIZED_DATA_MANIFEST_FILE.write_text(
-        json.dumps(manifest, indent=2, sort_keys=True),
+        json.dumps(manifest, **DUMP_JSON_KWARGS),
         encoding='utf-8',
     )
     logger.info(f'📋 Wrote {NORMALIZED_DATA_MANIFEST_FILE}')
