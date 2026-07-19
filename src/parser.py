@@ -59,8 +59,6 @@ def gen_elements(elements: str) -> Iterator[str]:
     elif ',' in elements:
         for e in re.split(r'\s*,\s*', elements.strip(string.whitespace + ',')):
             yield from gen_elements(e)
-    elif '(' in elements or ')' in elements:
-        yield elements
     elif elements == 'video\nimg':
         # bug @ https://html.spec.whatwg.org/multipage/indices.html#attributes-3:attr-media-controls
         # `controls` "Element(s)" cell has no semicolon between 'video' and 'img' <code> elements
@@ -117,7 +115,7 @@ def warn_if_unseparated_tokens(text: str, context: str) -> None:
     known 'video\\nimg' spec bug (see gen_elements())."""
     for segment in re.split(r'[;,]', text):
         if _ADJACENT_TOKENS_PATTERN.search(segment):
-            warning = f'missing separator between \'{"' and '".join(segment.strip().split())}\''
+            warning = f"missing separator between '{"' and '".join(segment.strip().split())}'"
             logger.warning(f'‼️ {context}: {warning}. Confirm workaround state (find it by "bug @").')
 
 
