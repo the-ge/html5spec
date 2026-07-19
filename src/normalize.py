@@ -2,8 +2,16 @@ import json
 import logging
 from datetime import datetime, timezone
 
-from config import DUMP_JSON_KWARGS, LOG_LEVEL, NORMALIZED_DATA_DIR, NORMALIZED_DATA_MANIFEST_FILE, PAGE_SECTIONS, RAW_DATA_DIR
+from config import (
+    DUMP_JSON_KWARGS,
+    LOG_LEVEL,
+    NORMALIZED_DATA_DIR,
+    NORMALIZED_DATA_MANIFEST_FILE,
+    PAGE_SECTIONS,
+    RAW_DATA_DIR,
+)
 from extract import Extractor
+from util import short_path
 
 logging.basicConfig(level=LOG_LEVEL, format='%(levelname)s: %(message)s')
 logger = logging.getLogger(__name__)
@@ -23,7 +31,7 @@ def main():
         json.dumps(manifest, **DUMP_JSON_KWARGS),
         encoding='utf-8',
     )
-    logger.info(f'📋 Wrote {NORMALIZED_DATA_MANIFEST_FILE}')
+    logger.info(f'📋 Wrote {short_path(NORMALIZED_DATA_MANIFEST_FILE)}')
 
 
 if __name__ == '__main__':

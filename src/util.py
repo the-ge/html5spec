@@ -5,8 +5,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, TypeVar
 
-from config import (DUMP_NDJSON_KWARGS)
-
+from config import DUMP_NDJSON_KWARGS, PROJECT_ROOT
 
 T = TypeVar('T')
 
@@ -194,3 +193,8 @@ def make_serializable(obj):
         return {k: make_serializable(v) for k, v in obj.items()}
     else:
         return obj
+
+
+def short_path(path: Path) -> str:
+    """Format a path relative to PROJECT_ROOT for logging."""
+    return str(path.relative_to(PROJECT_ROOT))

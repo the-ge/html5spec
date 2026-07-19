@@ -19,7 +19,7 @@ from config import (
     RAW_DATA_MANIFEST_FILE,
 )
 from parser import SpecParser
-from util import make_serializable
+from util import make_serializable, short_path
 
 logging.basicConfig(level=LOG_LEVEL, format='%(levelname)s: %(message)s')
 logger = logging.getLogger(__name__)
@@ -36,12 +36,12 @@ def build_manifest(counts: dict[str, int]) -> dict:
     into RAW_DATA_DIR) with a generation timestamp and per-category item counts."""
     sources = {}
     if not RAW_DATA_MANIFEST_FILE.exists():
-        logger.error(f'❌ Missing {RAW_DATA_MANIFEST_FILE}; did you run `make -C .dev/state` first?')
+        logger.error(f'❌ Missing {short_path(RAW_DATA_MANIFEST_FILE)}; did you run `make -C .dev/state` first?')
     else:
         try:
             sources = json.loads(RAW_DATA_MANIFEST_FILE.read_text(encoding='utf-8'))
         except json.JSONDecodeError as e:
-            logger.error(f'❌ Failed to parse {RAW_DATA_MANIFEST_FILE}: {e}')
+            logger.error(f'❌ Failed to parse {short_path(RAW_DATA_MANIFEST_FILE)}: {e}')
 
     return {
         'generated_at': datetime.now(timezone.utc).isoformat(),
@@ -104,27 +104,27 @@ def main():
     for name, data in results.items():
         output_path = DIST_JSON_DATA_DIR / f'{name}.json'
         write_output(data, output_path)
-        logger.info(f'📦 Published {output_path}')
+        logger.info(f'📦 Published {short_path(output_path)}')
 
         if isinstance(data, dict):
             yaml_subdir = DIST_YAML_DATA_DIR / name
             item_count = write_yaml_items(data, yaml_subdir)
             counts[name] = item_count
-            logger.info(f'📦 Published {item_count} individual YAML files to {yaml_subdir}')
+            logger.info(f'📦 Published {item_count} individual YAML files to {short_path(yaml_subdir)}')
         else:
             yaml_path = DIST_YAML_DATA_DIR / f'{name}.yaml'
             write_yaml_file(data, yaml_path)
             counts[name] = len(data)
-            logger.info(f'📦 Published {yaml_path}')
+            logger.info(f'📦 Published {short_path(yaml_path)}')
 
     # Static legal notice, copied once — no per-file duplication
     copy_notice()
-    logger.info(f'⚖️ Saved {DIST_NOTICE_FILE}')
+    logger.info(f'⚖️ Wrote {short_path(DIST_NOTICE_FILE)}')
 
     # Single manifest capturing per-source fetch times, generation time, and item counts
     manifest = build_manifest(counts)
     DIST_DATA_MANIFEST_FILE.write_text(json.dumps(manifest, **DUMP_JSON_KWARGS), encoding='utf-8')
-    logger.info(f'📋 Saved {DIST_DATA_MANIFEST_FILE}')
+    logger.info(f'📋 Wrote {short_path(DIST_DATA_MANIFEST_FILE)}')
 
 
 if __name__ == '__main__':
