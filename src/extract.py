@@ -35,9 +35,9 @@ def extract_elements(soup: BeautifulSoup) -> Iterator[RawElement]:
         if len(cells) != 7:
             logger.error(f'❌ Expected 7 cells, got {len(cells)}. Skipping row: {row}')
             continue
-        element, desc, categories, _, children, attributes, _ = cells
+        element, description, categories, _, children, attributes, _ = cells
         yield RawElement(
-            element=element, description=desc, categories=categories, children=children, attributes=attributes
+            element=element, description=description, categories=categories, children=children, attributes=attributes
         )
 
 
@@ -61,9 +61,9 @@ def extract_attributes(soup: BeautifulSoup) -> Iterator[RawAttribute]:
         if len(cells) != 4:
             logger.error(f'❌ Expected 4 cells, got {len(cells)}. Skipping row: {row}')
             continue
-        attr_name, tag_scope_info, attr_desc, value_info = cells
+        attribute, elements, description, value = cells
         yield RawAttribute(
-            attr_name=attr_name, tag_scope_info=tag_scope_info, attr_desc=attr_desc, value_info=value_info
+            attribute=attribute, elements=elements, description=description, value=value
         )
 
 
@@ -90,10 +90,12 @@ def extract_input_types(soup: BeautifulSoup) -> Iterator[RawInputType]:
     # https://html.spec.whatwg.org/dev/input.html#attr-input-type-keywords
     rows = soup.find('table', {'id': 'attr-input-type-keywords'}).find_next('tbody').find_all('tr')
     for row in rows:
-        cells = [x.get_text().strip() for x in row.find_all(['th', 'td'])]
-        if not cells:
-            continue
-        yield RawInputType(keyword=cells[0])
+        yield RawInputType(
+            keyword=row.code.get_text().strip(),
+            state=f'https://html.spec.whatwg.org/dev/input.html{row.a['href'].strip()}',
+            data_type=row.contents[2].get_text().strip(),
+            control_type=row.contents[3].get_text().strip(),
+        )
 
 
 def extract_element_types(soup: BeautifulSoup) -> Iterator[RawElementType]:
@@ -135,12 +137,12 @@ def extract_aria_roles(soup: BeautifulSoup) -> Iterator[RawAriaRole]:
     for role in concrete_roles:
         rows = soup.find('section', {'id': role}).find_next('ul').find_all('li')
         for row in rows:
-            deprecated='' if row.strong == None else row.strong.string
+            deprecated='' if row.strong == None else row.strong.get_text().strip()
             if deprecated != '':
                 deprecated = re.search(r'(?<=ARIA )\d+\.\d+', deprecated)
                 deprecated = deprecated[0] if deprecated else ''
             yield RawAriaRole(
-                name=row.code.string.strip(),
+                name=row.code.get_text().strip(),
                 url=row.a['href'].strip(),
                 deprecated_since_version=deprecated,
             )

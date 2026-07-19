@@ -173,14 +173,14 @@ def parse_categories(rows: Iterator[RawCategory]) -> Iterator[Category]:
 
 def parse_attributes(rows: Iterator[RawAttribute]) -> Iterator[Attribute]:
     for raw in rows:
-        attr_name, tag_scope_info, attr_desc, value_info = (
-            raw.attr_name,
-            raw.tag_scope_info,
-            raw.attr_desc,
-            raw.value_info,
+        name, tag_scope_info, description, value_info = (
+            raw.attribute,
+            raw.elements,
+            raw.description,
+            raw.value,
         )
 
-        warn_if_unseparated_tokens(tag_scope_info, f'Attribute {attr_name!r} tag scope')
+        warn_if_unseparated_tokens(tag_scope_info, f'Attribute {raw.attribute!r} tag scope')
 
         is_complicated = value_info.endswith('*')
         if is_complicated:
@@ -249,9 +249,9 @@ def parse_attributes(rows: Iterator[RawAttribute]) -> Iterator[Attribute]:
         ])
 
         yield Attribute(
-            name=attr_name,
+            name=name,
             tag_scope=tag_scope,
-            description=attr_desc,
+            description=description,
             value_type=value_type,
             value_enum=value_enum,
             value_info=value_info,

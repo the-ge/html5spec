@@ -35,10 +35,10 @@ class RawCategory:
 
 @dataclass(frozen=True, slots=True)
 class RawAttribute:
-    attr_name: str
-    tag_scope_info: str
-    attr_desc: str
-    value_info: str
+    attribute: str
+    elements: str
+    description: str
+    value: str
 
 
 @dataclass(frozen=True, slots=True)
@@ -55,6 +55,9 @@ class RawGlobalAttribute:
 @dataclass(frozen=True, slots=True)
 class RawInputType:
     keyword: str
+    state: str
+    data_type: str
+    control_type: str
 
 
 @dataclass(frozen=True, slots=True)
