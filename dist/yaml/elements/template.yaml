@@ -1,3 +1,9 @@
+description: Template
+categories:
+- flow
+- metadata
+- phrasing
+- script-supporting
 attributes:
 - accesskey
 - autocapitalize
@@ -37,10 +43,4 @@ attributes:
 - title
 - translate
 - writingsuggestions
-categories:
-- flow
-- metadata
-- phrasing
-- script-supporting
 children: []
-description: Template

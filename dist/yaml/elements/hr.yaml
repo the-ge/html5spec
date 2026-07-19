@@ -1,3 +1,6 @@
+description: Thematic break
+categories:
+- flow
 attributes:
 - accesskey
 - autocapitalize
@@ -31,7 +34,4 @@ attributes:
 - title
 - translate
 - writingsuggestions
-categories:
-- flow
 children: []
-description: Thematic break

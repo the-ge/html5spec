@@ -1,7 +1,7 @@
-description: Whether the control is checked
-separator: ''
 tag_scope:
 - input
+description: Whether the control is checked
+value_type: bool
 value_enum: []
 value_info: Boolean attribute
-value_type: bool
+separator: ''

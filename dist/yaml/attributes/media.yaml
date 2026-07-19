@@ -1,10 +1,10 @@
-description: Applicable media
-separator: ''
 tag_scope:
 - link
 - meta
 - source
 - style
+description: Applicable media
+value_type: string
 value_enum: []
 value_info: Valid media query list
-value_type: string
+separator: ''

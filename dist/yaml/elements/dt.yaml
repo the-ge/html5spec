@@ -1,3 +1,6 @@
+description: Legend for corresponding dd element(s)
+categories:
+- none
 attributes:
 - accesskey
 - autocapitalize
@@ -31,8 +34,5 @@ attributes:
 - title
 - translate
 - writingsuggestions
-categories:
-- none
 children:
 - flow
-description: Legend for corresponding dd element(s)

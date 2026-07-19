@@ -1,3 +1,10 @@
+description: Audio player
+categories:
+- embedded
+- flow
+- interactive
+- palpable
+- phrasing
 attributes:
 - accesskey
 - autocapitalize
@@ -39,14 +46,7 @@ attributes:
 - title
 - translate
 - writingsuggestions
-categories:
-- embedded
-- flow
-- interactive
-- palpable
-- phrasing
 children:
 - source
 - track
 - transparent
-description: Audio player

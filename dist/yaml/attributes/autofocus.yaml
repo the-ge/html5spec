@@ -1,6 +1,6 @@
-description: Automatically focus the element when the page is loaded
-separator: ''
 tag_scope: []
+description: Automatically focus the element when the page is loaded
+value_type: bool
 value_enum: []
 value_info: Boolean attribute
-value_type: bool
+separator: ''

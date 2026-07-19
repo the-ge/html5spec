@@ -1,5 +1,12 @@
 {
   "a": {
+    "description": "Hyperlink",
+    "categories": [
+      "flow",
+      "interactive",
+      "palpable",
+      "phrasing"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -42,63 +49,17 @@
       "type",
       "writingsuggestions"
     ],
-    "categories": [
-      "flow",
-      "interactive",
-      "palpable",
-      "phrasing"
-    ],
     "children": [
       "transparent"
-    ],
-    "description": "Hyperlink"
+    ]
   },
   "abbr": {
-    "attributes": [
-      "accesskey",
-      "autocapitalize",
-      "autocorrect",
-      "autofocus",
-      "class",
-      "contenteditable",
-      "dir",
-      "draggable",
-      "enterkeyhint",
-      "headingoffset",
-      "headingreset",
-      "hidden",
-      "id",
-      "inert",
-      "inputmode",
-      "is",
-      "itemid",
-      "itemprop",
-      "itemref",
-      "itemscope",
-      "itemtype",
-      "lang",
-      "nonce",
-      "popover",
-      "role",
-      "slot",
-      "spellcheck",
-      "style",
-      "tabindex",
-      "title",
-      "translate",
-      "writingsuggestions"
-    ],
+    "description": "Abbreviation",
     "categories": [
       "flow",
       "palpable",
       "phrasing"
     ],
-    "children": [
-      "phrasing"
-    ],
-    "description": "Abbreviation"
-  },
-  "address": {
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -133,16 +94,60 @@
       "translate",
       "writingsuggestions"
     ],
+    "children": [
+      "phrasing"
+    ]
+  },
+  "address": {
+    "description": "Contact information for a page or article element",
     "categories": [
       "flow",
       "palpable"
     ],
+    "attributes": [
+      "accesskey",
+      "autocapitalize",
+      "autocorrect",
+      "autofocus",
+      "class",
+      "contenteditable",
+      "dir",
+      "draggable",
+      "enterkeyhint",
+      "headingoffset",
+      "headingreset",
+      "hidden",
+      "id",
+      "inert",
+      "inputmode",
+      "is",
+      "itemid",
+      "itemprop",
+      "itemref",
+      "itemscope",
+      "itemtype",
+      "lang",
+      "nonce",
+      "popover",
+      "role",
+      "slot",
+      "spellcheck",
+      "style",
+      "tabindex",
+      "title",
+      "translate",
+      "writingsuggestions"
+    ],
     "children": [
       "flow"
-    ],
-    "description": "Contact information for a page or article element"
+    ]
   },
   "area": {
+    "description": "Hyperlink or dead area on an image map",
+    "categories": [
+      "flow",
+      "phrasing"
+    ],
     "attributes": [
       "accesskey",
       "alt",
@@ -186,14 +191,15 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "flow",
-      "phrasing"
-    ],
-    "children": [],
-    "description": "Hyperlink or dead area on an image map"
+    "children": []
   },
   "article": {
+    "description": "Self-contained syndicatable or reusable composition",
+    "categories": [
+      "flow",
+      "palpable",
+      "sectioning"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -228,17 +234,17 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "flow",
-      "palpable",
-      "sectioning"
-    ],
     "children": [
       "flow"
-    ],
-    "description": "Self-contained syndicatable or reusable composition"
+    ]
   },
   "aside": {
+    "description": "Sidebar for tangentially related content",
+    "categories": [
+      "flow",
+      "palpable",
+      "sectioning"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -273,17 +279,19 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "flow",
-      "palpable",
-      "sectioning"
-    ],
     "children": [
       "flow"
-    ],
-    "description": "Sidebar for tangentially related content"
+    ]
   },
   "audio": {
+    "description": "Audio player",
+    "categories": [
+      "embedded",
+      "flow",
+      "interactive",
+      "palpable",
+      "phrasing"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -326,21 +334,19 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "embedded",
-      "flow",
-      "interactive",
-      "palpable",
-      "phrasing"
-    ],
     "children": [
       "source",
       "track",
       "transparent"
-    ],
-    "description": "Audio player"
+    ]
   },
   "b": {
+    "description": "Keywords",
+    "categories": [
+      "flow",
+      "palpable",
+      "phrasing"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -375,17 +381,15 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "flow",
-      "palpable",
-      "phrasing"
-    ],
     "children": [
       "phrasing"
-    ],
-    "description": "Keywords"
+    ]
   },
   "base": {
+    "description": "Base URL and default target navigable for hyperlinks and forms",
+    "categories": [
+      "metadata"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -422,13 +426,15 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "metadata"
-    ],
-    "children": [],
-    "description": "Base URL and default target navigable for hyperlinks and forms"
+    "children": []
   },
   "bdi": {
+    "description": "Text directionality isolation",
+    "categories": [
+      "flow",
+      "palpable",
+      "phrasing"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -463,17 +469,17 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "flow",
-      "palpable",
-      "phrasing"
-    ],
     "children": [
       "phrasing"
-    ],
-    "description": "Text directionality isolation"
+    ]
   },
   "bdo": {
+    "description": "Text directionality formatting",
+    "categories": [
+      "flow",
+      "palpable",
+      "phrasing"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -508,17 +514,16 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "flow",
-      "palpable",
-      "phrasing"
-    ],
     "children": [
       "phrasing"
-    ],
-    "description": "Text directionality formatting"
+    ]
   },
   "blockquote": {
+    "description": "A section quoted from another source",
+    "categories": [
+      "flow",
+      "palpable"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -554,16 +559,15 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "flow",
-      "palpable"
-    ],
     "children": [
       "flow"
-    ],
-    "description": "A section quoted from another source"
+    ]
   },
   "body": {
+    "description": "Document body",
+    "categories": [
+      "none"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -616,15 +620,16 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "none"
-    ],
     "children": [
       "flow"
-    ],
-    "description": "Document body"
+    ]
   },
   "br": {
+    "description": "Line break, e.g. in poem or postal address",
+    "categories": [
+      "flow",
+      "phrasing"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -659,14 +664,20 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "flow",
-      "phrasing"
-    ],
-    "children": [],
-    "description": "Line break, e.g. in poem or postal address"
+    "children": []
   },
   "button": {
+    "description": "Button control",
+    "categories": [
+      "flow",
+      "form-associated",
+      "interactive",
+      "labelable",
+      "listed",
+      "palpable",
+      "phrasing",
+      "submittable"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -715,22 +726,18 @@
       "value",
       "writingsuggestions"
     ],
-    "categories": [
-      "flow",
-      "form-associated",
-      "interactive",
-      "labelable",
-      "listed",
-      "palpable",
-      "phrasing",
-      "submittable"
-    ],
     "children": [
       "phrasing"
-    ],
-    "description": "Button control"
+    ]
   },
   "canvas": {
+    "description": "Scriptable bitmap canvas",
+    "categories": [
+      "embedded",
+      "flow",
+      "palpable",
+      "phrasing"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -767,18 +774,15 @@
       "width",
       "writingsuggestions"
     ],
-    "categories": [
-      "embedded",
-      "flow",
-      "palpable",
-      "phrasing"
-    ],
     "children": [
       "transparent"
-    ],
-    "description": "Scriptable bitmap canvas"
+    ]
   },
   "caption": {
+    "description": "Table caption",
+    "categories": [
+      "none"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -812,16 +816,18 @@
       "title",
       "translate",
       "writingsuggestions"
-    ],
-    "categories": [
-      "none"
     ],
     "children": [
       "flow"
-    ],
-    "description": "Table caption"
+    ]
   },
   "cite": {
+    "description": "Title of a work",
+    "categories": [
+      "flow",
+      "palpable",
+      "phrasing"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -856,62 +862,60 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "flow",
-      "palpable",
-      "phrasing"
-    ],
     "children": [
       "phrasing"
-    ],
-    "description": "Title of a work"
+    ]
   },
   "code": {
-    "attributes": [
-      "accesskey",
-      "autocapitalize",
-      "autocorrect",
-      "autofocus",
-      "class",
-      "contenteditable",
-      "dir",
-      "draggable",
-      "enterkeyhint",
-      "headingoffset",
-      "headingreset",
-      "hidden",
-      "id",
-      "inert",
-      "inputmode",
-      "is",
-      "itemid",
-      "itemprop",
-      "itemref",
-      "itemscope",
-      "itemtype",
-      "lang",
-      "nonce",
-      "popover",
-      "role",
-      "slot",
-      "spellcheck",
-      "style",
-      "tabindex",
-      "title",
-      "translate",
-      "writingsuggestions"
-    ],
+    "description": "Computer code",
     "categories": [
       "flow",
       "palpable",
       "phrasing"
     ],
+    "attributes": [
+      "accesskey",
+      "autocapitalize",
+      "autocorrect",
+      "autofocus",
+      "class",
+      "contenteditable",
+      "dir",
+      "draggable",
+      "enterkeyhint",
+      "headingoffset",
+      "headingreset",
+      "hidden",
+      "id",
+      "inert",
+      "inputmode",
+      "is",
+      "itemid",
+      "itemprop",
+      "itemref",
+      "itemscope",
+      "itemtype",
+      "lang",
+      "nonce",
+      "popover",
+      "role",
+      "slot",
+      "spellcheck",
+      "style",
+      "tabindex",
+      "title",
+      "translate",
+      "writingsuggestions"
+    ],
     "children": [
       "phrasing"
-    ],
-    "description": "Computer code"
+    ]
   },
   "col": {
+    "description": "Table column",
+    "categories": [
+      "none"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -947,13 +951,13 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "none"
-    ],
-    "children": [],
-    "description": "Table column"
+    "children": []
   },
   "colgroup": {
+    "description": "Group of columns in a table",
+    "categories": [
+      "none"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -988,17 +992,19 @@
       "title",
       "translate",
       "writingsuggestions"
-    ],
-    "categories": [
-      "none"
     ],
     "children": [
       "col",
       "template"
-    ],
-    "description": "Group of columns in a table"
+    ]
   },
   "data": {
+    "description": "Machine-readable equivalent",
+    "categories": [
+      "flow",
+      "palpable",
+      "phrasing"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -1034,17 +1040,16 @@
       "value",
       "writingsuggestions"
     ],
-    "categories": [
-      "flow",
-      "palpable",
-      "phrasing"
-    ],
     "children": [
       "phrasing"
-    ],
-    "description": "Machine-readable equivalent"
+    ]
   },
   "datalist": {
+    "description": "Container for options for combo box control",
+    "categories": [
+      "flow",
+      "phrasing"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -1078,19 +1083,18 @@
       "title",
       "translate",
       "writingsuggestions"
-    ],
-    "categories": [
-      "flow",
-      "phrasing"
     ],
     "children": [
       "option",
       "phrasing",
       "script-supporting elements"
-    ],
-    "description": "Container for options for combo box control"
+    ]
   },
   "dd": {
+    "description": "Content for corresponding dt element(s)",
+    "categories": [
+      "none"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -1125,15 +1129,17 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "none"
-    ],
     "children": [
       "flow"
-    ],
-    "description": "Content for corresponding dt element(s)"
+    ]
   },
   "del": {
+    "description": "A removal from the document",
+    "categories": [
+      "flow",
+      "palpable",
+      "phrasing"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -1170,17 +1176,17 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "flow",
-      "palpable",
-      "phrasing"
-    ],
     "children": [
       "transparent"
-    ],
-    "description": "A removal from the document"
+    ]
   },
   "details": {
+    "description": "Disclosure control for hiding details",
+    "categories": [
+      "flow",
+      "interactive",
+      "palpable"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -1217,18 +1223,18 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "flow",
-      "interactive",
-      "palpable"
-    ],
     "children": [
       "flow",
       "summary"
-    ],
-    "description": "Disclosure control for hiding details"
+    ]
   },
   "dfn": {
+    "description": "Defining instance",
+    "categories": [
+      "flow",
+      "palpable",
+      "phrasing"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -1263,17 +1269,15 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "flow",
-      "palpable",
-      "phrasing"
-    ],
     "children": [
       "phrasing"
-    ],
-    "description": "Defining instance"
+    ]
   },
   "dialog": {
+    "description": "Dialog box or window",
+    "categories": [
+      "flow"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -1309,15 +1313,16 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "flow"
-    ],
     "children": [
       "flow"
-    ],
-    "description": "Dialog box or window"
+    ]
   },
   "div": {
+    "description": "Generic flow container, or container for name-value groups in dl elements",
+    "categories": [
+      "flow",
+      "palpable"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -1351,17 +1356,17 @@
       "title",
       "translate",
       "writingsuggestions"
-    ],
-    "categories": [
-      "flow",
-      "palpable"
     ],
     "children": [
       "flow"
-    ],
-    "description": "Generic flow container, or container for name-value groups in dl elements"
+    ]
   },
   "dl": {
+    "description": "Association list consisting of zero or more name-value groups",
+    "categories": [
+      "flow",
+      "palpable"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -1395,63 +1400,19 @@
       "title",
       "translate",
       "writingsuggestions"
-    ],
-    "categories": [
-      "flow",
-      "palpable"
     ],
     "children": [
       "dd",
       "div",
       "dt",
       "script-supporting elements"
-    ],
-    "description": "Association list consisting of zero or more name-value groups"
+    ]
   },
   "dt": {
-    "attributes": [
-      "accesskey",
-      "autocapitalize",
-      "autocorrect",
-      "autofocus",
-      "class",
-      "contenteditable",
-      "dir",
-      "draggable",
-      "enterkeyhint",
-      "headingoffset",
-      "headingreset",
-      "hidden",
-      "id",
-      "inert",
-      "inputmode",
-      "is",
-      "itemid",
-      "itemprop",
-      "itemref",
-      "itemscope",
-      "itemtype",
-      "lang",
-      "nonce",
-      "popover",
-      "role",
-      "slot",
-      "spellcheck",
-      "style",
-      "tabindex",
-      "title",
-      "translate",
-      "writingsuggestions"
-    ],
+    "description": "Legend for corresponding dd element(s)",
     "categories": [
       "none"
     ],
-    "children": [
-      "flow"
-    ],
-    "description": "Legend for corresponding dd element(s)"
-  },
-  "em": {
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -1486,17 +1447,64 @@
       "translate",
       "writingsuggestions"
     ],
+    "children": [
+      "flow"
+    ]
+  },
+  "em": {
+    "description": "Stress emphasis",
     "categories": [
       "flow",
       "palpable",
       "phrasing"
     ],
+    "attributes": [
+      "accesskey",
+      "autocapitalize",
+      "autocorrect",
+      "autofocus",
+      "class",
+      "contenteditable",
+      "dir",
+      "draggable",
+      "enterkeyhint",
+      "headingoffset",
+      "headingreset",
+      "hidden",
+      "id",
+      "inert",
+      "inputmode",
+      "is",
+      "itemid",
+      "itemprop",
+      "itemref",
+      "itemscope",
+      "itemtype",
+      "lang",
+      "nonce",
+      "popover",
+      "role",
+      "slot",
+      "spellcheck",
+      "style",
+      "tabindex",
+      "title",
+      "translate",
+      "writingsuggestions"
+    ],
     "children": [
       "phrasing"
-    ],
-    "description": "Stress emphasis"
+    ]
   },
   "embed": {
+    "description": "Plugin",
+    "categories": [
+      "embedded",
+      "flow",
+      "interactive",
+      "palpable",
+      "phrasing"
+    ],
     "attributes": [
       "accesskey",
       "any",
@@ -1536,17 +1544,16 @@
       "width",
       "writingsuggestions"
     ],
-    "categories": [
-      "embedded",
-      "flow",
-      "interactive",
-      "palpable",
-      "phrasing"
-    ],
-    "children": [],
-    "description": "Plugin"
+    "children": []
   },
   "fieldset": {
+    "description": "Group of form controls",
+    "categories": [
+      "flow",
+      "form-associated",
+      "listed",
+      "palpable"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -1584,62 +1591,16 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "flow",
-      "form-associated",
-      "listed",
-      "palpable"
-    ],
     "children": [
       "flow",
       "legend"
-    ],
-    "description": "Group of form controls"
+    ]
   },
   "figcaption": {
-    "attributes": [
-      "accesskey",
-      "autocapitalize",
-      "autocorrect",
-      "autofocus",
-      "class",
-      "contenteditable",
-      "dir",
-      "draggable",
-      "enterkeyhint",
-      "headingoffset",
-      "headingreset",
-      "hidden",
-      "id",
-      "inert",
-      "inputmode",
-      "is",
-      "itemid",
-      "itemprop",
-      "itemref",
-      "itemscope",
-      "itemtype",
-      "lang",
-      "nonce",
-      "popover",
-      "role",
-      "slot",
-      "spellcheck",
-      "style",
-      "tabindex",
-      "title",
-      "translate",
-      "writingsuggestions"
-    ],
+    "description": "Caption for figure",
     "categories": [
       "none"
     ],
-    "children": [
-      "flow"
-    ],
-    "description": "Caption for figure"
-  },
-  "figure": {
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -1674,17 +1635,61 @@
       "translate",
       "writingsuggestions"
     ],
+    "children": [
+      "flow"
+    ]
+  },
+  "figure": {
+    "description": "Figure with optional caption",
     "categories": [
       "flow",
       "palpable"
+    ],
+    "attributes": [
+      "accesskey",
+      "autocapitalize",
+      "autocorrect",
+      "autofocus",
+      "class",
+      "contenteditable",
+      "dir",
+      "draggable",
+      "enterkeyhint",
+      "headingoffset",
+      "headingreset",
+      "hidden",
+      "id",
+      "inert",
+      "inputmode",
+      "is",
+      "itemid",
+      "itemprop",
+      "itemref",
+      "itemscope",
+      "itemtype",
+      "lang",
+      "nonce",
+      "popover",
+      "role",
+      "slot",
+      "spellcheck",
+      "style",
+      "tabindex",
+      "title",
+      "translate",
+      "writingsuggestions"
     ],
     "children": [
       "figcaption",
       "flow"
-    ],
-    "description": "Figure with optional caption"
+    ]
   },
   "footer": {
+    "description": "Footer for a page or section",
+    "categories": [
+      "flow",
+      "palpable"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -1719,16 +1724,16 @@
       "translate",
       "writingsuggestions"
     ],
+    "children": [
+      "flow"
+    ]
+  },
+  "form": {
+    "description": "User-submittable form",
     "categories": [
       "flow",
       "palpable"
     ],
-    "children": [
-      "flow"
-    ],
-    "description": "Footer for a page or section"
-  },
-  "form": {
     "attributes": [
       "accept-charset",
       "accesskey",
@@ -1772,16 +1777,17 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "flow",
-      "palpable"
-    ],
     "children": [
       "flow"
-    ],
-    "description": "User-submittable form"
+    ]
   },
   "h1": {
+    "description": "Heading",
+    "categories": [
+      "flow",
+      "heading",
+      "palpable"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -1816,17 +1822,17 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "flow",
-      "heading",
-      "palpable"
-    ],
     "children": [
       "phrasing"
-    ],
-    "description": "Heading"
+    ]
   },
   "h2": {
+    "description": "Heading",
+    "categories": [
+      "flow",
+      "heading",
+      "palpable"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -1861,17 +1867,17 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "flow",
-      "heading",
-      "palpable"
-    ],
     "children": [
       "phrasing"
-    ],
-    "description": "Heading"
+    ]
   },
   "h3": {
+    "description": "Heading",
+    "categories": [
+      "flow",
+      "heading",
+      "palpable"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -1906,17 +1912,17 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "flow",
-      "heading",
-      "palpable"
-    ],
     "children": [
       "phrasing"
-    ],
-    "description": "Heading"
+    ]
   },
   "h4": {
+    "description": "Heading",
+    "categories": [
+      "flow",
+      "heading",
+      "palpable"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -1951,17 +1957,17 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "flow",
-      "heading",
-      "palpable"
-    ],
     "children": [
       "phrasing"
-    ],
-    "description": "Heading"
+    ]
   },
   "h5": {
+    "description": "Heading",
+    "categories": [
+      "flow",
+      "heading",
+      "palpable"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -1996,62 +2002,17 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "flow",
-      "heading",
-      "palpable"
-    ],
     "children": [
       "phrasing"
-    ],
-    "description": "Heading"
+    ]
   },
   "h6": {
-    "attributes": [
-      "accesskey",
-      "autocapitalize",
-      "autocorrect",
-      "autofocus",
-      "class",
-      "contenteditable",
-      "dir",
-      "draggable",
-      "enterkeyhint",
-      "headingoffset",
-      "headingreset",
-      "hidden",
-      "id",
-      "inert",
-      "inputmode",
-      "is",
-      "itemid",
-      "itemprop",
-      "itemref",
-      "itemscope",
-      "itemtype",
-      "lang",
-      "nonce",
-      "popover",
-      "role",
-      "slot",
-      "spellcheck",
-      "style",
-      "tabindex",
-      "title",
-      "translate",
-      "writingsuggestions"
-    ],
+    "description": "Heading",
     "categories": [
       "flow",
       "heading",
       "palpable"
     ],
-    "children": [
-      "phrasing"
-    ],
-    "description": "Heading"
-  },
-  "head": {
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -2086,15 +2047,15 @@
       "translate",
       "writingsuggestions"
     ],
+    "children": [
+      "phrasing"
+    ]
+  },
+  "head": {
+    "description": "Container for document metadata",
     "categories": [
       "none"
     ],
-    "children": [
-      "metadata content"
-    ],
-    "description": "Container for document metadata"
-  },
-  "header": {
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -2129,16 +2090,60 @@
       "translate",
       "writingsuggestions"
     ],
+    "children": [
+      "metadata content"
+    ]
+  },
+  "header": {
+    "description": "Introductory or navigational aids for a page or section",
     "categories": [
       "flow",
       "palpable"
+    ],
+    "attributes": [
+      "accesskey",
+      "autocapitalize",
+      "autocorrect",
+      "autofocus",
+      "class",
+      "contenteditable",
+      "dir",
+      "draggable",
+      "enterkeyhint",
+      "headingoffset",
+      "headingreset",
+      "hidden",
+      "id",
+      "inert",
+      "inputmode",
+      "is",
+      "itemid",
+      "itemprop",
+      "itemref",
+      "itemscope",
+      "itemtype",
+      "lang",
+      "nonce",
+      "popover",
+      "role",
+      "slot",
+      "spellcheck",
+      "style",
+      "tabindex",
+      "title",
+      "translate",
+      "writingsuggestions"
     ],
     "children": [
       "flow"
-    ],
-    "description": "Introductory or navigational aids for a page or section"
+    ]
   },
   "hgroup": {
+    "description": "Heading container",
+    "categories": [
+      "flow",
+      "palpable"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -2172,10 +2177,6 @@
       "title",
       "translate",
       "writingsuggestions"
-    ],
-    "categories": [
-      "flow",
-      "palpable"
     ],
     "children": [
       "h1",
@@ -2186,51 +2187,13 @@
       "h6",
       "p",
       "script-supporting elements"
-    ],
-    "description": "Heading container"
+    ]
   },
   "hr": {
-    "attributes": [
-      "accesskey",
-      "autocapitalize",
-      "autocorrect",
-      "autofocus",
-      "class",
-      "contenteditable",
-      "dir",
-      "draggable",
-      "enterkeyhint",
-      "headingoffset",
-      "headingreset",
-      "hidden",
-      "id",
-      "inert",
-      "inputmode",
-      "is",
-      "itemid",
-      "itemprop",
-      "itemref",
-      "itemscope",
-      "itemtype",
-      "lang",
-      "nonce",
-      "popover",
-      "role",
-      "slot",
-      "spellcheck",
-      "style",
-      "tabindex",
-      "title",
-      "translate",
-      "writingsuggestions"
-    ],
+    "description": "Thematic break",
     "categories": [
       "flow"
     ],
-    "children": [],
-    "description": "Thematic break"
-  },
-  "html": {
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -2265,61 +2228,106 @@
       "translate",
       "writingsuggestions"
     ],
+    "children": []
+  },
+  "html": {
+    "description": "Root element",
     "categories": [
       "none"
+    ],
+    "attributes": [
+      "accesskey",
+      "autocapitalize",
+      "autocorrect",
+      "autofocus",
+      "class",
+      "contenteditable",
+      "dir",
+      "draggable",
+      "enterkeyhint",
+      "headingoffset",
+      "headingreset",
+      "hidden",
+      "id",
+      "inert",
+      "inputmode",
+      "is",
+      "itemid",
+      "itemprop",
+      "itemref",
+      "itemscope",
+      "itemtype",
+      "lang",
+      "nonce",
+      "popover",
+      "role",
+      "slot",
+      "spellcheck",
+      "style",
+      "tabindex",
+      "title",
+      "translate",
+      "writingsuggestions"
     ],
     "children": [
       "body",
       "head"
-    ],
-    "description": "Root element"
+    ]
   },
   "i": {
-    "attributes": [
-      "accesskey",
-      "autocapitalize",
-      "autocorrect",
-      "autofocus",
-      "class",
-      "contenteditable",
-      "dir",
-      "draggable",
-      "enterkeyhint",
-      "headingoffset",
-      "headingreset",
-      "hidden",
-      "id",
-      "inert",
-      "inputmode",
-      "is",
-      "itemid",
-      "itemprop",
-      "itemref",
-      "itemscope",
-      "itemtype",
-      "lang",
-      "nonce",
-      "popover",
-      "role",
-      "slot",
-      "spellcheck",
-      "style",
-      "tabindex",
-      "title",
-      "translate",
-      "writingsuggestions"
-    ],
+    "description": "Alternate voice",
     "categories": [
       "flow",
       "palpable",
       "phrasing"
     ],
+    "attributes": [
+      "accesskey",
+      "autocapitalize",
+      "autocorrect",
+      "autofocus",
+      "class",
+      "contenteditable",
+      "dir",
+      "draggable",
+      "enterkeyhint",
+      "headingoffset",
+      "headingreset",
+      "hidden",
+      "id",
+      "inert",
+      "inputmode",
+      "is",
+      "itemid",
+      "itemprop",
+      "itemref",
+      "itemscope",
+      "itemtype",
+      "lang",
+      "nonce",
+      "popover",
+      "role",
+      "slot",
+      "spellcheck",
+      "style",
+      "tabindex",
+      "title",
+      "translate",
+      "writingsuggestions"
+    ],
     "children": [
       "phrasing"
-    ],
-    "description": "Alternate voice"
+    ]
   },
   "iframe": {
+    "description": "Child navigable",
+    "categories": [
+      "embedded",
+      "flow",
+      "interactive",
+      "palpable",
+      "phrasing"
+    ],
     "attributes": [
       "accesskey",
       "allow",
@@ -2364,17 +2372,18 @@
       "width",
       "writingsuggestions"
     ],
+    "children": []
+  },
+  "img": {
+    "description": "Image",
     "categories": [
       "embedded",
       "flow",
+      "form-associated",
       "interactive",
       "palpable",
       "phrasing"
     ],
-    "children": [],
-    "description": "Child navigable"
-  },
-  "img": {
     "attributes": [
       "accesskey",
       "alt",
@@ -2423,18 +2432,21 @@
       "width",
       "writingsuggestions"
     ],
+    "children": []
+  },
+  "input": {
+    "description": "Form control",
     "categories": [
-      "embedded",
       "flow",
       "form-associated",
       "interactive",
+      "labelable",
+      "listed",
       "palpable",
-      "phrasing"
+      "phrasing",
+      "resettable",
+      "submittable"
     ],
-    "children": [],
-    "description": "Image"
-  },
-  "input": {
     "attributes": [
       "accept",
       "accesskey",
@@ -2503,21 +2515,15 @@
       "width",
       "writingsuggestions"
     ],
-    "categories": [
-      "flow",
-      "form-associated",
-      "interactive",
-      "labelable",
-      "listed",
-      "palpable",
-      "phrasing",
-      "resettable",
-      "submittable"
-    ],
-    "children": [],
-    "description": "Form control"
+    "children": []
   },
   "ins": {
+    "description": "An addition to the document",
+    "categories": [
+      "flow",
+      "palpable",
+      "phrasing"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -2554,17 +2560,17 @@
       "translate",
       "writingsuggestions"
     ],
+    "children": [
+      "transparent"
+    ]
+  },
+  "kbd": {
+    "description": "User input",
     "categories": [
       "flow",
       "palpable",
       "phrasing"
     ],
-    "children": [
-      "transparent"
-    ],
-    "description": "An addition to the document"
-  },
-  "kbd": {
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -2599,17 +2605,18 @@
       "translate",
       "writingsuggestions"
     ],
+    "children": [
+      "phrasing"
+    ]
+  },
+  "label": {
+    "description": "Caption for a form control",
     "categories": [
       "flow",
+      "interactive",
       "palpable",
       "phrasing"
     ],
-    "children": [
-      "phrasing"
-    ],
-    "description": "User input"
-  },
-  "label": {
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -2645,18 +2652,15 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "flow",
-      "interactive",
-      "palpable",
-      "phrasing"
-    ],
     "children": [
       "phrasing"
-    ],
-    "description": "Caption for a form control"
+    ]
   },
   "legend": {
+    "description": "Caption for fieldset",
+    "categories": [
+      "none"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -2691,16 +2695,16 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "none"
-    ],
     "children": [
       "heading content",
       "phrasing"
-    ],
-    "description": "Caption for fieldset"
+    ]
   },
   "li": {
+    "description": "List item",
+    "categories": [
+      "none"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -2736,15 +2740,17 @@
       "value",
       "writingsuggestions"
     ],
-    "categories": [
-      "none"
-    ],
     "children": [
       "flow"
-    ],
-    "description": "List item"
+    ]
   },
   "link": {
+    "description": "Link metadata",
+    "categories": [
+      "flow",
+      "metadata",
+      "phrasing"
+    ],
     "attributes": [
       "accesskey",
       "as",
@@ -2795,15 +2801,14 @@
       "type",
       "writingsuggestions"
     ],
-    "categories": [
-      "flow",
-      "metadata",
-      "phrasing"
-    ],
-    "children": [],
-    "description": "Link metadata"
+    "children": []
   },
   "main": {
+    "description": "Container for the dominant contents of the document",
+    "categories": [
+      "flow",
+      "palpable"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -2838,16 +2843,17 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "flow",
-      "palpable"
-    ],
     "children": [
       "flow"
-    ],
-    "description": "Container for the dominant contents of the document"
+    ]
   },
   "map": {
+    "description": "Image map",
+    "categories": [
+      "flow",
+      "palpable",
+      "phrasing"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -2883,18 +2889,18 @@
       "translate",
       "writingsuggestions"
     ],
+    "children": [
+      "area",
+      "transparent"
+    ]
+  },
+  "mark": {
+    "description": "Highlight",
     "categories": [
       "flow",
       "palpable",
       "phrasing"
     ],
-    "children": [
-      "area",
-      "transparent"
-    ],
-    "description": "Image map"
-  },
-  "mark": {
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -2929,32 +2935,31 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "flow",
-      "palpable",
-      "phrasing"
-    ],
     "children": [
       "phrasing"
-    ],
-    "description": "Highlight"
+    ]
   },
   "math": {
-    "attributes": [
-      "per [MATHML]"
-    ],
+    "description": "MathML root",
     "categories": [
       "embedded",
       "flow",
       "palpable",
       "phrasing"
     ],
-    "children": [
+    "attributes": [
       "per [MATHML]"
     ],
-    "description": "MathML root"
+    "children": [
+      "per [MATHML]"
+    ]
   },
   "menu": {
+    "description": "Menu of commands",
+    "categories": [
+      "flow",
+      "palpable"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -2989,17 +2994,18 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "flow",
-      "palpable"
-    ],
     "children": [
       "li",
       "script-supporting elements"
-    ],
-    "description": "Menu of commands"
+    ]
   },
   "meta": {
+    "description": "Text metadata",
+    "categories": [
+      "flow",
+      "metadata",
+      "phrasing"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -3039,15 +3045,16 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "flow",
-      "metadata",
-      "phrasing"
-    ],
-    "children": [],
-    "description": "Text metadata"
+    "children": []
   },
   "meter": {
+    "description": "Gauge",
+    "categories": [
+      "flow",
+      "labelable",
+      "palpable",
+      "phrasing"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -3088,63 +3095,17 @@
       "value",
       "writingsuggestions"
     ],
-    "categories": [
-      "flow",
-      "labelable",
-      "palpable",
-      "phrasing"
-    ],
     "children": [
       "phrasing"
-    ],
-    "description": "Gauge"
+    ]
   },
   "nav": {
-    "attributes": [
-      "accesskey",
-      "autocapitalize",
-      "autocorrect",
-      "autofocus",
-      "class",
-      "contenteditable",
-      "dir",
-      "draggable",
-      "enterkeyhint",
-      "headingoffset",
-      "headingreset",
-      "hidden",
-      "id",
-      "inert",
-      "inputmode",
-      "is",
-      "itemid",
-      "itemprop",
-      "itemref",
-      "itemscope",
-      "itemtype",
-      "lang",
-      "nonce",
-      "popover",
-      "role",
-      "slot",
-      "spellcheck",
-      "style",
-      "tabindex",
-      "title",
-      "translate",
-      "writingsuggestions"
-    ],
+    "description": "Section with navigational links",
     "categories": [
       "flow",
       "palpable",
       "sectioning"
     ],
-    "children": [
-      "flow"
-    ],
-    "description": "Section with navigational links"
-  },
-  "noscript": {
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -3179,17 +3140,66 @@
       "translate",
       "writingsuggestions"
     ],
+    "children": [
+      "flow"
+    ]
+  },
+  "noscript": {
+    "description": "Fallback content for script",
     "categories": [
       "flow",
       "metadata",
       "phrasing"
     ],
+    "attributes": [
+      "accesskey",
+      "autocapitalize",
+      "autocorrect",
+      "autofocus",
+      "class",
+      "contenteditable",
+      "dir",
+      "draggable",
+      "enterkeyhint",
+      "headingoffset",
+      "headingreset",
+      "hidden",
+      "id",
+      "inert",
+      "inputmode",
+      "is",
+      "itemid",
+      "itemprop",
+      "itemref",
+      "itemscope",
+      "itemtype",
+      "lang",
+      "nonce",
+      "popover",
+      "role",
+      "slot",
+      "spellcheck",
+      "style",
+      "tabindex",
+      "title",
+      "translate",
+      "writingsuggestions"
+    ],
     "children": [
       "varies"
-    ],
-    "description": "Fallback content for script"
+    ]
   },
   "object": {
+    "description": "Image, child navigable, or plugin",
+    "categories": [
+      "embedded",
+      "flow",
+      "form-associated",
+      "interactive",
+      "listed",
+      "palpable",
+      "phrasing"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -3230,21 +3240,16 @@
       "width",
       "writingsuggestions"
     ],
-    "categories": [
-      "embedded",
-      "flow",
-      "form-associated",
-      "interactive",
-      "listed",
-      "palpable",
-      "phrasing"
-    ],
     "children": [
       "transparent"
-    ],
-    "description": "Image, child navigable, or plugin"
+    ]
   },
   "ol": {
+    "description": "Ordered list",
+    "categories": [
+      "flow",
+      "palpable"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -3282,17 +3287,16 @@
       "type",
       "writingsuggestions"
     ],
-    "categories": [
-      "flow",
-      "palpable"
-    ],
     "children": [
       "li",
       "script-supporting elements"
-    ],
-    "description": "Ordered list"
+    ]
   },
   "optgroup": {
+    "description": "Group of options in a list box",
+    "categories": [
+      "none"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -3329,19 +3333,19 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "none"
-    ],
     "children": [
       "div",
       "legend",
       "noscript",
       "option",
       "script-supporting elements"
-    ],
-    "description": "Group of options in a list box"
+    ]
   },
   "option": {
+    "description": "Option in a list box or combo box control",
+    "categories": [
+      "none"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -3380,17 +3384,23 @@
       "value",
       "writingsuggestions"
     ],
-    "categories": [
-      "none"
-    ],
     "children": [
       "div",
       "phrasing",
       "text"
-    ],
-    "description": "Option in a list box or combo box control"
+    ]
   },
   "output": {
+    "description": "Calculated output value",
+    "categories": [
+      "flow",
+      "form-associated",
+      "labelable",
+      "listed",
+      "palpable",
+      "phrasing",
+      "resettable"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -3428,65 +3438,16 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "flow",
-      "form-associated",
-      "labelable",
-      "listed",
-      "palpable",
-      "phrasing",
-      "resettable"
-    ],
     "children": [
       "phrasing"
-    ],
-    "description": "Calculated output value"
+    ]
   },
   "p": {
-    "attributes": [
-      "accesskey",
-      "autocapitalize",
-      "autocorrect",
-      "autofocus",
-      "class",
-      "contenteditable",
-      "dir",
-      "draggable",
-      "enterkeyhint",
-      "headingoffset",
-      "headingreset",
-      "hidden",
-      "id",
-      "inert",
-      "inputmode",
-      "is",
-      "itemid",
-      "itemprop",
-      "itemref",
-      "itemscope",
-      "itemtype",
-      "lang",
-      "nonce",
-      "popover",
-      "role",
-      "slot",
-      "spellcheck",
-      "style",
-      "tabindex",
-      "title",
-      "translate",
-      "writingsuggestions"
-    ],
+    "description": "Paragraph",
     "categories": [
       "flow",
       "palpable"
     ],
-    "children": [
-      "phrasing"
-    ],
-    "description": "Paragraph"
-  },
-  "picture": {
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -3521,20 +3482,18 @@
       "translate",
       "writingsuggestions"
     ],
+    "children": [
+      "phrasing"
+    ]
+  },
+  "picture": {
+    "description": "Image",
     "categories": [
       "embedded",
       "flow",
       "palpable",
       "phrasing"
     ],
-    "children": [
-      "one img",
-      "script-supporting elements",
-      "source"
-    ],
-    "description": "Image"
-  },
-  "pre": {
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -3569,16 +3528,64 @@
       "translate",
       "writingsuggestions"
     ],
+    "children": [
+      "one img",
+      "script-supporting elements",
+      "source"
+    ]
+  },
+  "pre": {
+    "description": "Block of preformatted text",
     "categories": [
       "flow",
       "palpable"
     ],
+    "attributes": [
+      "accesskey",
+      "autocapitalize",
+      "autocorrect",
+      "autofocus",
+      "class",
+      "contenteditable",
+      "dir",
+      "draggable",
+      "enterkeyhint",
+      "headingoffset",
+      "headingreset",
+      "hidden",
+      "id",
+      "inert",
+      "inputmode",
+      "is",
+      "itemid",
+      "itemprop",
+      "itemref",
+      "itemscope",
+      "itemtype",
+      "lang",
+      "nonce",
+      "popover",
+      "role",
+      "slot",
+      "spellcheck",
+      "style",
+      "tabindex",
+      "title",
+      "translate",
+      "writingsuggestions"
+    ],
     "children": [
       "phrasing"
-    ],
-    "description": "Block of preformatted text"
+    ]
   },
   "progress": {
+    "description": "Progress bar",
+    "categories": [
+      "flow",
+      "labelable",
+      "palpable",
+      "phrasing"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -3615,18 +3622,17 @@
       "value",
       "writingsuggestions"
     ],
+    "children": [
+      "phrasing"
+    ]
+  },
+  "q": {
+    "description": "Quotation",
     "categories": [
       "flow",
-      "labelable",
       "palpable",
       "phrasing"
     ],
-    "children": [
-      "phrasing"
-    ],
-    "description": "Progress bar"
-  },
-  "q": {
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -3662,17 +3668,15 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "flow",
-      "palpable",
-      "phrasing"
-    ],
     "children": [
       "phrasing"
-    ],
-    "description": "Quotation"
+    ]
   },
   "rp": {
+    "description": "Parenthesis for ruby annotation text",
+    "categories": [
+      "none"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -3706,59 +3710,16 @@
       "title",
       "translate",
       "writingsuggestions"
-    ],
-    "categories": [
-      "none"
     ],
     "children": [
       "text"
-    ],
-    "description": "Parenthesis for ruby annotation text"
+    ]
   },
   "rt": {
-    "attributes": [
-      "accesskey",
-      "autocapitalize",
-      "autocorrect",
-      "autofocus",
-      "class",
-      "contenteditable",
-      "dir",
-      "draggable",
-      "enterkeyhint",
-      "headingoffset",
-      "headingreset",
-      "hidden",
-      "id",
-      "inert",
-      "inputmode",
-      "is",
-      "itemid",
-      "itemprop",
-      "itemref",
-      "itemscope",
-      "itemtype",
-      "lang",
-      "nonce",
-      "popover",
-      "role",
-      "slot",
-      "spellcheck",
-      "style",
-      "tabindex",
-      "title",
-      "translate",
-      "writingsuggestions"
-    ],
+    "description": "Ruby annotation text",
     "categories": [
       "none"
     ],
-    "children": [
-      "phrasing"
-    ],
-    "description": "Ruby annotation text"
-  },
-  "ruby": {
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -3793,19 +3754,64 @@
       "translate",
       "writingsuggestions"
     ],
+    "children": [
+      "phrasing"
+    ]
+  },
+  "ruby": {
+    "description": "Ruby annotation(s)",
     "categories": [
       "flow",
       "palpable",
       "phrasing"
+    ],
+    "attributes": [
+      "accesskey",
+      "autocapitalize",
+      "autocorrect",
+      "autofocus",
+      "class",
+      "contenteditable",
+      "dir",
+      "draggable",
+      "enterkeyhint",
+      "headingoffset",
+      "headingreset",
+      "hidden",
+      "id",
+      "inert",
+      "inputmode",
+      "is",
+      "itemid",
+      "itemprop",
+      "itemref",
+      "itemscope",
+      "itemtype",
+      "lang",
+      "nonce",
+      "popover",
+      "role",
+      "slot",
+      "spellcheck",
+      "style",
+      "tabindex",
+      "title",
+      "translate",
+      "writingsuggestions"
     ],
     "children": [
       "phrasing",
       "rp",
       "rt"
-    ],
-    "description": "Ruby annotation(s)"
+    ]
   },
   "s": {
+    "description": "Inaccurate text",
+    "categories": [
+      "flow",
+      "palpable",
+      "phrasing"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -3840,17 +3846,17 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "flow",
-      "palpable",
-      "phrasing"
-    ],
     "children": [
       "phrasing"
-    ],
-    "description": "Inaccurate text"
+    ]
   },
   "samp": {
+    "description": "Computer output",
+    "categories": [
+      "flow",
+      "palpable",
+      "phrasing"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -3885,17 +3891,18 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "flow",
-      "palpable",
-      "phrasing"
-    ],
     "children": [
       "phrasing"
-    ],
-    "description": "Computer output"
+    ]
   },
   "script": {
+    "description": "Embedded script",
+    "categories": [
+      "flow",
+      "metadata",
+      "phrasing",
+      "script-supporting"
+    ],
     "attributes": [
       "accesskey",
       "async",
@@ -3940,62 +3947,16 @@
       "type",
       "writingsuggestions"
     ],
-    "categories": [
-      "flow",
-      "metadata",
-      "phrasing",
-      "script-supporting"
-    ],
     "children": [
       "script, data, or script documentation"
-    ],
-    "description": "Embedded script"
+    ]
   },
   "search": {
-    "attributes": [
-      "accesskey",
-      "autocapitalize",
-      "autocorrect",
-      "autofocus",
-      "class",
-      "contenteditable",
-      "dir",
-      "draggable",
-      "enterkeyhint",
-      "headingoffset",
-      "headingreset",
-      "hidden",
-      "id",
-      "inert",
-      "inputmode",
-      "is",
-      "itemid",
-      "itemprop",
-      "itemref",
-      "itemscope",
-      "itemtype",
-      "lang",
-      "nonce",
-      "popover",
-      "role",
-      "slot",
-      "spellcheck",
-      "style",
-      "tabindex",
-      "title",
-      "translate",
-      "writingsuggestions"
-    ],
+    "description": "Container for search controls",
     "categories": [
       "flow",
       "palpable"
     ],
-    "children": [
-      "flow"
-    ],
-    "description": "Container for search controls"
-  },
-  "section": {
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -4030,17 +3991,68 @@
       "translate",
       "writingsuggestions"
     ],
+    "children": [
+      "flow"
+    ]
+  },
+  "section": {
+    "description": "Generic document or application section",
     "categories": [
       "flow",
       "palpable",
       "sectioning"
     ],
+    "attributes": [
+      "accesskey",
+      "autocapitalize",
+      "autocorrect",
+      "autofocus",
+      "class",
+      "contenteditable",
+      "dir",
+      "draggable",
+      "enterkeyhint",
+      "headingoffset",
+      "headingreset",
+      "hidden",
+      "id",
+      "inert",
+      "inputmode",
+      "is",
+      "itemid",
+      "itemprop",
+      "itemref",
+      "itemscope",
+      "itemtype",
+      "lang",
+      "nonce",
+      "popover",
+      "role",
+      "slot",
+      "spellcheck",
+      "style",
+      "tabindex",
+      "title",
+      "translate",
+      "writingsuggestions"
+    ],
     "children": [
       "flow"
-    ],
-    "description": "Generic document or application section"
+    ]
   },
   "select": {
+    "description": "List box control",
+    "categories": [
+      "flow",
+      "form-associated",
+      "interactive",
+      "labelable",
+      "listed",
+      "palpable",
+      "phrasing",
+      "resettable",
+      "submittable"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -4082,17 +4094,6 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "flow",
-      "form-associated",
-      "interactive",
-      "labelable",
-      "listed",
-      "palpable",
-      "phrasing",
-      "resettable",
-      "submittable"
-    ],
     "children": [
       "button",
       "div",
@@ -4101,10 +4102,13 @@
       "optgroup",
       "option",
       "script-supporting elements"
-    ],
-    "description": "List box control"
+    ]
   },
   "selectedcontent": {
+    "description": "Mirrors content from an option",
+    "categories": [
+      "none"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -4139,13 +4143,14 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "none"
-    ],
-    "children": [],
-    "description": "Mirrors content from an option"
+    "children": []
   },
   "slot": {
+    "description": "Shadow tree slot",
+    "categories": [
+      "flow",
+      "phrasing"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -4181,16 +4186,17 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "flow",
-      "phrasing"
-    ],
     "children": [
       "transparent"
-    ],
-    "description": "Shadow tree slot"
+    ]
   },
   "small": {
+    "description": "Side comment",
+    "categories": [
+      "flow",
+      "palpable",
+      "phrasing"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -4225,17 +4231,15 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "flow",
-      "palpable",
-      "phrasing"
-    ],
     "children": [
       "phrasing"
-    ],
-    "description": "Side comment"
+    ]
   },
   "source": {
+    "description": "Image source for img or media source for video or audio",
+    "categories": [
+      "none"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -4277,13 +4281,15 @@
       "width",
       "writingsuggestions"
     ],
-    "categories": [
-      "none"
-    ],
-    "children": [],
-    "description": "Image source for img or media source for video or audio"
+    "children": []
   },
   "span": {
+    "description": "Generic phrasing container",
+    "categories": [
+      "flow",
+      "palpable",
+      "phrasing"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -4318,17 +4324,17 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "flow",
-      "palpable",
-      "phrasing"
-    ],
     "children": [
       "phrasing"
-    ],
-    "description": "Generic phrasing container"
+    ]
   },
   "strong": {
+    "description": "Importance",
+    "categories": [
+      "flow",
+      "palpable",
+      "phrasing"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -4363,17 +4369,15 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "flow",
-      "palpable",
-      "phrasing"
-    ],
     "children": [
       "phrasing"
-    ],
-    "description": "Importance"
+    ]
   },
   "style": {
+    "description": "Embedded styling information",
+    "categories": [
+      "metadata"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -4410,60 +4414,17 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "metadata"
-    ],
     "children": [
       "text"
-    ],
-    "description": "Embedded styling information"
+    ]
   },
   "sub": {
-    "attributes": [
-      "accesskey",
-      "autocapitalize",
-      "autocorrect",
-      "autofocus",
-      "class",
-      "contenteditable",
-      "dir",
-      "draggable",
-      "enterkeyhint",
-      "headingoffset",
-      "headingreset",
-      "hidden",
-      "id",
-      "inert",
-      "inputmode",
-      "is",
-      "itemid",
-      "itemprop",
-      "itemref",
-      "itemscope",
-      "itemtype",
-      "lang",
-      "nonce",
-      "popover",
-      "role",
-      "slot",
-      "spellcheck",
-      "style",
-      "tabindex",
-      "title",
-      "translate",
-      "writingsuggestions"
-    ],
+    "description": "Subscript",
     "categories": [
       "flow",
       "palpable",
       "phrasing"
     ],
-    "children": [
-      "phrasing"
-    ],
-    "description": "Subscript"
-  },
-  "summary": {
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -4498,16 +4459,61 @@
       "translate",
       "writingsuggestions"
     ],
+    "children": [
+      "phrasing"
+    ]
+  },
+  "summary": {
+    "description": "Caption for details",
     "categories": [
       "none"
+    ],
+    "attributes": [
+      "accesskey",
+      "autocapitalize",
+      "autocorrect",
+      "autofocus",
+      "class",
+      "contenteditable",
+      "dir",
+      "draggable",
+      "enterkeyhint",
+      "headingoffset",
+      "headingreset",
+      "hidden",
+      "id",
+      "inert",
+      "inputmode",
+      "is",
+      "itemid",
+      "itemprop",
+      "itemref",
+      "itemscope",
+      "itemtype",
+      "lang",
+      "nonce",
+      "popover",
+      "role",
+      "slot",
+      "spellcheck",
+      "style",
+      "tabindex",
+      "title",
+      "translate",
+      "writingsuggestions"
     ],
     "children": [
       "heading content",
       "phrasing"
-    ],
-    "description": "Caption for details"
+    ]
   },
   "sup": {
+    "description": "Superscript",
+    "categories": [
+      "flow",
+      "palpable",
+      "phrasing"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -4542,32 +4548,31 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "flow",
-      "palpable",
-      "phrasing"
-    ],
     "children": [
       "phrasing"
-    ],
-    "description": "Superscript"
+    ]
   },
   "svg": {
-    "attributes": [
-      "per [SVG]"
-    ],
+    "description": "SVG root",
     "categories": [
       "embedded",
       "flow",
       "palpable",
       "phrasing"
     ],
-    "children": [
+    "attributes": [
       "per [SVG]"
     ],
-    "description": "SVG root"
+    "children": [
+      "per [SVG]"
+    ]
   },
   "table": {
+    "description": "Table",
+    "categories": [
+      "flow",
+      "palpable"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -4601,10 +4606,6 @@
       "title",
       "translate",
       "writingsuggestions"
-    ],
-    "categories": [
-      "flow",
-      "palpable"
     ],
     "children": [
       "caption",
@@ -4614,10 +4615,13 @@
       "tfoot",
       "thead",
       "tr"
-    ],
-    "description": "Table"
+    ]
   },
   "tbody": {
+    "description": "Group of rows in a table",
+    "categories": [
+      "none"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -4652,16 +4656,16 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "none"
-    ],
     "children": [
       "script-supporting elements",
       "tr"
-    ],
-    "description": "Group of rows in a table"
+    ]
   },
   "td": {
+    "description": "Table cell",
+    "categories": [
+      "none"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -4699,15 +4703,18 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "none"
-    ],
     "children": [
       "flow"
-    ],
-    "description": "Table cell"
+    ]
   },
   "template": {
+    "description": "Template",
+    "categories": [
+      "flow",
+      "metadata",
+      "phrasing",
+      "script-supporting"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -4748,16 +4755,21 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "flow",
-      "metadata",
-      "phrasing",
-      "script-supporting"
-    ],
-    "children": [],
-    "description": "Template"
+    "children": []
   },
   "textarea": {
+    "description": "Multiline text controls",
+    "categories": [
+      "flow",
+      "form-associated",
+      "interactive",
+      "labelable",
+      "listed",
+      "palpable",
+      "phrasing",
+      "resettable",
+      "submittable"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -4805,23 +4817,15 @@
       "wrap",
       "writingsuggestions"
     ],
-    "categories": [
-      "flow",
-      "form-associated",
-      "interactive",
-      "labelable",
-      "listed",
-      "palpable",
-      "phrasing",
-      "resettable",
-      "submittable"
-    ],
     "children": [
       "text"
-    ],
-    "description": "Multiline text controls"
+    ]
   },
   "tfoot": {
+    "description": "Group of footer rows in a table",
+    "categories": [
+      "none"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -4856,16 +4860,16 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "none"
-    ],
     "children": [
       "script-supporting elements",
       "tr"
-    ],
-    "description": "Group of footer rows in a table"
+    ]
   },
   "th": {
+    "description": "Table header cell",
+    "categories": [
+      "interactive"
+    ],
     "attributes": [
       "abbr",
       "accesskey",
@@ -4905,15 +4909,15 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "interactive"
-    ],
     "children": [
       "flow"
-    ],
-    "description": "Table header cell"
+    ]
   },
   "thead": {
+    "description": "Group of heading rows in a table",
+    "categories": [
+      "none"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -4948,16 +4952,18 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "none"
-    ],
     "children": [
       "script-supporting elements",
       "tr"
-    ],
-    "description": "Group of heading rows in a table"
+    ]
   },
   "time": {
+    "description": "Machine-readable equivalent of date- or time-related data",
+    "categories": [
+      "flow",
+      "palpable",
+      "phrasing"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -4993,60 +4999,15 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "flow",
-      "palpable",
-      "phrasing"
-    ],
     "children": [
       "phrasing"
-    ],
-    "description": "Machine-readable equivalent of date- or time-related data"
+    ]
   },
   "title": {
-    "attributes": [
-      "accesskey",
-      "autocapitalize",
-      "autocorrect",
-      "autofocus",
-      "class",
-      "contenteditable",
-      "dir",
-      "draggable",
-      "enterkeyhint",
-      "headingoffset",
-      "headingreset",
-      "hidden",
-      "id",
-      "inert",
-      "inputmode",
-      "is",
-      "itemid",
-      "itemprop",
-      "itemref",
-      "itemscope",
-      "itemtype",
-      "lang",
-      "nonce",
-      "popover",
-      "role",
-      "slot",
-      "spellcheck",
-      "style",
-      "tabindex",
-      "title",
-      "translate",
-      "writingsuggestions"
-    ],
+    "description": "Document title",
     "categories": [
       "metadata"
     ],
-    "children": [
-      "text"
-    ],
-    "description": "Document title"
-  },
-  "tr": {
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -5081,17 +5042,60 @@
       "translate",
       "writingsuggestions"
     ],
+    "children": [
+      "text"
+    ]
+  },
+  "tr": {
+    "description": "Table row",
     "categories": [
       "none"
+    ],
+    "attributes": [
+      "accesskey",
+      "autocapitalize",
+      "autocorrect",
+      "autofocus",
+      "class",
+      "contenteditable",
+      "dir",
+      "draggable",
+      "enterkeyhint",
+      "headingoffset",
+      "headingreset",
+      "hidden",
+      "id",
+      "inert",
+      "inputmode",
+      "is",
+      "itemid",
+      "itemprop",
+      "itemref",
+      "itemscope",
+      "itemtype",
+      "lang",
+      "nonce",
+      "popover",
+      "role",
+      "slot",
+      "spellcheck",
+      "style",
+      "tabindex",
+      "title",
+      "translate",
+      "writingsuggestions"
     ],
     "children": [
       "script-supporting elements",
       "td",
       "th"
-    ],
-    "description": "Table row"
+    ]
   },
   "track": {
+    "description": "Timed text track",
+    "categories": [
+      "none"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -5131,58 +5135,15 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "none"
-    ],
-    "children": [],
-    "description": "Timed text track"
+    "children": []
   },
   "u": {
-    "attributes": [
-      "accesskey",
-      "autocapitalize",
-      "autocorrect",
-      "autofocus",
-      "class",
-      "contenteditable",
-      "dir",
-      "draggable",
-      "enterkeyhint",
-      "headingoffset",
-      "headingreset",
-      "hidden",
-      "id",
-      "inert",
-      "inputmode",
-      "is",
-      "itemid",
-      "itemprop",
-      "itemref",
-      "itemscope",
-      "itemtype",
-      "lang",
-      "nonce",
-      "popover",
-      "role",
-      "slot",
-      "spellcheck",
-      "style",
-      "tabindex",
-      "title",
-      "translate",
-      "writingsuggestions"
-    ],
+    "description": "Unarticulated annotation",
     "categories": [
       "flow",
       "palpable",
       "phrasing"
     ],
-    "children": [
-      "phrasing"
-    ],
-    "description": "Unarticulated annotation"
-  },
-  "ul": {
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -5217,17 +5178,16 @@
       "translate",
       "writingsuggestions"
     ],
+    "children": [
+      "phrasing"
+    ]
+  },
+  "ul": {
+    "description": "List",
     "categories": [
       "flow",
       "palpable"
     ],
-    "children": [
-      "li",
-      "script-supporting elements"
-    ],
-    "description": "List"
-  },
-  "var": {
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -5262,17 +5222,65 @@
       "translate",
       "writingsuggestions"
     ],
+    "children": [
+      "li",
+      "script-supporting elements"
+    ]
+  },
+  "var": {
+    "description": "Variable",
     "categories": [
       "flow",
       "palpable",
       "phrasing"
     ],
+    "attributes": [
+      "accesskey",
+      "autocapitalize",
+      "autocorrect",
+      "autofocus",
+      "class",
+      "contenteditable",
+      "dir",
+      "draggable",
+      "enterkeyhint",
+      "headingoffset",
+      "headingreset",
+      "hidden",
+      "id",
+      "inert",
+      "inputmode",
+      "is",
+      "itemid",
+      "itemprop",
+      "itemref",
+      "itemscope",
+      "itemtype",
+      "lang",
+      "nonce",
+      "popover",
+      "role",
+      "slot",
+      "spellcheck",
+      "style",
+      "tabindex",
+      "title",
+      "translate",
+      "writingsuggestions"
+    ],
     "children": [
       "phrasing"
-    ],
-    "description": "Variable"
+    ]
   },
   "video": {
+    "description": "Video player",
+    "categories": [
+      "embedded",
+      "flow",
+      "interactive",
+      "palpable",
+      "phrasing"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -5319,21 +5327,18 @@
       "width",
       "writingsuggestions"
     ],
-    "categories": [
-      "embedded",
-      "flow",
-      "interactive",
-      "palpable",
-      "phrasing"
-    ],
     "children": [
       "source",
       "track",
       "transparent"
-    ],
-    "description": "Video player"
+    ]
   },
   "wbr": {
+    "description": "Line breaking opportunity",
+    "categories": [
+      "flow",
+      "phrasing"
+    ],
     "attributes": [
       "accesskey",
       "autocapitalize",
@@ -5368,11 +5373,6 @@
       "translate",
       "writingsuggestions"
     ],
-    "categories": [
-      "flow",
-      "phrasing"
-    ],
-    "children": [],
-    "description": "Line breaking opportunity"
+    "children": []
   }
 }

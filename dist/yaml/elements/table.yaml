@@ -1,3 +1,7 @@
+description: Table
+categories:
+- flow
+- palpable
 attributes:
 - accesskey
 - autocapitalize
@@ -31,9 +35,6 @@ attributes:
 - title
 - translate
 - writingsuggestions
-categories:
-- flow
-- palpable
 children:
 - caption
 - colgroup
@@ -42,4 +43,3 @@ children:
 - tfoot
 - thead
 - tr
-description: Table

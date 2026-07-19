@@ -1,7 +1,7 @@
-description: Indicates to the targeted element which action to take.
-separator: ''
 tag_scope:
 - button
+description: Indicates to the targeted element which action to take.
+value_type: string
 value_enum: []
 value_info: '"toggle-popover"; "show-popover"; "hide-popover"; "close"; "request-close"; "show-modal"; a custom command keyword'
-value_type: string
+separator: ''

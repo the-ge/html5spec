@@ -1,3 +1,6 @@
+description: Table caption
+categories:
+- none
 attributes:
 - accesskey
 - autocapitalize
@@ -31,8 +34,5 @@ attributes:
 - title
 - translate
 - writingsuggestions
-categories:
-- none
 children:
 - flow
-description: Table caption

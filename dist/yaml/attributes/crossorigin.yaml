@@ -1,14 +1,14 @@
-description: How the element handles crossorigin requests
-separator: ''
 tag_scope:
 - audio
 - img
 - link
 - script
 - video
+description: How the element handles crossorigin requests
+value_type: enum
 value_enum:
 - ''
 - anonymous
 - use-credentials
 value_info: ''
-value_type: enum
+separator: ''

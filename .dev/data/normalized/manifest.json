@@ -1,45 +1,45 @@
 {
-  "generated_at": "2026-07-19T08:25:43.648232+00:00",
+  "generated_at": "2026-07-19T09:43:02.748355+00:00",
   "sections": {
-    "aria.aria_roles": {
-      "extracted_at": "2026-07-19T08:25:43.648145+00:00",
-      "row_count": 63,
-      "status": "ok"
-    },
-    "dom.global_attributes": {
-      "extracted_at": "2026-07-19T08:25:42.662058+00:00",
-      "row_count": 28,
-      "status": "ok"
-    },
-    "indices.attributes": {
-      "extracted_at": "2026-07-19T08:25:42.487368+00:00",
-      "row_count": 179,
-      "status": "ok"
+    "indices.elements": {
+      "status": "ok",
+      "row_count": 111,
+      "extracted_at": "2026-07-19T09:43:01.498457+00:00"
     },
     "indices.categories": {
-      "extracted_at": "2026-07-19T08:25:42.474814+00:00",
+      "status": "ok",
       "row_count": 15,
-      "status": "ok"
+      "extracted_at": "2026-07-19T09:43:01.502375+00:00"
     },
-    "indices.elements": {
-      "extracted_at": "2026-07-19T08:25:42.470979+00:00",
-      "row_count": 111,
-      "status": "ok"
+    "indices.attributes": {
+      "status": "ok",
+      "row_count": 179,
+      "extracted_at": "2026-07-19T09:43:01.515890+00:00"
     },
     "indices.event_handlers": {
-      "extracted_at": "2026-07-19T08:25:42.497837+00:00",
+      "status": "ok",
       "row_count": 89,
-      "status": "ok"
+      "extracted_at": "2026-07-19T09:43:01.525040+00:00"
+    },
+    "dom.global_attributes": {
+      "status": "ok",
+      "row_count": 28,
+      "extracted_at": "2026-07-19T09:43:01.696990+00:00"
     },
     "input.input_types": {
-      "extracted_at": "2026-07-19T08:25:42.892675+00:00",
+      "status": "ok",
       "row_count": 22,
-      "status": "ok"
+      "extracted_at": "2026-07-19T09:43:01.947250+00:00"
     },
     "syntax.element_types": {
-      "extracted_at": "2026-07-19T08:25:42.927662+00:00",
+      "status": "ok",
       "row_count": 6,
-      "status": "ok"
+      "extracted_at": "2026-07-19T09:43:01.985715+00:00"
+    },
+    "aria.aria_roles": {
+      "status": "ok",
+      "row_count": 63,
+      "extracted_at": "2026-07-19T09:43:02.748271+00:00"
     }
   }
 }

@@ -1,8 +1,8 @@
-description: Whether the details are visible
-next: open(2)
-separator: ''
 tag_scope:
 - details
+description: Whether the details are visible
+value_type: bool
 value_enum: []
 value_info: Boolean attribute
-value_type: bool
+separator: ''
+next: open(2)

@@ -1,3 +1,10 @@
+description: Child navigable
+categories:
+- embedded
+- flow
+- interactive
+- palpable
+- phrasing
 attributes:
 - accesskey
 - allow
@@ -41,11 +48,4 @@ attributes:
 - translate
 - width
 - writingsuggestions
-categories:
-- embedded
-- flow
-- interactive
-- palpable
-- phrasing
 children: []
-description: Child navigable

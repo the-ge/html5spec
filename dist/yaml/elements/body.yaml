@@ -1,3 +1,6 @@
+description: Document body
+categories:
+- none
 attributes:
 - accesskey
 - autocapitalize
@@ -49,8 +52,5 @@ attributes:
 - title
 - translate
 - writingsuggestions
-categories:
-- none
 children:
 - flow
-description: Document body

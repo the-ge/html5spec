@@ -1,3 +1,8 @@
+description: Ruby annotation(s)
+categories:
+- flow
+- palpable
+- phrasing
 attributes:
 - accesskey
 - autocapitalize
@@ -31,12 +36,7 @@ attributes:
 - title
 - translate
 - writingsuggestions
-categories:
-- flow
-- palpable
-- phrasing
 children:
 - phrasing
 - rp
 - rt
-description: Ruby annotation(s)

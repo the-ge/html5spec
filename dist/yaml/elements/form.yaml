@@ -1,3 +1,7 @@
+description: User-submittable form
+categories:
+- flow
+- palpable
 attributes:
 - accept-charset
 - accesskey
@@ -40,9 +44,5 @@ attributes:
 - title
 - translate
 - writingsuggestions
-categories:
-- flow
-- palpable
 children:
 - flow
-description: User-submittable form

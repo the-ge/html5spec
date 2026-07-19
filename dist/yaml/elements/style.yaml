@@ -1,3 +1,6 @@
+description: Embedded styling information
+categories:
+- metadata
 attributes:
 - accesskey
 - autocapitalize
@@ -33,8 +36,5 @@ attributes:
 - title
 - translate
 - writingsuggestions
-categories:
-- metadata
 children:
 - text
-description: Embedded styling information

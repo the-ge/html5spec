@@ -1,3 +1,9 @@
+description: Gauge
+categories:
+- flow
+- labelable
+- palpable
+- phrasing
 attributes:
 - accesskey
 - autocapitalize
@@ -37,11 +43,5 @@ attributes:
 - translate
 - value
 - writingsuggestions
-categories:
-- flow
-- labelable
-- palpable
-- phrasing
 children:
 - phrasing
-description: Gauge

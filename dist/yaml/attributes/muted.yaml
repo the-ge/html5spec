@@ -1,8 +1,8 @@
-description: Whether to mute the media resource by default
-separator: ''
 tag_scope:
 - audio
 - video
+description: Whether to mute the media resource by default
+value_type: bool
 value_enum: []
 value_info: Boolean attribute
-value_type: bool
+separator: ''

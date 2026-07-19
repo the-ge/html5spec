@@ -1,3 +1,7 @@
+description: Hyperlink or dead area on an image map
+categories:
+- flow
+- phrasing
 attributes:
 - accesskey
 - alt
@@ -40,8 +44,4 @@ attributes:
 - title
 - translate
 - writingsuggestions
-categories:
-- flow
-- phrasing
 children: []
-description: Hyperlink or dead area on an image map

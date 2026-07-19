@@ -1,7 +1,7 @@
-description: The type of text track
-separator: ''
 tag_scope:
 - track
+description: The type of text track
+value_type: enum
 value_enum:
 - captions
 - chapters
@@ -9,4 +9,4 @@ value_enum:
 - metadata
 - subtitles
 value_info: ''
-value_type: enum
+separator: ''

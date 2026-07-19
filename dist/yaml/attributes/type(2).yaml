@@ -1,11 +1,11 @@
-description: Type of button
-next: type(3)
-separator: ''
 tag_scope:
 - button
+description: Type of button
+value_type: enum
 value_enum:
 - button
 - reset
 - submit
 value_info: ''
-value_type: enum
+separator: ''
+next: type(3)

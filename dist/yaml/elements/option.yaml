@@ -1,3 +1,6 @@
+description: Option in a list box or combo box control
+categories:
+- none
 attributes:
 - accesskey
 - autocapitalize
@@ -35,10 +38,7 @@ attributes:
 - translate
 - value
 - writingsuggestions
-categories:
-- none
 children:
 - div
 - phrasing
 - text
-description: Option in a list box or combo box control

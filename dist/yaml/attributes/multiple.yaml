@@ -1,8 +1,8 @@
-description: Whether to allow multiple values
-separator: ''
 tag_scope:
 - input
 - select
+description: Whether to allow multiple values
+value_type: bool
 value_enum: []
 value_info: Boolean attribute
-value_type: bool
+separator: ''

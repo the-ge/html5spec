@@ -1,6 +1,6 @@
-description: Hint for selecting an enter key action
-separator: ''
 tag_scope: []
+description: Hint for selecting an enter key action
+value_type: enum
 value_enum:
 - done
 - enter
@@ -10,4 +10,4 @@ value_enum:
 - search
 - send
 value_info: ''
-value_type: enum
+separator: ''

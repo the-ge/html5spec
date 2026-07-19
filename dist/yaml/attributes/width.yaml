@@ -1,5 +1,3 @@
-description: Horizontal dimension
-separator: ''
 tag_scope:
 - canvas
 - embed
@@ -9,6 +7,8 @@ tag_scope:
 - object
 - source
 - video
+description: Horizontal dimension
+value_type: int
 value_enum: []
 value_info: 'Valid non-negative integer. Special tag scope: source (in picture). *Incomplete description. See the full specification.'
-value_type: int
+separator: ''

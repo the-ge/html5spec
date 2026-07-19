@@ -1,3 +1,10 @@
+description: Video player
+categories:
+- embedded
+- flow
+- interactive
+- palpable
+- phrasing
 attributes:
 - accesskey
 - autocapitalize
@@ -43,14 +50,7 @@ attributes:
 - translate
 - width
 - writingsuggestions
-categories:
-- embedded
-- flow
-- interactive
-- palpable
-- phrasing
 children:
 - source
 - track
 - transparent
-description: Video player

@@ -1,3 +1,6 @@
+description: Base URL and default target navigable for hyperlinks and forms
+categories:
+- metadata
 attributes:
 - accesskey
 - autocapitalize
@@ -33,7 +36,4 @@ attributes:
 - title
 - translate
 - writingsuggestions
-categories:
-- metadata
 children: []
-description: Base URL and default target navigable for hyperlinks and forms

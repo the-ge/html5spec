@@ -1,3 +1,6 @@
+description: Table column
+categories:
+- none
 attributes:
 - accesskey
 - autocapitalize
@@ -32,7 +35,4 @@ attributes:
 - title
 - translate
 - writingsuggestions
-categories:
-- none
 children: []
-description: Table column

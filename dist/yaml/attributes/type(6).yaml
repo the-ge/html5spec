@@ -1,8 +1,8 @@
-description: Type of script
-next: type(7)
-separator: ''
 tag_scope:
 - script
+description: Type of script
+value_type: string
 value_enum: []
 value_info: '"module"; "importmap"; "speculationrules"; a valid MIME type string that is not a JavaScript MIME type essence match'
-value_type: string
+separator: ''
+next: type(7)

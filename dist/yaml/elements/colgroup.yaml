@@ -1,3 +1,6 @@
+description: Group of columns in a table
+categories:
+- none
 attributes:
 - accesskey
 - autocapitalize
@@ -32,9 +35,6 @@ attributes:
 - title
 - translate
 - writingsuggestions
-categories:
-- none
 children:
 - col
 - template
-description: Group of columns in a table

@@ -1,3 +1,13 @@
+description: Button control
+categories:
+- flow
+- form-associated
+- interactive
+- labelable
+- listed
+- palpable
+- phrasing
+- submittable
 attributes:
 - accesskey
 - autocapitalize
@@ -45,15 +55,5 @@ attributes:
 - type
 - value
 - writingsuggestions
-categories:
-- flow
-- form-associated
-- interactive
-- labelable
-- listed
-- palpable
-- phrasing
-- submittable
 children:
 - phrasing
-description: Button control

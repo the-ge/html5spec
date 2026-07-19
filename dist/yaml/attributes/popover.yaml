@@ -1,10 +1,10 @@
-description: Makes the element a popover element
-separator: ''
 tag_scope: []
+description: Makes the element a popover element
+value_type: enum
 value_enum:
 - ''
 - auto
 - hint
 - manual
 value_info: ''
-value_type: enum
+separator: ''

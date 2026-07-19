@@ -1,3 +1,6 @@
+description: List item
+categories:
+- none
 attributes:
 - accesskey
 - autocapitalize
@@ -32,8 +35,5 @@ attributes:
 - translate
 - value
 - writingsuggestions
-categories:
-- none
 children:
 - flow
-description: List item

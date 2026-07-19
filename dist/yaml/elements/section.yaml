@@ -1,3 +1,8 @@
+description: Generic document or application section
+categories:
+- flow
+- palpable
+- sectioning
 attributes:
 - accesskey
 - autocapitalize
@@ -31,10 +36,5 @@ attributes:
 - title
 - translate
 - writingsuggestions
-categories:
-- flow
-- palpable
-- sectioning
 children:
 - flow
-description: Generic document or application section

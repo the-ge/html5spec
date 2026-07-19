@@ -1,7 +1,7 @@
-description: Whether the link is disabled
-separator: ''
 tag_scope:
 - link
+description: Whether the link is disabled
+value_type: bool
 value_enum: []
 value_info: Boolean attribute
-value_type: bool
+separator: ''

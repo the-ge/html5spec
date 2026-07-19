@@ -1,9 +1,9 @@
-description: Whether the control is required for form submission
-separator: ''
 tag_scope:
 - input
 - select
 - textarea
+description: Whether the control is required for form submission
+value_type: bool
 value_enum: []
 value_info: Boolean attribute
-value_type: bool
+separator: ''

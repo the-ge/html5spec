@@ -1,5 +1,3 @@
-description: Referrer policy for fetches initiated by the element
-separator: ''
 tag_scope:
 - a
 - area
@@ -7,6 +5,8 @@ tag_scope:
 - img
 - link
 - script
+description: Referrer policy for fetches initiated by the element
+value_type: string
 value_enum: []
 value_info: Referrer policy
-value_type: string
+separator: ''

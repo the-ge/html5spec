@@ -1,3 +1,12 @@
+description: Image, child navigable, or plugin
+categories:
+- embedded
+- flow
+- form-associated
+- interactive
+- listed
+- palpable
+- phrasing
 attributes:
 - accesskey
 - autocapitalize
@@ -37,14 +46,5 @@ attributes:
 - type
 - width
 - writingsuggestions
-categories:
-- embedded
-- flow
-- form-associated
-- interactive
-- listed
-- palpable
-- phrasing
 children:
 - transparent
-description: Image, child navigable, or plugin

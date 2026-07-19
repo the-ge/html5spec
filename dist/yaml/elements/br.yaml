@@ -1,3 +1,7 @@
+description: Line break, e.g. in poem or postal address
+categories:
+- flow
+- phrasing
 attributes:
 - accesskey
 - autocapitalize
@@ -31,8 +35,4 @@ attributes:
 - title
 - translate
 - writingsuggestions
-categories:
-- flow
-- phrasing
 children: []
-description: Line break, e.g. in poem or postal address

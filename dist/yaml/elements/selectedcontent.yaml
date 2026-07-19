@@ -1,3 +1,6 @@
+description: Mirrors content from an option
+categories:
+- none
 attributes:
 - accesskey
 - autocapitalize
@@ -31,7 +34,4 @@ attributes:
 - title
 - translate
 - writingsuggestions
-categories:
-- none
 children: []
-description: Mirrors content from an option

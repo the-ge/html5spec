@@ -1,5 +1,3 @@
-description: Associates the element with a form element
-separator: ''
 tag_scope:
 - button
 - custom
@@ -9,6 +7,8 @@ tag_scope:
 - output
 - select
 - textarea
+description: Associates the element with a form element
+value_type: string
 value_enum: []
 value_info: ID. *Incomplete description. See the full specification.
-value_type: string
+separator: ''

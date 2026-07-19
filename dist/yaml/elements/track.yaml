@@ -1,3 +1,6 @@
+description: Timed text track
+categories:
+- none
 attributes:
 - accesskey
 - autocapitalize
@@ -36,7 +39,4 @@ attributes:
 - title
 - translate
 - writingsuggestions
-categories:
-- none
 children: []
-description: Timed text track

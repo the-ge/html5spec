@@ -1,3 +1,7 @@
+description: Contact information for a page or article element
+categories:
+- flow
+- palpable
 attributes:
 - accesskey
 - autocapitalize
@@ -31,9 +35,5 @@ attributes:
 - title
 - translate
 - writingsuggestions
-categories:
-- flow
-- palpable
 children:
 - flow
-description: Contact information for a page or article element

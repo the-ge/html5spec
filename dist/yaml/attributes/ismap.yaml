@@ -1,7 +1,7 @@
-description: Whether the image is a server-side image map
-separator: ''
 tag_scope:
 - img
+description: Whether the image is a server-side image map
+value_type: bool
 value_enum: []
 value_info: Boolean attribute
-value_type: bool
+separator: ''

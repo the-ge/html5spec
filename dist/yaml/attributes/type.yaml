@@ -1,9 +1,9 @@
-description: Hint for the type of the referenced resource
-next: type(2)
-separator: ''
 tag_scope:
 - a
 - link
+description: Hint for the type of the referenced resource
+value_type: string
 value_enum: []
 value_info: Valid MIME type string
-value_type: string
+separator: ''
+next: type(2)

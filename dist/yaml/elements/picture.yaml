@@ -1,3 +1,9 @@
+description: Image
+categories:
+- embedded
+- flow
+- palpable
+- phrasing
 attributes:
 - accesskey
 - autocapitalize
@@ -31,13 +37,7 @@ attributes:
 - title
 - translate
 - writingsuggestions
-categories:
-- embedded
-- flow
-- palpable
-- phrasing
 children:
 - one img
 - script-supporting elements
 - source
-description: Image

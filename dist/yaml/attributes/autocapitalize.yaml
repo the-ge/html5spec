@@ -1,6 +1,6 @@
-description: Recommended autocapitalization behavior (for supported input methods)
-separator: ''
 tag_scope: []
+description: Recommended autocapitalization behavior (for supported input methods)
+value_type: enum
 value_enum:
 - characters
 - none
@@ -9,4 +9,4 @@ value_enum:
 - sentences
 - words
 value_info: ''
-value_type: enum
+separator: ''

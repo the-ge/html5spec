@@ -1,3 +1,8 @@
+description: Text metadata
+categories:
+- flow
+- metadata
+- phrasing
 attributes:
 - accesskey
 - autocapitalize
@@ -36,9 +41,4 @@ attributes:
 - title
 - translate
 - writingsuggestions
-categories:
-- flow
-- metadata
-- phrasing
 children: []
-description: Text metadata

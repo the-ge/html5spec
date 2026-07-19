@@ -1,3 +1,9 @@
+description: Group of form controls
+categories:
+- flow
+- form-associated
+- listed
+- palpable
 attributes:
 - accesskey
 - autocapitalize
@@ -34,12 +40,6 @@ attributes:
 - title
 - translate
 - writingsuggestions
-categories:
-- flow
-- form-associated
-- listed
-- palpable
 children:
 - flow
 - legend
-description: Group of form controls

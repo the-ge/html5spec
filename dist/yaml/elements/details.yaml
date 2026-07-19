@@ -1,3 +1,8 @@
+description: Disclosure control for hiding details
+categories:
+- flow
+- interactive
+- palpable
 attributes:
 - accesskey
 - autocapitalize
@@ -33,11 +38,6 @@ attributes:
 - title
 - translate
 - writingsuggestions
-categories:
-- flow
-- interactive
-- palpable
 children:
 - flow
 - summary
-description: Disclosure control for hiding details

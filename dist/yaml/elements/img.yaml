@@ -1,3 +1,11 @@
+description: Image
+categories:
+- embedded
+- flow
+- form-associated
+- interactive
+- palpable
+- phrasing
 attributes:
 - accesskey
 - alt
@@ -45,12 +53,4 @@ attributes:
 - usemap
 - width
 - writingsuggestions
-categories:
-- embedded
-- flow
-- form-associated
-- interactive
-- palpable
-- phrasing
 children: []
-description: Image

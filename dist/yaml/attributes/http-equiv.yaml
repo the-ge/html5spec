@@ -1,7 +1,7 @@
-description: Pragma directive
-separator: ''
 tag_scope:
 - meta
+description: Pragma directive
+value_type: enum
 value_enum:
 - content-security-policy
 - content-type
@@ -9,4 +9,4 @@ value_enum:
 - refresh
 - x-ua-compatible
 value_info: ''
-value_type: enum
+separator: ''

@@ -1,3 +1,6 @@
+description: Group of options in a list box
+categories:
+- none
 attributes:
 - accesskey
 - autocapitalize
@@ -33,12 +36,9 @@ attributes:
 - title
 - translate
 - writingsuggestions
-categories:
-- none
 children:
 - div
 - legend
 - noscript
 - option
 - script-supporting elements
-description: Group of options in a list box

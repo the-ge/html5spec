@@ -1,3 +1,8 @@
+description: Machine-readable equivalent
+categories:
+- flow
+- palpable
+- phrasing
 attributes:
 - accesskey
 - autocapitalize
@@ -32,10 +37,5 @@ attributes:
 - translate
 - value
 - writingsuggestions
-categories:
-- flow
-- palpable
-- phrasing
 children:
 - phrasing
-description: Machine-readable equivalent

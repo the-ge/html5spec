@@ -1,7 +1,7 @@
-description: Sets serializable on a declarative shadow root
-separator: ''
 tag_scope:
 - template
+description: Sets serializable on a declarative shadow root
+value_type: bool
 value_enum: []
 value_info: Boolean attribute
-value_type: bool
+separator: ''

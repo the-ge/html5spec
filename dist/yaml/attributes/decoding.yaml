@@ -1,10 +1,10 @@
-description: Decoding hint to use when processing this image for presentation
-separator: ''
 tag_scope:
 - img
+description: Decoding hint to use when processing this image for presentation
+value_type: enum
 value_enum:
 - async
 - auto
 - sync
 value_info: ''
-value_type: enum
+separator: ''

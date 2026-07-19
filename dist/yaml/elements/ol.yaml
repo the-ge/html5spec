@@ -1,3 +1,7 @@
+description: Ordered list
+categories:
+- flow
+- palpable
 attributes:
 - accesskey
 - autocapitalize
@@ -34,10 +38,6 @@ attributes:
 - translate
 - type
 - writingsuggestions
-categories:
-- flow
-- palpable
 children:
 - li
 - script-supporting elements
-description: Ordered list

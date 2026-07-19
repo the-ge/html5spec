@@ -1,8 +1,8 @@
-description: Ordinal value of the list item
-next: value(5)
-separator: ''
 tag_scope:
 - li
+description: Ordinal value of the list item
+value_type: int
 value_enum: []
 value_info: Valid integer
-value_type: int
+separator: ''
+next: value(5)

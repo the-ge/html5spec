@@ -1,3 +1,7 @@
+description: Association list consisting of zero or more name-value groups
+categories:
+- flow
+- palpable
 attributes:
 - accesskey
 - autocapitalize
@@ -31,12 +35,8 @@ attributes:
 - title
 - translate
 - writingsuggestions
-categories:
-- flow
-- palpable
 children:
 - dd
 - div
 - dt
 - script-supporting elements
-description: Association list consisting of zero or more name-value groups

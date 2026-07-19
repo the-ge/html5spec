@@ -1,3 +1,7 @@
+description: Container for options for combo box control
+categories:
+- flow
+- phrasing
 attributes:
 - accesskey
 - autocapitalize
@@ -31,11 +35,7 @@ attributes:
 - title
 - translate
 - writingsuggestions
-categories:
-- flow
-- phrasing
 children:
 - option
 - phrasing
 - script-supporting elements
-description: Container for options for combo box control

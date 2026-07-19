@@ -1,3 +1,6 @@
+description: Dialog box or window
+categories:
+- flow
 attributes:
 - accesskey
 - autocapitalize
@@ -32,8 +35,5 @@ attributes:
 - title
 - translate
 - writingsuggestions
-categories:
-- flow
 children:
 - flow
-description: Dialog box or window

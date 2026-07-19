@@ -1,3 +1,6 @@
+description: Table row
+categories:
+- none
 attributes:
 - accesskey
 - autocapitalize
@@ -31,10 +34,7 @@ attributes:
 - title
 - translate
 - writingsuggestions
-categories:
-- none
 children:
 - script-supporting elements
 - td
 - th
-description: Table row

@@ -1,3 +1,9 @@
+description: Caption for a form control
+categories:
+- flow
+- interactive
+- palpable
+- phrasing
 attributes:
 - accesskey
 - autocapitalize
@@ -32,11 +38,5 @@ attributes:
 - title
 - translate
 - writingsuggestions
-categories:
-- flow
-- interactive
-- palpable
-- phrasing
 children:
 - phrasing
-description: Caption for a form control

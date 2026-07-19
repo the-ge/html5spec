@@ -1,118 +1,118 @@
 {
   "abbr": {
-    "description": "Alternative label to use for the header cell when referencing the cell in other contexts",
-    "separator": "",
     "tag_scope": [
       "th"
     ],
+    "description": "Alternative label to use for the header cell when referencing the cell in other contexts",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Text. *Incomplete description. See the full specification.",
-    "value_type": "string"
+    "separator": ""
   },
   "accept": {
-    "description": "Hint for expected file type in file upload controls",
-    "separator": ",",
     "tag_scope": [
       "input"
     ],
+    "description": "Hint for expected file type in file upload controls",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Set of comma-separated tokens* consisting of valid MIME type strings with no parameters or audio/*, video/*, or image/. *Incomplete description. See the full specification.",
-    "value_type": "string"
+    "separator": ","
   },
   "accept-charset": {
-    "description": "Character encodings to use for form submission",
-    "separator": "",
     "tag_scope": [
       "form"
     ],
+    "description": "Character encodings to use for form submission",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "ASCII case-insensitive match for \"UTF-8\"",
-    "value_type": "string"
+    "separator": ""
   },
   "accesskey": {
-    "description": "Keyboard shortcut to activate or focus element",
-    "separator": " ",
     "tag_scope": [],
+    "description": "Keyboard shortcut to activate or focus element",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Ordered set of unique space-separated tokens, none of which are identical to another, each consisting of one code point in length",
-    "value_type": "string"
+    "separator": " "
   },
   "action": {
-    "description": "URL to use for form submission",
-    "separator": "",
     "tag_scope": [
       "form"
     ],
+    "description": "URL to use for form submission",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Valid non-empty URL potentially surrounded by spaces",
-    "value_type": "string"
+    "separator": ""
   },
   "allow": {
-    "description": "Permissions policy to be applied to the iframe's contents",
-    "separator": "",
     "tag_scope": [
       "iframe"
     ],
+    "description": "Permissions policy to be applied to the iframe's contents",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Serialized permissions policy",
-    "value_type": "string"
+    "separator": ""
   },
   "allowfullscreen": {
-    "description": "Whether to allow the iframe's contents to use requestFullscreen()",
-    "separator": "",
     "tag_scope": [
       "iframe"
     ],
+    "description": "Whether to allow the iframe's contents to use requestFullscreen()",
+    "value_type": "bool",
     "value_enum": [],
     "value_info": "Boolean attribute",
-    "value_type": "bool"
+    "separator": ""
   },
   "alpha": {
-    "description": "Allow the color's alpha component to be set",
-    "separator": "",
     "tag_scope": [
       "input"
     ],
+    "description": "Allow the color's alpha component to be set",
+    "value_type": "bool",
     "value_enum": [],
     "value_info": "Boolean attribute",
-    "value_type": "bool"
+    "separator": ""
   },
   "alt": {
-    "description": "Replacement text for use when images are not available",
-    "separator": "",
     "tag_scope": [
       "area",
       "img",
       "input"
     ],
+    "description": "Replacement text for use when images are not available",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Text. *Incomplete description. See the full specification.",
-    "value_type": "string"
+    "separator": ""
   },
   "as": {
-    "description": "Destination for a preload request (for rel=\"preload\" and rel=\"modulepreload\")",
-    "separator": "",
     "tag_scope": [
       "link"
     ],
+    "description": "Destination for a preload request (for rel=\"preload\" and rel=\"modulepreload\")",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Preload destination, for rel=\"preload\"; module preload destination, for rel=\"modulepreload\"",
-    "value_type": "string"
+    "separator": ""
   },
   "async": {
-    "description": "Execute script when available, without blocking while fetching",
-    "separator": "",
     "tag_scope": [
       "script"
     ],
+    "description": "Execute script when available, without blocking while fetching",
+    "value_type": "bool",
     "value_enum": [],
     "value_info": "Boolean attribute",
-    "value_type": "bool"
+    "separator": ""
   },
   "autocapitalize": {
-    "description": "Recommended autocapitalization behavior (for supported input methods)",
-    "separator": "",
     "tag_scope": [],
+    "description": "Recommended autocapitalization behavior (for supported input methods)",
+    "value_type": "enum",
     "value_enum": [
       "characters",
       "none",
@@ -122,208 +122,208 @@
       "words"
     ],
     "value_info": "",
-    "value_type": "enum"
+    "separator": ""
   },
   "autocomplete": {
-    "description": "Default setting for autofill feature for controls in the form",
-    "next": "autocomplete(2)",
-    "separator": "",
     "tag_scope": [
       "form"
     ],
+    "description": "Default setting for autofill feature for controls in the form",
+    "value_type": "enum",
     "value_enum": [
       "off",
       "on"
     ],
     "value_info": "",
-    "value_type": "enum"
+    "separator": "",
+    "next": "autocomplete(2)"
   },
   "autocomplete(2)": {
-    "description": "Hint for form autofill feature",
-    "separator": "",
     "tag_scope": [
       "input",
       "select",
       "textarea"
     ],
+    "description": "Hint for form autofill feature",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Autofill field name and related tokens. *Incomplete description. See the full specification.",
-    "value_type": "string"
+    "separator": ""
   },
   "autocorrect": {
-    "description": "Recommended autocorrection behavior (for supported input methods)",
-    "separator": "",
     "tag_scope": [],
+    "description": "Recommended autocorrection behavior (for supported input methods)",
+    "value_type": "enum",
     "value_enum": [
       "",
       "off",
       "on"
     ],
     "value_info": "",
-    "value_type": "enum"
+    "separator": ""
   },
   "autofocus": {
-    "description": "Automatically focus the element when the page is loaded",
-    "separator": "",
     "tag_scope": [],
+    "description": "Automatically focus the element when the page is loaded",
+    "value_type": "bool",
     "value_enum": [],
     "value_info": "Boolean attribute",
-    "value_type": "bool"
+    "separator": ""
   },
   "autoplay": {
-    "description": "Hint that the media resource can be started automatically when the page is loaded",
-    "separator": "",
     "tag_scope": [
       "audio",
       "video"
     ],
+    "description": "Hint that the media resource can be started automatically when the page is loaded",
+    "value_type": "bool",
     "value_enum": [],
     "value_info": "Boolean attribute",
-    "value_type": "bool"
+    "separator": ""
   },
   "blocking": {
-    "description": "Whether the element is potentially render-blocking",
-    "separator": " ",
     "tag_scope": [
       "link",
       "script",
       "style"
     ],
+    "description": "Whether the element is potentially render-blocking",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Unordered set of unique space-separated tokens. *Incomplete description. See the full specification.",
-    "value_type": "string"
+    "separator": " "
   },
   "charset": {
-    "description": "Character encoding declaration",
-    "separator": "",
     "tag_scope": [
       "meta"
     ],
+    "description": "Character encoding declaration",
+    "value_type": "enum",
     "value_enum": [
       "utf-8"
     ],
     "value_info": "",
-    "value_type": "enum"
+    "separator": ""
   },
   "checked": {
-    "description": "Whether the control is checked",
-    "separator": "",
     "tag_scope": [
       "input"
     ],
+    "description": "Whether the control is checked",
+    "value_type": "bool",
     "value_enum": [],
     "value_info": "Boolean attribute",
-    "value_type": "bool"
+    "separator": ""
   },
   "cite": {
-    "description": "Link to the source of the quotation or more information about the edit",
-    "separator": "",
     "tag_scope": [
       "blockquote",
       "del",
       "ins",
       "q"
     ],
+    "description": "Link to the source of the quotation or more information about the edit",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Valid URL potentially surrounded by spaces",
-    "value_type": "string"
+    "separator": ""
   },
   "class": {
-    "description": "Classes to which the element belongs",
-    "separator": " ",
     "tag_scope": [],
+    "description": "Classes to which the element belongs",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Set of space-separated tokens",
-    "value_type": "string"
+    "separator": " "
   },
   "closedby": {
-    "description": "Which user actions will close the dialog",
-    "separator": "",
     "tag_scope": [
       "dialog"
     ],
+    "description": "Which user actions will close the dialog",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "\"any\"; \"closerequest\"; \"none\";",
-    "value_type": "string"
+    "separator": ""
   },
   "color": {
-    "description": "Color to use when customizing a site's icon (for rel=\"mask-icon\")",
-    "separator": "",
     "tag_scope": [
       "link"
     ],
+    "description": "Color to use when customizing a site's icon (for rel=\"mask-icon\")",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "CSS <color>",
-    "value_type": "string"
+    "separator": ""
   },
   "colorspace": {
-    "description": "The color space of the serialized color",
-    "separator": "",
     "tag_scope": [
       "input"
     ],
+    "description": "The color space of the serialized color",
+    "value_type": "enum",
     "value_enum": [
       "display-p3",
       "limited-srgb"
     ],
     "value_info": "",
-    "value_type": "enum"
+    "separator": ""
   },
   "cols": {
-    "description": "Maximum number of characters per line",
-    "separator": "",
     "tag_scope": [
       "textarea"
     ],
+    "description": "Maximum number of characters per line",
+    "value_type": "int",
     "value_enum": [],
     "value_info": "Valid non-negative integer greater than zero",
-    "value_type": "int"
+    "separator": ""
   },
   "colspan": {
-    "description": "Number of columns that the cell is to span",
-    "separator": "",
     "tag_scope": [
       "td",
       "th"
     ],
+    "description": "Number of columns that the cell is to span",
+    "value_type": "int",
     "value_enum": [],
     "value_info": "Valid non-negative integer greater than zero",
-    "value_type": "int"
+    "separator": ""
   },
   "command": {
-    "description": "Indicates to the targeted element which action to take.",
-    "separator": "",
     "tag_scope": [
       "button"
     ],
+    "description": "Indicates to the targeted element which action to take.",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "\"toggle-popover\"; \"show-popover\"; \"hide-popover\"; \"close\"; \"request-close\"; \"show-modal\"; a custom command keyword",
-    "value_type": "string"
+    "separator": ""
   },
   "commandfor": {
-    "description": "Targets another element to be invoked.",
-    "separator": "",
     "tag_scope": [
       "button"
     ],
+    "description": "Targets another element to be invoked.",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "ID. *Incomplete description. See the full specification.",
-    "value_type": "string"
+    "separator": ""
   },
   "content": {
-    "description": "Value of the element",
-    "separator": "",
     "tag_scope": [
       "meta"
     ],
+    "description": "Value of the element",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Text. *Incomplete description. See the full specification.",
-    "value_type": "string"
+    "separator": ""
   },
   "contenteditable": {
-    "description": "Whether the element is editable",
-    "separator": "",
     "tag_scope": [],
+    "description": "Whether the element is editable",
+    "value_type": "enum",
     "value_enum": [
       "",
       "false",
@@ -331,33 +331,31 @@
       "true"
     ],
     "value_info": "",
-    "value_type": "enum"
+    "separator": ""
   },
   "controls": {
-    "description": "Show user agent controls",
-    "separator": "",
     "tag_scope": [
       "audio",
       "img",
       "video"
     ],
+    "description": "Show user agent controls",
+    "value_type": "bool",
     "value_enum": [],
     "value_info": "Boolean attribute",
-    "value_type": "bool"
+    "separator": ""
   },
   "coords": {
-    "description": "Coordinates for the shape to be created in an image map",
-    "separator": ",",
     "tag_scope": [
       "area"
     ],
+    "description": "Coordinates for the shape to be created in an image map",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Valid list of floating-point numbers. *Incomplete description. See the full specification.",
-    "value_type": "string"
+    "separator": ","
   },
   "crossorigin": {
-    "description": "How the element handles crossorigin requests",
-    "separator": "",
     "tag_scope": [
       "audio",
       "img",
@@ -365,121 +363,120 @@
       "script",
       "video"
     ],
+    "description": "How the element handles crossorigin requests",
+    "value_type": "enum",
     "value_enum": [
       "",
       "anonymous",
       "use-credentials"
     ],
     "value_info": "",
-    "value_type": "enum"
+    "separator": ""
   },
   "data": {
-    "description": "Address of the resource",
-    "separator": "",
     "tag_scope": [
       "object"
     ],
+    "description": "Address of the resource",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Valid non-empty URL potentially surrounded by spaces",
-    "value_type": "string"
+    "separator": ""
   },
   "datetime": {
-    "description": "Date and (optionally) time of the change",
-    "next": "datetime(2)",
-    "separator": "",
     "tag_scope": [
       "del",
       "ins"
     ],
+    "description": "Date and (optionally) time of the change",
+    "value_type": "datetime",
     "value_enum": [],
     "value_info": "Valid date string with optional time",
-    "value_type": "datetime"
+    "separator": "",
+    "next": "datetime(2)"
   },
   "datetime(2)": {
-    "description": "Machine-readable value",
-    "separator": "",
     "tag_scope": [
       "time"
     ],
+    "description": "Machine-readable value",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Valid month string, valid date string, valid yearless date string, valid time string, valid local date and time string, valid time-zone offset string, valid global date and time string, valid week string, valid non-negative integer, or valid duration string",
-    "value_type": "string"
+    "separator": ""
   },
   "decoding": {
-    "description": "Decoding hint to use when processing this image for presentation",
-    "separator": "",
     "tag_scope": [
       "img"
     ],
+    "description": "Decoding hint to use when processing this image for presentation",
+    "value_type": "enum",
     "value_enum": [
       "async",
       "auto",
       "sync"
     ],
     "value_info": "",
-    "value_type": "enum"
+    "separator": ""
   },
   "default": {
-    "description": "Enable the track if no other text track is more suitable",
-    "separator": "",
     "tag_scope": [
       "track"
     ],
+    "description": "Enable the track if no other text track is more suitable",
+    "value_type": "bool",
     "value_enum": [],
     "value_info": "Boolean attribute",
-    "value_type": "bool"
+    "separator": ""
   },
   "defer": {
-    "description": "Defer script execution",
-    "separator": "",
     "tag_scope": [
       "script"
     ],
+    "description": "Defer script execution",
+    "value_type": "bool",
     "value_enum": [],
     "value_info": "Boolean attribute",
-    "value_type": "bool"
+    "separator": ""
   },
   "dir": {
-    "description": "The text directionality of the element",
-    "next": "dir(2)",
-    "separator": "",
     "tag_scope": [],
+    "description": "The text directionality of the element",
+    "value_type": "enum",
     "value_enum": [
       "auto",
       "ltr",
       "rtl"
     ],
     "value_info": "",
-    "value_type": "enum"
+    "separator": "",
+    "next": "dir(2)"
   },
   "dir(2)": {
-    "description": "The text directionality of the element",
-    "separator": "",
     "tag_scope": [
       "bdo"
     ],
+    "description": "The text directionality of the element",
+    "value_type": "enum",
     "value_enum": [
       "ltr",
       "rtl"
     ],
     "value_info": "",
-    "value_type": "enum"
+    "separator": ""
   },
   "dirname": {
-    "description": "Name of form control to use for sending the element's directionality in form submission",
-    "separator": "",
     "tag_scope": [
       "input",
       "textarea"
     ],
+    "description": "Name of form control to use for sending the element's directionality in form submission",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Text. *Incomplete description. See the full specification.",
-    "value_type": "string"
+    "separator": ""
   },
   "disabled": {
-    "description": "Whether the form control is disabled",
-    "next": "disabled(2)",
-    "separator": "",
     "tag_scope": [
       "button",
       "custom",
@@ -489,71 +486,74 @@
       "select",
       "textarea"
     ],
+    "description": "Whether the form control is disabled",
+    "value_type": "bool",
     "value_enum": [],
     "value_info": "Boolean attribute",
-    "value_type": "bool"
+    "separator": "",
+    "next": "disabled(2)"
   },
   "disabled(2)": {
-    "description": "Whether the descendant form controls, except any inside legend, are disabled",
-    "next": "disabled(3)",
-    "separator": "",
     "tag_scope": [
       "fieldset"
     ],
+    "description": "Whether the descendant form controls, except any inside legend, are disabled",
+    "value_type": "bool",
     "value_enum": [],
     "value_info": "Boolean attribute",
-    "value_type": "bool"
+    "separator": "",
+    "next": "disabled(3)"
   },
   "disabled(3)": {
-    "description": "Whether the link is disabled",
-    "separator": "",
     "tag_scope": [
       "link"
     ],
+    "description": "Whether the link is disabled",
+    "value_type": "bool",
     "value_enum": [],
     "value_info": "Boolean attribute",
-    "value_type": "bool"
+    "separator": ""
   },
   "download": {
-    "description": "Whether to download the resource instead of navigating to it, and its filename if so",
-    "separator": "",
     "tag_scope": [
       "a",
       "area"
     ],
+    "description": "Whether to download the resource instead of navigating to it, and its filename if so",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Text",
-    "value_type": "string"
+    "separator": ""
   },
   "draggable": {
-    "description": "Whether the element is draggable",
-    "separator": "",
     "tag_scope": [],
+    "description": "Whether the element is draggable",
+    "value_type": "enum",
     "value_enum": [
       "false",
       "true"
     ],
     "value_info": "",
-    "value_type": "enum"
+    "separator": ""
   },
   "enctype": {
-    "description": "Entry list encoding type to use for form submission",
-    "separator": "",
     "tag_scope": [
       "form"
     ],
+    "description": "Entry list encoding type to use for form submission",
+    "value_type": "enum",
     "value_enum": [
       "application/x-www-form-urlencoded",
       "multipart/form-data",
       "text/plain"
     ],
     "value_info": "",
-    "value_type": "enum"
+    "separator": ""
   },
   "enterkeyhint": {
-    "description": "Hint for selecting an enter key action",
-    "separator": "",
     "tag_scope": [],
+    "description": "Hint for selecting an enter key action",
+    "value_type": "enum",
     "value_enum": [
       "done",
       "enter",
@@ -564,48 +564,46 @@
       "send"
     ],
     "value_info": "",
-    "value_type": "enum"
+    "separator": ""
   },
   "fetchpriority": {
-    "description": "Sets the priority for fetches initiated by the element",
-    "separator": "",
     "tag_scope": [
       "img",
       "link",
       "script"
     ],
+    "description": "Sets the priority for fetches initiated by the element",
+    "value_type": "enum",
     "value_enum": [
       "auto",
       "high",
       "low"
     ],
     "value_info": "",
-    "value_type": "enum"
+    "separator": ""
   },
   "for": {
-    "description": "Associate the label with form control",
-    "next": "for(2)",
-    "separator": "",
     "tag_scope": [
       "label"
     ],
+    "description": "Associate the label with form control",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "ID. *Incomplete description. See the full specification.",
-    "value_type": "string"
+    "separator": "",
+    "next": "for(2)"
   },
   "for(2)": {
-    "description": "Specifies controls from which the output was calculated",
-    "separator": " ",
     "tag_scope": [
       "output"
     ],
+    "description": "Specifies controls from which the output was calculated",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Unordered set of unique space-separated tokens consisting of IDs. *Incomplete description. See the full specification.",
-    "value_type": "string"
+    "separator": " "
   },
   "form": {
-    "description": "Associates the element with a form element",
-    "separator": "",
     "tag_scope": [
       "button",
       "custom",
@@ -616,103 +614,103 @@
       "select",
       "textarea"
     ],
+    "description": "Associates the element with a form element",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "ID. *Incomplete description. See the full specification.",
-    "value_type": "string"
+    "separator": ""
   },
   "formaction": {
-    "description": "URL to use for form submission",
-    "separator": "",
     "tag_scope": [
       "button",
       "input"
     ],
+    "description": "URL to use for form submission",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Valid non-empty URL potentially surrounded by spaces",
-    "value_type": "string"
+    "separator": ""
   },
   "formenctype": {
-    "description": "Entry list encoding type to use for form submission",
-    "separator": "",
     "tag_scope": [
       "button",
       "input"
     ],
+    "description": "Entry list encoding type to use for form submission",
+    "value_type": "enum",
     "value_enum": [
       "application/x-www-form-urlencoded",
       "multipart/form-data",
       "text/plain"
     ],
     "value_info": "",
-    "value_type": "enum"
+    "separator": ""
   },
   "formmethod": {
-    "description": "Variant to use for form submission",
-    "separator": "",
     "tag_scope": [
       "button",
       "input"
     ],
+    "description": "Variant to use for form submission",
+    "value_type": "enum",
     "value_enum": [
       "dialog",
       "get",
       "post"
     ],
     "value_info": "",
-    "value_type": "enum"
+    "separator": ""
   },
   "formnovalidate": {
-    "description": "Bypass form control validation for form submission",
-    "separator": "",
     "tag_scope": [
       "button",
       "input"
     ],
+    "description": "Bypass form control validation for form submission",
+    "value_type": "bool",
     "value_enum": [],
     "value_info": "Boolean attribute",
-    "value_type": "bool"
+    "separator": ""
   },
   "formtarget": {
-    "description": "Navigable for form submission",
-    "separator": "",
     "tag_scope": [
       "button",
       "input"
     ],
+    "description": "Navigable for form submission",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Valid navigable target name or keyword",
-    "value_type": "string"
+    "separator": ""
   },
   "headers": {
-    "description": "The header cells for this cell",
-    "separator": " ",
     "tag_scope": [
       "td",
       "th"
     ],
+    "description": "The header cells for this cell",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Unordered set of unique space-separated tokens consisting of IDs. *Incomplete description. See the full specification.",
-    "value_type": "string"
+    "separator": " "
   },
   "headingoffset": {
-    "description": "Offsets heading levels for descendants",
-    "separator": "",
     "tag_scope": [],
+    "description": "Offsets heading levels for descendants",
+    "value_type": "int",
     "value_enum": [],
     "value_info": "Valid non-negative integer between 0 and 8",
-    "value_type": "int"
+    "separator": ""
   },
   "headingreset": {
-    "description": "Prevents a heading offset computation from traversing beyond the element with the attribute",
-    "separator": "",
     "tag_scope": [],
+    "description": "Prevents a heading offset computation from traversing beyond the element with the attribute",
+    "value_type": "bool",
     "value_enum": [],
     "value_info": "Boolean attribute",
-    "value_type": "bool"
+    "separator": ""
   },
   "height": {
-    "description": "Vertical dimension",
-    "separator": "",
     "tag_scope": [
       "canvas",
       "embed",
@@ -723,82 +721,84 @@
       "source",
       "video"
     ],
+    "description": "Vertical dimension",
+    "value_type": "int",
     "value_enum": [],
     "value_info": "Valid non-negative integer. Special tag scope: source (in picture). *Incomplete description. See the full specification.",
-    "value_type": "int"
+    "separator": ""
   },
   "hidden": {
-    "description": "Whether the element is relevant",
-    "separator": "",
     "tag_scope": [],
+    "description": "Whether the element is relevant",
+    "value_type": "enum",
     "value_enum": [
       "",
       "hidden",
       "until-found"
     ],
     "value_info": "",
-    "value_type": "enum"
+    "separator": ""
   },
   "high": {
-    "description": "Low limit of high range",
-    "separator": "",
     "tag_scope": [
       "meter"
     ],
+    "description": "Low limit of high range",
+    "value_type": "float",
     "value_enum": [],
     "value_info": "Valid floating-point number. *Incomplete description. See the full specification.",
-    "value_type": "float"
+    "separator": ""
   },
   "href": {
-    "description": "Address of the hyperlink",
-    "next": "href(2)",
-    "separator": "",
     "tag_scope": [
       "a",
       "area"
     ],
+    "description": "Address of the hyperlink",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Valid URL potentially surrounded by spaces",
-    "value_type": "string"
+    "separator": "",
+    "next": "href(2)"
   },
   "href(2)": {
-    "description": "Address of the hyperlink",
-    "next": "href(3)",
-    "separator": "",
     "tag_scope": [
       "link"
     ],
+    "description": "Address of the hyperlink",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Valid non-empty URL potentially surrounded by spaces",
-    "value_type": "string"
+    "separator": "",
+    "next": "href(3)"
   },
   "href(3)": {
-    "description": "Document base URL",
-    "separator": "",
     "tag_scope": [
       "base"
     ],
+    "description": "Document base URL",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Valid URL potentially surrounded by spaces",
-    "value_type": "string"
+    "separator": ""
   },
   "hreflang": {
-    "description": "Language of the linked resource",
-    "separator": "",
     "tag_scope": [
       "a",
       "link"
     ],
+    "description": "Language of the linked resource",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Valid BCP 47 language tag",
-    "value_type": "string"
+    "separator": ""
   },
   "http-equiv": {
-    "description": "Pragma directive",
-    "separator": "",
     "tag_scope": [
       "meta"
     ],
+    "description": "Pragma directive",
+    "value_type": "enum",
     "value_enum": [
       "content-security-policy",
       "content-type",
@@ -807,48 +807,48 @@
       "x-ua-compatible"
     ],
     "value_info": "",
-    "value_type": "enum"
+    "separator": ""
   },
   "id": {
-    "description": "The element's ID",
-    "separator": "",
     "tag_scope": [],
+    "description": "The element's ID",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Text. *Incomplete description. See the full specification.",
-    "value_type": "string"
+    "separator": ""
   },
   "imagesizes": {
-    "description": "Image sizes for different page layouts (for rel=\"preload\")",
-    "separator": ",",
     "tag_scope": [
       "link"
     ],
+    "description": "Image sizes for different page layouts (for rel=\"preload\")",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Valid source size list",
-    "value_type": "string"
+    "separator": ","
   },
   "imagesrcset": {
-    "description": "Images to use in different situations, e.g., high-resolution displays, small monitors, etc. (for rel=\"preload\")",
-    "separator": ",",
     "tag_scope": [
       "link"
     ],
+    "description": "Images to use in different situations, e.g., high-resolution displays, small monitors, etc. (for rel=\"preload\")",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Comma-separated list of image candidate strings",
-    "value_type": "string"
+    "separator": ","
   },
   "inert": {
-    "description": "Whether the element is inert.",
-    "separator": "",
     "tag_scope": [],
+    "description": "Whether the element is inert.",
+    "value_type": "bool",
     "value_enum": [],
     "value_info": "Boolean attribute",
-    "value_type": "bool"
+    "separator": ""
   },
   "inputmode": {
-    "description": "Hint for selecting an input modality",
-    "separator": "",
     "tag_scope": [],
+    "description": "Hint for selecting an input modality",
+    "value_type": "enum",
     "value_enum": [
       "decimal",
       "email",
@@ -860,83 +860,83 @@
       "url"
     ],
     "value_info": "",
-    "value_type": "enum"
+    "separator": ""
   },
   "integrity": {
-    "description": "Integrity metadata used in Subresource Integrity checks [SRI]",
-    "separator": "",
     "tag_scope": [
       "link",
       "script"
     ],
+    "description": "Integrity metadata used in Subresource Integrity checks [SRI]",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Text",
-    "value_type": "string"
+    "separator": ""
   },
   "is": {
-    "description": "Creates a customized built-in element",
-    "separator": "",
     "tag_scope": [],
+    "description": "Creates a customized built-in element",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Valid custom element name of a defined customized built-in element",
-    "value_type": "string"
+    "separator": ""
   },
   "ismap": {
-    "description": "Whether the image is a server-side image map",
-    "separator": "",
     "tag_scope": [
       "img"
     ],
+    "description": "Whether the image is a server-side image map",
+    "value_type": "bool",
     "value_enum": [],
     "value_info": "Boolean attribute",
-    "value_type": "bool"
+    "separator": ""
   },
   "itemid": {
-    "description": "Global identifier for a microdata item",
-    "separator": "",
     "tag_scope": [],
+    "description": "Global identifier for a microdata item",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Valid URL potentially surrounded by spaces",
-    "value_type": "string"
+    "separator": ""
   },
   "itemprop": {
-    "description": "Property names of a microdata item",
-    "separator": " ",
     "tag_scope": [],
+    "description": "Property names of a microdata item",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Unordered set of unique space-separated tokens consisting of valid absolute URLs, defined property names, or text. *Incomplete description. See the full specification.",
-    "value_type": "string"
+    "separator": " "
   },
   "itemref": {
-    "description": "Referenced elements",
-    "separator": " ",
     "tag_scope": [],
+    "description": "Referenced elements",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Unordered set of unique space-separated tokens consisting of IDs. *Incomplete description. See the full specification.",
-    "value_type": "string"
+    "separator": " "
   },
   "itemscope": {
-    "description": "Introduces a microdata item",
-    "separator": "",
     "tag_scope": [],
+    "description": "Introduces a microdata item",
+    "value_type": "bool",
     "value_enum": [],
     "value_info": "Boolean attribute",
-    "value_type": "bool"
+    "separator": ""
   },
   "itemtype": {
-    "description": "Item types of a microdata item",
-    "separator": " ",
     "tag_scope": [],
+    "description": "Item types of a microdata item",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Unordered set of unique space-separated tokens consisting of valid absolute URLs. *Incomplete description. See the full specification.",
-    "value_type": "string"
+    "separator": " "
   },
   "kind": {
-    "description": "The type of text track",
-    "separator": "",
     "tag_scope": [
       "track"
     ],
+    "description": "The type of text track",
+    "value_type": "enum",
     "value_enum": [
       "captions",
       "chapters",
@@ -945,193 +945,190 @@
       "subtitles"
     ],
     "value_info": "",
-    "value_type": "enum"
+    "separator": ""
   },
   "label": {
-    "description": "User-visible label",
-    "separator": "",
     "tag_scope": [
       "optgroup",
       "option",
       "track"
     ],
+    "description": "User-visible label",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Text",
-    "value_type": "string"
+    "separator": ""
   },
   "lang": {
-    "description": "Language of the element",
-    "separator": "",
     "tag_scope": [],
+    "description": "Language of the element",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Valid BCP 47 language tag or the empty string",
-    "value_type": "string"
+    "separator": ""
   },
   "list": {
-    "description": "List of autocomplete options",
-    "separator": "",
     "tag_scope": [
       "input"
     ],
+    "description": "List of autocomplete options",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "ID. *Incomplete description. See the full specification.",
-    "value_type": "string"
+    "separator": ""
   },
   "loading": {
-    "description": "Used when determining loading deferral",
-    "separator": "",
     "tag_scope": [
       "audio",
       "iframe",
       "img",
       "video"
     ],
+    "description": "Used when determining loading deferral",
+    "value_type": "enum",
     "value_enum": [
       "eager",
       "lazy"
     ],
     "value_info": "",
-    "value_type": "enum"
+    "separator": ""
   },
   "loop": {
-    "description": "Whether to loop the media resource",
-    "separator": "",
     "tag_scope": [
       "audio",
       "video"
     ],
+    "description": "Whether to loop the media resource",
+    "value_type": "bool",
     "value_enum": [],
     "value_info": "Boolean attribute",
-    "value_type": "bool"
+    "separator": ""
   },
   "low": {
-    "description": "High limit of low range",
-    "separator": "",
     "tag_scope": [
       "meter"
     ],
+    "description": "High limit of low range",
+    "value_type": "float",
     "value_enum": [],
     "value_info": "Valid floating-point number. *Incomplete description. See the full specification.",
-    "value_type": "float"
+    "separator": ""
   },
   "max": {
-    "description": "Maximum value",
-    "next": "max(2)",
-    "separator": "",
     "tag_scope": [
       "input"
     ],
+    "description": "Maximum value",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Varies. *Incomplete description. See the full specification.",
-    "value_type": "string"
+    "separator": "",
+    "next": "max(2)"
   },
   "max(2)": {
-    "description": "Upper bound of range",
-    "separator": "",
     "tag_scope": [
       "meter",
       "progress"
     ],
+    "description": "Upper bound of range",
+    "value_type": "float",
     "value_enum": [],
     "value_info": "Valid floating-point number. *Incomplete description. See the full specification.",
-    "value_type": "float"
+    "separator": ""
   },
   "maxlength": {
-    "description": "Maximum length of value",
-    "separator": "",
     "tag_scope": [
       "input",
       "textarea"
     ],
+    "description": "Maximum length of value",
+    "value_type": "int",
     "value_enum": [],
     "value_info": "Valid non-negative integer",
-    "value_type": "int"
+    "separator": ""
   },
   "media": {
-    "description": "Applicable media",
-    "separator": "",
     "tag_scope": [
       "link",
       "meta",
       "source",
       "style"
     ],
+    "description": "Applicable media",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Valid media query list",
-    "value_type": "string"
+    "separator": ""
   },
   "method": {
-    "description": "Variant to use for form submission",
-    "separator": "",
     "tag_scope": [
       "form"
     ],
+    "description": "Variant to use for form submission",
+    "value_type": "enum",
     "value_enum": [
       "dialog",
       "get",
       "post"
     ],
     "value_info": "",
-    "value_type": "enum"
+    "separator": ""
   },
   "min": {
-    "description": "Minimum value",
-    "next": "min(2)",
-    "separator": "",
     "tag_scope": [
       "input"
     ],
+    "description": "Minimum value",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Varies. *Incomplete description. See the full specification.",
-    "value_type": "string"
+    "separator": "",
+    "next": "min(2)"
   },
   "min(2)": {
-    "description": "Lower bound of range",
-    "separator": "",
     "tag_scope": [
       "meter"
     ],
+    "description": "Lower bound of range",
+    "value_type": "float",
     "value_enum": [],
     "value_info": "Valid floating-point number. *Incomplete description. See the full specification.",
-    "value_type": "float"
+    "separator": ""
   },
   "minlength": {
-    "description": "Minimum length of value",
-    "separator": "",
     "tag_scope": [
       "input",
       "textarea"
     ],
+    "description": "Minimum length of value",
+    "value_type": "int",
     "value_enum": [],
     "value_info": "Valid non-negative integer",
-    "value_type": "int"
+    "separator": ""
   },
   "multiple": {
-    "description": "Whether to allow multiple values",
-    "separator": "",
     "tag_scope": [
       "input",
       "select"
     ],
+    "description": "Whether to allow multiple values",
+    "value_type": "bool",
     "value_enum": [],
     "value_info": "Boolean attribute",
-    "value_type": "bool"
+    "separator": ""
   },
   "muted": {
-    "description": "Whether to mute the media resource by default",
-    "separator": "",
     "tag_scope": [
       "audio",
       "video"
     ],
+    "description": "Whether to mute the media resource by default",
+    "value_type": "bool",
     "value_enum": [],
     "value_info": "Boolean attribute",
-    "value_type": "bool"
+    "separator": ""
   },
   "name": {
-    "description": "Name of the element to use for form submission and in the form.elements API",
-    "next": "name(2)",
-    "separator": "",
     "tag_scope": [
       "button",
       "custom",
@@ -1141,181 +1138,184 @@
       "select",
       "textarea"
     ],
+    "description": "Name of the element to use for form submission and in the form.elements API",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Text. *Incomplete description. See the full specification.",
-    "value_type": "string"
+    "separator": "",
+    "next": "name(2)"
   },
   "name(2)": {
-    "description": "Name of group of mutually-exclusive details elements",
-    "next": "name(3)",
-    "separator": "",
     "tag_scope": [
       "details"
     ],
+    "description": "Name of group of mutually-exclusive details elements",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Text. *Incomplete description. See the full specification.",
-    "value_type": "string"
+    "separator": "",
+    "next": "name(3)"
   },
   "name(3)": {
-    "description": "Name of form to use in the document.forms API",
-    "next": "name(4)",
-    "separator": "",
     "tag_scope": [
       "form"
     ],
+    "description": "Name of form to use in the document.forms API",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Text. *Incomplete description. See the full specification.",
-    "value_type": "string"
+    "separator": "",
+    "next": "name(4)"
   },
   "name(4)": {
-    "description": "Name of content navigable",
-    "next": "name(5)",
-    "separator": "",
     "tag_scope": [
       "iframe",
       "object"
     ],
+    "description": "Name of content navigable",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Valid navigable target name or keyword",
-    "value_type": "string"
+    "separator": "",
+    "next": "name(5)"
   },
   "name(5)": {
-    "description": "Name of image map to reference from the usemap attribute",
-    "next": "name(6)",
-    "separator": "",
     "tag_scope": [
       "map"
     ],
+    "description": "Name of image map to reference from the usemap attribute",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Text. *Incomplete description. See the full specification.",
-    "value_type": "string"
+    "separator": "",
+    "next": "name(6)"
   },
   "name(6)": {
-    "description": "Metadata name",
-    "next": "name(7)",
-    "separator": "",
     "tag_scope": [
       "meta"
     ],
+    "description": "Metadata name",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Text. *Incomplete description. See the full specification.",
-    "value_type": "string"
+    "separator": "",
+    "next": "name(7)"
   },
   "name(7)": {
-    "description": "Name of shadow tree slot",
-    "separator": "",
     "tag_scope": [
       "slot"
     ],
+    "description": "Name of shadow tree slot",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Text",
-    "value_type": "string"
+    "separator": ""
   },
   "nomodule": {
-    "description": "Prevents execution in user agents that support module scripts",
-    "separator": "",
     "tag_scope": [
       "script"
     ],
+    "description": "Prevents execution in user agents that support module scripts",
+    "value_type": "bool",
     "value_enum": [],
     "value_info": "Boolean attribute",
-    "value_type": "bool"
+    "separator": ""
   },
   "nonce": {
-    "description": "Cryptographic nonce used in Content Security Policy checks [CSP]",
-    "separator": "",
     "tag_scope": [],
+    "description": "Cryptographic nonce used in Content Security Policy checks [CSP]",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Text",
-    "value_type": "string"
+    "separator": ""
   },
   "novalidate": {
-    "description": "Bypass form control validation for form submission",
-    "separator": "",
     "tag_scope": [
       "form"
     ],
+    "description": "Bypass form control validation for form submission",
+    "value_type": "bool",
     "value_enum": [],
     "value_info": "Boolean attribute",
-    "value_type": "bool"
+    "separator": ""
   },
   "open": {
-    "description": "Whether the details are visible",
-    "next": "open(2)",
-    "separator": "",
     "tag_scope": [
       "details"
     ],
+    "description": "Whether the details are visible",
+    "value_type": "bool",
     "value_enum": [],
     "value_info": "Boolean attribute",
-    "value_type": "bool"
+    "separator": "",
+    "next": "open(2)"
   },
   "open(2)": {
-    "description": "Whether the dialog box is showing",
-    "separator": "",
     "tag_scope": [
       "dialog"
     ],
+    "description": "Whether the dialog box is showing",
+    "value_type": "bool",
     "value_enum": [],
     "value_info": "Boolean attribute",
-    "value_type": "bool"
+    "separator": ""
   },
   "optimum": {
-    "description": "Optimum value in gauge",
-    "separator": "",
     "tag_scope": [
       "meter"
     ],
+    "description": "Optimum value in gauge",
+    "value_type": "float",
     "value_enum": [],
     "value_info": "Valid floating-point number. *Incomplete description. See the full specification.",
-    "value_type": "float"
+    "separator": ""
   },
   "pattern": {
-    "description": "Pattern to be matched by the form control's value",
-    "separator": "",
     "tag_scope": [
       "input"
     ],
+    "description": "Pattern to be matched by the form control's value",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Regular expression matching the JavaScript Pattern production",
-    "value_type": "string"
+    "separator": ""
   },
   "ping": {
-    "description": "URLs to ping",
-    "separator": " ",
     "tag_scope": [
       "a",
       "area"
     ],
+    "description": "URLs to ping",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Set of space-separated tokens consisting of valid non-empty URLs",
-    "value_type": "string"
+    "separator": " "
   },
   "placeholder": {
-    "description": "User-visible label to be placed within the form control",
-    "separator": "",
     "tag_scope": [
       "input",
       "textarea"
     ],
+    "description": "User-visible label to be placed within the form control",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Text. *Incomplete description. See the full specification.",
-    "value_type": "string"
+    "separator": ""
   },
   "playsinline": {
-    "description": "Encourage the user agent to display video content within the element's playback area",
-    "separator": "",
     "tag_scope": [
       "video"
     ],
+    "description": "Encourage the user agent to display video content within the element's playback area",
+    "value_type": "bool",
     "value_enum": [],
     "value_info": "Boolean attribute",
-    "value_type": "bool"
+    "separator": ""
   },
   "popover": {
-    "description": "Makes the element a popover element",
-    "separator": "",
     "tag_scope": [],
+    "description": "Makes the element a popover element",
+    "value_type": "enum",
     "value_enum": [
       "",
       "auto",
@@ -1323,51 +1323,51 @@
       "manual"
     ],
     "value_info": "",
-    "value_type": "enum"
+    "separator": ""
   },
   "popovertarget": {
-    "description": "Targets a popover element to toggle, show, or hide",
-    "separator": "",
     "tag_scope": [
       "button",
       "input"
     ],
+    "description": "Targets a popover element to toggle, show, or hide",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "ID. *Incomplete description. See the full specification.",
-    "value_type": "string"
+    "separator": ""
   },
   "popovertargetaction": {
-    "description": "Indicates whether a targeted popover element is to be toggled, shown, or hidden",
-    "separator": "",
     "tag_scope": [
       "button",
       "input"
     ],
+    "description": "Indicates whether a targeted popover element is to be toggled, shown, or hidden",
+    "value_type": "enum",
     "value_enum": [
       "hide",
       "show",
       "toggle"
     ],
     "value_info": "",
-    "value_type": "enum"
+    "separator": ""
   },
   "poster": {
-    "description": "Poster frame to show prior to video playback",
-    "separator": "",
     "tag_scope": [
       "video"
     ],
+    "description": "Poster frame to show prior to video playback",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Valid non-empty URL potentially surrounded by spaces",
-    "value_type": "string"
+    "separator": ""
   },
   "preload": {
-    "description": "Hints how much buffering the media resource will likely need",
-    "separator": "",
     "tag_scope": [
       "audio",
       "video"
     ],
+    "description": "Hints how much buffering the media resource will likely need",
+    "value_type": "enum",
     "value_enum": [
       "",
       "auto",
@@ -1375,33 +1375,31 @@
       "none"
     ],
     "value_info": "",
-    "value_type": "enum"
+    "separator": ""
   },
   "readonly": {
-    "description": "Whether to allow the value to be edited by the user",
-    "next": "readonly(2)",
-    "separator": "",
     "tag_scope": [
       "input",
       "textarea"
     ],
+    "description": "Whether to allow the value to be edited by the user",
+    "value_type": "bool",
     "value_enum": [],
     "value_info": "Boolean attribute",
-    "value_type": "bool"
+    "separator": "",
+    "next": "readonly(2)"
   },
   "readonly(2)": {
-    "description": "Affects willValidate, plus any behavior added by the custom element author",
-    "separator": "",
     "tag_scope": [
       "custom"
     ],
+    "description": "Affects willValidate, plus any behavior added by the custom element author",
+    "value_type": "bool",
     "value_enum": [],
     "value_info": "Boolean attribute",
-    "value_type": "bool"
+    "separator": ""
   },
   "referrerpolicy": {
-    "description": "Referrer policy for fetches initiated by the element",
-    "separator": "",
     "tag_scope": [
       "a",
       "area",
@@ -1410,58 +1408,665 @@
       "link",
       "script"
     ],
+    "description": "Referrer policy for fetches initiated by the element",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Referrer policy",
-    "value_type": "string"
+    "separator": ""
   },
   "rel": {
-    "description": "Relationship between the location in the document containing the hyperlink and the destination resource",
-    "next": "rel(2)",
-    "separator": " ",
     "tag_scope": [
       "a",
       "area"
     ],
+    "description": "Relationship between the location in the document containing the hyperlink and the destination resource",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Unordered set of unique space-separated tokens. *Incomplete description. See the full specification.",
-    "value_type": "string"
+    "separator": " ",
+    "next": "rel(2)"
   },
   "rel(2)": {
-    "description": "Relationship between the document containing the hyperlink and the destination resource",
-    "separator": " ",
     "tag_scope": [
       "link"
     ],
+    "description": "Relationship between the document containing the hyperlink and the destination resource",
+    "value_type": "string",
     "value_enum": [],
     "value_info": "Unordered set of unique space-separated tokens. *Incomplete description. See the full specification.",
-    "value_type": "string"
+    "separator": " "
   },
   "required": {
-    "description": "Whether the control is required for form submission",
-    "separator": "",
     "tag_scope": [
       "input",
       "select",
       "textarea"
     ],
+    "description": "Whether the control is required for form submission",
+    "value_type": "bool",
     "value_enum": [],
     "value_info": "Boolean attribute",
-    "value_type": "bool"
+    "separator": ""
   },
   "reversed": {
-    "description": "Number the list backwards",
-    "separator": "",
     "tag_scope": [
       "ol"
     ],
+    "description": "Number the list backwards",
+    "value_type": "bool",
     "value_enum": [],
     "value_info": "Boolean attribute",
-    "value_type": "bool"
+    "separator": ""
+  },
+  "rows": {
+    "tag_scope": [
+      "textarea"
+    ],
+    "description": "Number of lines to show",
+    "value_type": "int",
+    "value_enum": [],
+    "value_info": "Valid non-negative integer greater than zero",
+    "separator": ""
+  },
+  "rowspan": {
+    "tag_scope": [
+      "td",
+      "th"
+    ],
+    "description": "Number of rows that the cell is to span",
+    "value_type": "int",
+    "value_enum": [],
+    "value_info": "Valid non-negative integer",
+    "separator": ""
+  },
+  "sandbox": {
+    "tag_scope": [
+      "iframe"
+    ],
+    "description": "Security rules for nested content",
+    "value_type": "string",
+    "value_enum": [],
+    "value_info": "Unordered set of unique space-separated tokens, ASCII case-insensitive, consisting of \"allow-downloads\"\"allow-forms\"\"allow-modals\"\"allow-orientation-lock\"\"allow-pointer-lock\"\"allow-popups\"\"allow-popups-to-escape-sandbox\"\"allow-presentation\"\"allow-same-origin\"\"allow-scripts\"\"allow-top-navigation\"\"allow-top-navigation-by-user-activation\"\"allow-top-navigation-to-custom-protocols\"",
+    "separator": " "
+  },
+  "scope": {
+    "tag_scope": [
+      "th"
+    ],
+    "description": "Specifies which cells the header cell applies to",
+    "value_type": "enum",
+    "value_enum": [
+      "col",
+      "colgroup",
+      "row",
+      "rowgroup"
+    ],
+    "value_info": "",
+    "separator": ""
+  },
+  "selected": {
+    "tag_scope": [
+      "option"
+    ],
+    "description": "Whether the option is selected by default",
+    "value_type": "bool",
+    "value_enum": [],
+    "value_info": "Boolean attribute",
+    "separator": ""
+  },
+  "shadowrootclonable": {
+    "tag_scope": [
+      "template"
+    ],
+    "description": "Sets clonable on a declarative shadow root",
+    "value_type": "bool",
+    "value_enum": [],
+    "value_info": "Boolean attribute",
+    "separator": ""
+  },
+  "shadowrootcustomelementregistry": {
+    "tag_scope": [
+      "template"
+    ],
+    "description": "Enables declarative shadow roots to indicate they will use a custom element registry",
+    "value_type": "bool",
+    "value_enum": [],
+    "value_info": "Boolean attribute",
+    "separator": ""
+  },
+  "shadowrootdelegatesfocus": {
+    "tag_scope": [
+      "template"
+    ],
+    "description": "Sets delegates focus on a declarative shadow root",
+    "value_type": "bool",
+    "value_enum": [],
+    "value_info": "Boolean attribute",
+    "separator": ""
+  },
+  "shadowrootmode": {
+    "tag_scope": [
+      "template"
+    ],
+    "description": "Enables streaming declarative shadow roots",
+    "value_type": "enum",
+    "value_enum": [
+      "closed",
+      "open"
+    ],
+    "value_info": "",
+    "separator": ""
+  },
+  "shadowrootserializable": {
+    "tag_scope": [
+      "template"
+    ],
+    "description": "Sets serializable on a declarative shadow root",
+    "value_type": "bool",
+    "value_enum": [],
+    "value_info": "Boolean attribute",
+    "separator": ""
+  },
+  "shadowrootslotassignment": {
+    "tag_scope": [
+      "template"
+    ],
+    "description": "Sets slot assignment on a declarative shadow root",
+    "value_type": "enum",
+    "value_enum": [
+      "manual",
+      "named"
+    ],
+    "value_info": "",
+    "separator": ""
+  },
+  "shape": {
+    "tag_scope": [
+      "area"
+    ],
+    "description": "The kind of shape to be created in an image map",
+    "value_type": "enum",
+    "value_enum": [
+      "circle",
+      "default",
+      "poly",
+      "rect"
+    ],
+    "value_info": "",
+    "separator": ""
+  },
+  "size": {
+    "tag_scope": [
+      "input",
+      "select"
+    ],
+    "description": "Size of the control",
+    "value_type": "int",
+    "value_enum": [],
+    "value_info": "Valid non-negative integer greater than zero",
+    "separator": ""
+  },
+  "sizes": {
+    "tag_scope": [
+      "link"
+    ],
+    "description": "Sizes of the icons (for rel=\"icon\")",
+    "value_type": "string",
+    "value_enum": [],
+    "value_info": "Unordered set of unique space-separated tokens, ASCII case-insensitive, consisting of sizes. *Incomplete description. See the full specification.",
+    "separator": " ",
+    "next": "sizes(2)"
+  },
+  "sizes(2)": {
+    "tag_scope": [
+      "img",
+      "source"
+    ],
+    "description": "Image sizes for different page layouts",
+    "value_type": "string",
+    "value_enum": [],
+    "value_info": "Valid source size list",
+    "separator": ","
+  },
+  "slot": {
+    "tag_scope": [],
+    "description": "The element's desired slot",
+    "value_type": "string",
+    "value_enum": [],
+    "value_info": "Text",
+    "separator": ""
+  },
+  "span": {
+    "tag_scope": [
+      "col",
+      "colgroup"
+    ],
+    "description": "Number of columns spanned by the element",
+    "value_type": "int",
+    "value_enum": [],
+    "value_info": "Valid non-negative integer greater than zero",
+    "separator": ""
+  },
+  "spellcheck": {
+    "tag_scope": [],
+    "description": "Whether the element is to have its spelling and grammar checked",
+    "value_type": "enum",
+    "value_enum": [
+      "",
+      "false",
+      "true"
+    ],
+    "value_info": "",
+    "separator": ""
+  },
+  "src": {
+    "tag_scope": [
+      "audio",
+      "embed",
+      "iframe",
+      "img",
+      "input",
+      "script",
+      "source",
+      "track",
+      "video"
+    ],
+    "description": "Address of the resource",
+    "value_type": "string",
+    "value_enum": [],
+    "value_info": "Valid non-empty URL potentially surrounded by spaces. Special tag scope: source (in video or audio). *Incomplete description. See the full specification.",
+    "separator": ""
+  },
+  "srcdoc": {
+    "tag_scope": [
+      "iframe"
+    ],
+    "description": "A document to render in the iframe",
+    "value_type": "string",
+    "value_enum": [],
+    "value_info": "The source of an iframe srcdoc document. *Incomplete description. See the full specification.",
+    "separator": ""
+  },
+  "srclang": {
+    "tag_scope": [
+      "track"
+    ],
+    "description": "Language of the text track",
+    "value_type": "string",
+    "value_enum": [],
+    "value_info": "Valid BCP 47 language tag",
+    "separator": ""
+  },
+  "srcset": {
+    "tag_scope": [
+      "img",
+      "source"
+    ],
+    "description": "Images to use in different situations, e.g., high-resolution displays, small monitors, etc.",
+    "value_type": "string",
+    "value_enum": [],
+    "value_info": "Comma-separated list of image candidate strings",
+    "separator": ","
+  },
+  "start": {
+    "tag_scope": [
+      "ol"
+    ],
+    "description": "Starting value of the list",
+    "value_type": "int",
+    "value_enum": [],
+    "value_info": "Valid integer",
+    "separator": ""
+  },
+  "step": {
+    "tag_scope": [
+      "input"
+    ],
+    "description": "Granularity to be matched by the form control's value",
+    "value_type": "float",
+    "value_enum": [],
+    "value_info": "Valid floating-point number greater than zero, or \"any\"",
+    "separator": ""
+  },
+  "style": {
+    "tag_scope": [],
+    "description": "Presentational and formatting instructions",
+    "value_type": "string",
+    "value_enum": [],
+    "value_info": "CSS declarations. *Incomplete description. See the full specification.",
+    "separator": ""
+  },
+  "tabindex": {
+    "tag_scope": [],
+    "description": "Whether the element is focusable and sequentially focusable, and\n     the relative order of the element for the purposes of sequential focus navigation",
+    "value_type": "int",
+    "value_enum": [],
+    "value_info": "Valid integer",
+    "separator": ""
+  },
+  "target": {
+    "tag_scope": [
+      "a",
+      "area"
+    ],
+    "description": "Navigable for hyperlink navigation",
+    "value_type": "string",
+    "value_enum": [],
+    "value_info": "Valid navigable target name or keyword",
+    "separator": "",
+    "next": "target(2)"
+  },
+  "target(2)": {
+    "tag_scope": [
+      "base"
+    ],
+    "description": "Default navigable for hyperlink navigation and form submission",
+    "value_type": "string",
+    "value_enum": [],
+    "value_info": "Valid navigable target name or keyword",
+    "separator": "",
+    "next": "target(3)"
+  },
+  "target(3)": {
+    "tag_scope": [
+      "form"
+    ],
+    "description": "Navigable for form submission",
+    "value_type": "string",
+    "value_enum": [],
+    "value_info": "Valid navigable target name or keyword",
+    "separator": ""
+  },
+  "title": {
+    "tag_scope": [],
+    "description": "Advisory information for the element",
+    "value_type": "string",
+    "value_enum": [],
+    "value_info": "Text",
+    "separator": "",
+    "next": "title(2)"
+  },
+  "title(2)": {
+    "tag_scope": [
+      "abbr",
+      "dfn"
+    ],
+    "description": "Full term or expansion of abbreviation",
+    "value_type": "string",
+    "value_enum": [],
+    "value_info": "Text",
+    "separator": "",
+    "next": "title(3)"
+  },
+  "title(3)": {
+    "tag_scope": [
+      "input"
+    ],
+    "description": "Description of pattern (when used with pattern attribute)",
+    "value_type": "string",
+    "value_enum": [],
+    "value_info": "Text",
+    "separator": "",
+    "next": "title(4)"
+  },
+  "title(4)": {
+    "tag_scope": [
+      "link"
+    ],
+    "description": "Title of the link",
+    "value_type": "string",
+    "value_enum": [],
+    "value_info": "Text",
+    "separator": "",
+    "next": "title(5)"
+  },
+  "title(5)": {
+    "tag_scope": [
+      "link",
+      "style"
+    ],
+    "description": "CSS style sheet set name",
+    "value_type": "string",
+    "value_enum": [],
+    "value_info": "Text",
+    "separator": ""
+  },
+  "translate": {
+    "tag_scope": [],
+    "description": "Whether the element is to be translated when the page is localized",
+    "value_type": "enum",
+    "value_enum": [
+      "",
+      "no",
+      "yes"
+    ],
+    "value_info": "",
+    "separator": ""
+  },
+  "type": {
+    "tag_scope": [
+      "a",
+      "link"
+    ],
+    "description": "Hint for the type of the referenced resource",
+    "value_type": "string",
+    "value_enum": [],
+    "value_info": "Valid MIME type string",
+    "separator": "",
+    "next": "type(2)"
+  },
+  "type(2)": {
+    "tag_scope": [
+      "button"
+    ],
+    "description": "Type of button",
+    "value_type": "enum",
+    "value_enum": [
+      "button",
+      "reset",
+      "submit"
+    ],
+    "value_info": "",
+    "separator": "",
+    "next": "type(3)"
+  },
+  "type(3)": {
+    "tag_scope": [
+      "embed",
+      "object",
+      "source"
+    ],
+    "description": "Type of embedded resource",
+    "value_type": "string",
+    "value_enum": [],
+    "value_info": "Valid MIME type string",
+    "separator": "",
+    "next": "type(4)"
+  },
+  "type(4)": {
+    "tag_scope": [
+      "input"
+    ],
+    "description": "Type of form control",
+    "value_type": "string",
+    "value_enum": [],
+    "value_info": "input type keyword",
+    "separator": "",
+    "next": "type(5)"
+  },
+  "type(5)": {
+    "tag_scope": [
+      "ol"
+    ],
+    "description": "Kind of list marker",
+    "value_type": "enum",
+    "value_enum": [
+      "1",
+      "A",
+      "I",
+      "a",
+      "i"
+    ],
+    "value_info": "",
+    "separator": "",
+    "next": "type(6)"
+  },
+  "type(6)": {
+    "tag_scope": [
+      "script"
+    ],
+    "description": "Type of script",
+    "value_type": "string",
+    "value_enum": [],
+    "value_info": "\"module\"; \"importmap\"; \"speculationrules\"; a valid MIME type string that is not a JavaScript MIME type essence match",
+    "separator": "",
+    "next": "type(7)"
+  },
+  "usemap": {
+    "tag_scope": [
+      "img"
+    ],
+    "description": "Name of image map to use",
+    "value_type": "string",
+    "value_enum": [],
+    "value_info": "Valid hash-name reference. *Incomplete description. See the full specification.",
+    "separator": ""
+  },
+  "value": {
+    "tag_scope": [
+      "button",
+      "option"
+    ],
+    "description": "Value to be used for form submission",
+    "value_type": "string",
+    "value_enum": [],
+    "value_info": "Text",
+    "separator": "",
+    "next": "value(2)"
+  },
+  "value(2)": {
+    "tag_scope": [
+      "data"
+    ],
+    "description": "Machine-readable value",
+    "value_type": "string",
+    "value_enum": [],
+    "value_info": "Text. *Incomplete description. See the full specification.",
+    "separator": "",
+    "next": "value(3)"
+  },
+  "value(3)": {
+    "tag_scope": [
+      "input"
+    ],
+    "description": "Value of the form control",
+    "value_type": "string",
+    "value_enum": [],
+    "value_info": "Varies. *Incomplete description. See the full specification.",
+    "separator": "",
+    "next": "value(4)"
+  },
+  "value(4)": {
+    "tag_scope": [
+      "li"
+    ],
+    "description": "Ordinal value of the list item",
+    "value_type": "int",
+    "value_enum": [],
+    "value_info": "Valid integer",
+    "separator": "",
+    "next": "value(5)"
+  },
+  "value(5)": {
+    "tag_scope": [
+      "meter",
+      "progress"
+    ],
+    "description": "Current value of the element",
+    "value_type": "float",
+    "value_enum": [],
+    "value_info": "Valid floating-point number",
+    "separator": ""
+  },
+  "width": {
+    "tag_scope": [
+      "canvas",
+      "embed",
+      "iframe",
+      "img",
+      "input",
+      "object",
+      "source",
+      "video"
+    ],
+    "description": "Horizontal dimension",
+    "value_type": "int",
+    "value_enum": [],
+    "value_info": "Valid non-negative integer. Special tag scope: source (in picture). *Incomplete description. See the full specification.",
+    "separator": ""
+  },
+  "wrap": {
+    "tag_scope": [
+      "textarea"
+    ],
+    "description": "How the value of the form control is to be wrapped for form submission",
+    "value_type": "enum",
+    "value_enum": [
+      "hard",
+      "soft"
+    ],
+    "value_info": "",
+    "separator": ""
+  },
+  "writingsuggestions": {
+    "tag_scope": [],
+    "description": "Whether the element can offer writing suggestions or not.",
+    "value_type": "enum",
+    "value_enum": [
+      "",
+      "false",
+      "true"
+    ],
+    "value_info": "",
+    "separator": ""
+  },
+  "type(7)": {
+    "tag_scope": [
+      "input"
+    ],
+    "description": "Type of form control",
+    "value_type": "string",
+    "value_enum": [
+      "button",
+      "checkbox",
+      "color",
+      "date",
+      "datetime-local",
+      "email",
+      "file",
+      "hidden",
+      "image",
+      "month",
+      "number",
+      "password",
+      "radio",
+      "range",
+      "reset",
+      "search",
+      "submit",
+      "tel",
+      "text",
+      "time",
+      "url",
+      "week"
+    ],
+    "value_info": "An input type e.g. \"text\", \"number\", or \"week\".",
+    "separator": ""
   },
   "role": {
-    "description": "ARIA semantic role",
-    "separator": " ",
     "tag_scope": [],
+    "description": "ARIA semantic role",
+    "value_type": "string",
     "value_enum": [
       "alert",
       "alertdialog",
@@ -1526,611 +2131,6 @@
       "tooltip"
     ],
     "value_info": "",
-    "value_type": "string"
-  },
-  "rows": {
-    "description": "Number of lines to show",
-    "separator": "",
-    "tag_scope": [
-      "textarea"
-    ],
-    "value_enum": [],
-    "value_info": "Valid non-negative integer greater than zero",
-    "value_type": "int"
-  },
-  "rowspan": {
-    "description": "Number of rows that the cell is to span",
-    "separator": "",
-    "tag_scope": [
-      "td",
-      "th"
-    ],
-    "value_enum": [],
-    "value_info": "Valid non-negative integer",
-    "value_type": "int"
-  },
-  "sandbox": {
-    "description": "Security rules for nested content",
-    "separator": " ",
-    "tag_scope": [
-      "iframe"
-    ],
-    "value_enum": [],
-    "value_info": "Unordered set of unique space-separated tokens, ASCII case-insensitive, consisting of \"allow-downloads\"\"allow-forms\"\"allow-modals\"\"allow-orientation-lock\"\"allow-pointer-lock\"\"allow-popups\"\"allow-popups-to-escape-sandbox\"\"allow-presentation\"\"allow-same-origin\"\"allow-scripts\"\"allow-top-navigation\"\"allow-top-navigation-by-user-activation\"\"allow-top-navigation-to-custom-protocols\"",
-    "value_type": "string"
-  },
-  "scope": {
-    "description": "Specifies which cells the header cell applies to",
-    "separator": "",
-    "tag_scope": [
-      "th"
-    ],
-    "value_enum": [
-      "col",
-      "colgroup",
-      "row",
-      "rowgroup"
-    ],
-    "value_info": "",
-    "value_type": "enum"
-  },
-  "selected": {
-    "description": "Whether the option is selected by default",
-    "separator": "",
-    "tag_scope": [
-      "option"
-    ],
-    "value_enum": [],
-    "value_info": "Boolean attribute",
-    "value_type": "bool"
-  },
-  "shadowrootclonable": {
-    "description": "Sets clonable on a declarative shadow root",
-    "separator": "",
-    "tag_scope": [
-      "template"
-    ],
-    "value_enum": [],
-    "value_info": "Boolean attribute",
-    "value_type": "bool"
-  },
-  "shadowrootcustomelementregistry": {
-    "description": "Enables declarative shadow roots to indicate they will use a custom element registry",
-    "separator": "",
-    "tag_scope": [
-      "template"
-    ],
-    "value_enum": [],
-    "value_info": "Boolean attribute",
-    "value_type": "bool"
-  },
-  "shadowrootdelegatesfocus": {
-    "description": "Sets delegates focus on a declarative shadow root",
-    "separator": "",
-    "tag_scope": [
-      "template"
-    ],
-    "value_enum": [],
-    "value_info": "Boolean attribute",
-    "value_type": "bool"
-  },
-  "shadowrootmode": {
-    "description": "Enables streaming declarative shadow roots",
-    "separator": "",
-    "tag_scope": [
-      "template"
-    ],
-    "value_enum": [
-      "closed",
-      "open"
-    ],
-    "value_info": "",
-    "value_type": "enum"
-  },
-  "shadowrootserializable": {
-    "description": "Sets serializable on a declarative shadow root",
-    "separator": "",
-    "tag_scope": [
-      "template"
-    ],
-    "value_enum": [],
-    "value_info": "Boolean attribute",
-    "value_type": "bool"
-  },
-  "shadowrootslotassignment": {
-    "description": "Sets slot assignment on a declarative shadow root",
-    "separator": "",
-    "tag_scope": [
-      "template"
-    ],
-    "value_enum": [
-      "manual",
-      "named"
-    ],
-    "value_info": "",
-    "value_type": "enum"
-  },
-  "shape": {
-    "description": "The kind of shape to be created in an image map",
-    "separator": "",
-    "tag_scope": [
-      "area"
-    ],
-    "value_enum": [
-      "circle",
-      "default",
-      "poly",
-      "rect"
-    ],
-    "value_info": "",
-    "value_type": "enum"
-  },
-  "size": {
-    "description": "Size of the control",
-    "separator": "",
-    "tag_scope": [
-      "input",
-      "select"
-    ],
-    "value_enum": [],
-    "value_info": "Valid non-negative integer greater than zero",
-    "value_type": "int"
-  },
-  "sizes": {
-    "description": "Sizes of the icons (for rel=\"icon\")",
-    "next": "sizes(2)",
-    "separator": " ",
-    "tag_scope": [
-      "link"
-    ],
-    "value_enum": [],
-    "value_info": "Unordered set of unique space-separated tokens, ASCII case-insensitive, consisting of sizes. *Incomplete description. See the full specification.",
-    "value_type": "string"
-  },
-  "sizes(2)": {
-    "description": "Image sizes for different page layouts",
-    "separator": ",",
-    "tag_scope": [
-      "img",
-      "source"
-    ],
-    "value_enum": [],
-    "value_info": "Valid source size list",
-    "value_type": "string"
-  },
-  "slot": {
-    "description": "The element's desired slot",
-    "separator": "",
-    "tag_scope": [],
-    "value_enum": [],
-    "value_info": "Text",
-    "value_type": "string"
-  },
-  "span": {
-    "description": "Number of columns spanned by the element",
-    "separator": "",
-    "tag_scope": [
-      "col",
-      "colgroup"
-    ],
-    "value_enum": [],
-    "value_info": "Valid non-negative integer greater than zero",
-    "value_type": "int"
-  },
-  "spellcheck": {
-    "description": "Whether the element is to have its spelling and grammar checked",
-    "separator": "",
-    "tag_scope": [],
-    "value_enum": [
-      "",
-      "false",
-      "true"
-    ],
-    "value_info": "",
-    "value_type": "enum"
-  },
-  "src": {
-    "description": "Address of the resource",
-    "separator": "",
-    "tag_scope": [
-      "audio",
-      "embed",
-      "iframe",
-      "img",
-      "input",
-      "script",
-      "source",
-      "track",
-      "video"
-    ],
-    "value_enum": [],
-    "value_info": "Valid non-empty URL potentially surrounded by spaces. Special tag scope: source (in video or audio). *Incomplete description. See the full specification.",
-    "value_type": "string"
-  },
-  "srcdoc": {
-    "description": "A document to render in the iframe",
-    "separator": "",
-    "tag_scope": [
-      "iframe"
-    ],
-    "value_enum": [],
-    "value_info": "The source of an iframe srcdoc document. *Incomplete description. See the full specification.",
-    "value_type": "string"
-  },
-  "srclang": {
-    "description": "Language of the text track",
-    "separator": "",
-    "tag_scope": [
-      "track"
-    ],
-    "value_enum": [],
-    "value_info": "Valid BCP 47 language tag",
-    "value_type": "string"
-  },
-  "srcset": {
-    "description": "Images to use in different situations, e.g., high-resolution displays, small monitors, etc.",
-    "separator": ",",
-    "tag_scope": [
-      "img",
-      "source"
-    ],
-    "value_enum": [],
-    "value_info": "Comma-separated list of image candidate strings",
-    "value_type": "string"
-  },
-  "start": {
-    "description": "Starting value of the list",
-    "separator": "",
-    "tag_scope": [
-      "ol"
-    ],
-    "value_enum": [],
-    "value_info": "Valid integer",
-    "value_type": "int"
-  },
-  "step": {
-    "description": "Granularity to be matched by the form control's value",
-    "separator": "",
-    "tag_scope": [
-      "input"
-    ],
-    "value_enum": [],
-    "value_info": "Valid floating-point number greater than zero, or \"any\"",
-    "value_type": "float"
-  },
-  "style": {
-    "description": "Presentational and formatting instructions",
-    "separator": "",
-    "tag_scope": [],
-    "value_enum": [],
-    "value_info": "CSS declarations. *Incomplete description. See the full specification.",
-    "value_type": "string"
-  },
-  "tabindex": {
-    "description": "Whether the element is focusable and sequentially focusable, and\n     the relative order of the element for the purposes of sequential focus navigation",
-    "separator": "",
-    "tag_scope": [],
-    "value_enum": [],
-    "value_info": "Valid integer",
-    "value_type": "int"
-  },
-  "target": {
-    "description": "Navigable for hyperlink navigation",
-    "next": "target(2)",
-    "separator": "",
-    "tag_scope": [
-      "a",
-      "area"
-    ],
-    "value_enum": [],
-    "value_info": "Valid navigable target name or keyword",
-    "value_type": "string"
-  },
-  "target(2)": {
-    "description": "Default navigable for hyperlink navigation and form submission",
-    "next": "target(3)",
-    "separator": "",
-    "tag_scope": [
-      "base"
-    ],
-    "value_enum": [],
-    "value_info": "Valid navigable target name or keyword",
-    "value_type": "string"
-  },
-  "target(3)": {
-    "description": "Navigable for form submission",
-    "separator": "",
-    "tag_scope": [
-      "form"
-    ],
-    "value_enum": [],
-    "value_info": "Valid navigable target name or keyword",
-    "value_type": "string"
-  },
-  "title": {
-    "description": "Advisory information for the element",
-    "next": "title(2)",
-    "separator": "",
-    "tag_scope": [],
-    "value_enum": [],
-    "value_info": "Text",
-    "value_type": "string"
-  },
-  "title(2)": {
-    "description": "Full term or expansion of abbreviation",
-    "next": "title(3)",
-    "separator": "",
-    "tag_scope": [
-      "abbr",
-      "dfn"
-    ],
-    "value_enum": [],
-    "value_info": "Text",
-    "value_type": "string"
-  },
-  "title(3)": {
-    "description": "Description of pattern (when used with pattern attribute)",
-    "next": "title(4)",
-    "separator": "",
-    "tag_scope": [
-      "input"
-    ],
-    "value_enum": [],
-    "value_info": "Text",
-    "value_type": "string"
-  },
-  "title(4)": {
-    "description": "Title of the link",
-    "next": "title(5)",
-    "separator": "",
-    "tag_scope": [
-      "link"
-    ],
-    "value_enum": [],
-    "value_info": "Text",
-    "value_type": "string"
-  },
-  "title(5)": {
-    "description": "CSS style sheet set name",
-    "separator": "",
-    "tag_scope": [
-      "link",
-      "style"
-    ],
-    "value_enum": [],
-    "value_info": "Text",
-    "value_type": "string"
-  },
-  "translate": {
-    "description": "Whether the element is to be translated when the page is localized",
-    "separator": "",
-    "tag_scope": [],
-    "value_enum": [
-      "",
-      "no",
-      "yes"
-    ],
-    "value_info": "",
-    "value_type": "enum"
-  },
-  "type": {
-    "description": "Hint for the type of the referenced resource",
-    "next": "type(2)",
-    "separator": "",
-    "tag_scope": [
-      "a",
-      "link"
-    ],
-    "value_enum": [],
-    "value_info": "Valid MIME type string",
-    "value_type": "string"
-  },
-  "type(2)": {
-    "description": "Type of button",
-    "next": "type(3)",
-    "separator": "",
-    "tag_scope": [
-      "button"
-    ],
-    "value_enum": [
-      "button",
-      "reset",
-      "submit"
-    ],
-    "value_info": "",
-    "value_type": "enum"
-  },
-  "type(3)": {
-    "description": "Type of embedded resource",
-    "next": "type(4)",
-    "separator": "",
-    "tag_scope": [
-      "embed",
-      "object",
-      "source"
-    ],
-    "value_enum": [],
-    "value_info": "Valid MIME type string",
-    "value_type": "string"
-  },
-  "type(4)": {
-    "description": "Type of form control",
-    "next": "type(5)",
-    "separator": "",
-    "tag_scope": [
-      "input"
-    ],
-    "value_enum": [],
-    "value_info": "input type keyword",
-    "value_type": "string"
-  },
-  "type(5)": {
-    "description": "Kind of list marker",
-    "next": "type(6)",
-    "separator": "",
-    "tag_scope": [
-      "ol"
-    ],
-    "value_enum": [
-      "1",
-      "A",
-      "I",
-      "a",
-      "i"
-    ],
-    "value_info": "",
-    "value_type": "enum"
-  },
-  "type(6)": {
-    "description": "Type of script",
-    "next": "type(7)",
-    "separator": "",
-    "tag_scope": [
-      "script"
-    ],
-    "value_enum": [],
-    "value_info": "\"module\"; \"importmap\"; \"speculationrules\"; a valid MIME type string that is not a JavaScript MIME type essence match",
-    "value_type": "string"
-  },
-  "type(7)": {
-    "description": "Type of form control",
-    "separator": "",
-    "tag_scope": [
-      "input"
-    ],
-    "value_enum": [
-      "button",
-      "checkbox",
-      "color",
-      "date",
-      "datetime-local",
-      "email",
-      "file",
-      "hidden",
-      "image",
-      "month",
-      "number",
-      "password",
-      "radio",
-      "range",
-      "reset",
-      "search",
-      "submit",
-      "tel",
-      "text",
-      "time",
-      "url",
-      "week"
-    ],
-    "value_info": "An input type e.g. \"text\", \"number\", or \"week\".",
-    "value_type": "string"
-  },
-  "usemap": {
-    "description": "Name of image map to use",
-    "separator": "",
-    "tag_scope": [
-      "img"
-    ],
-    "value_enum": [],
-    "value_info": "Valid hash-name reference. *Incomplete description. See the full specification.",
-    "value_type": "string"
-  },
-  "value": {
-    "description": "Value to be used for form submission",
-    "next": "value(2)",
-    "separator": "",
-    "tag_scope": [
-      "button",
-      "option"
-    ],
-    "value_enum": [],
-    "value_info": "Text",
-    "value_type": "string"
-  },
-  "value(2)": {
-    "description": "Machine-readable value",
-    "next": "value(3)",
-    "separator": "",
-    "tag_scope": [
-      "data"
-    ],
-    "value_enum": [],
-    "value_info": "Text. *Incomplete description. See the full specification.",
-    "value_type": "string"
-  },
-  "value(3)": {
-    "description": "Value of the form control",
-    "next": "value(4)",
-    "separator": "",
-    "tag_scope": [
-      "input"
-    ],
-    "value_enum": [],
-    "value_info": "Varies. *Incomplete description. See the full specification.",
-    "value_type": "string"
-  },
-  "value(4)": {
-    "description": "Ordinal value of the list item",
-    "next": "value(5)",
-    "separator": "",
-    "tag_scope": [
-      "li"
-    ],
-    "value_enum": [],
-    "value_info": "Valid integer",
-    "value_type": "int"
-  },
-  "value(5)": {
-    "description": "Current value of the element",
-    "separator": "",
-    "tag_scope": [
-      "meter",
-      "progress"
-    ],
-    "value_enum": [],
-    "value_info": "Valid floating-point number",
-    "value_type": "float"
-  },
-  "width": {
-    "description": "Horizontal dimension",
-    "separator": "",
-    "tag_scope": [
-      "canvas",
-      "embed",
-      "iframe",
-      "img",
-      "input",
-      "object",
-      "source",
-      "video"
-    ],
-    "value_enum": [],
-    "value_info": "Valid non-negative integer. Special tag scope: source (in picture). *Incomplete description. See the full specification.",
-    "value_type": "int"
-  },
-  "wrap": {
-    "description": "How the value of the form control is to be wrapped for form submission",
-    "separator": "",
-    "tag_scope": [
-      "textarea"
-    ],
-    "value_enum": [
-      "hard",
-      "soft"
-    ],
-    "value_info": "",
-    "value_type": "enum"
-  },
-  "writingsuggestions": {
-    "description": "Whether the element can offer writing suggestions or not.",
-    "separator": "",
-    "tag_scope": [],
-    "value_enum": [
-      "",
-      "false",
-      "true"
-    ],
-    "value_info": "",
-    "value_type": "enum"
+    "separator": " "
   }
 }

@@ -1,3 +1,9 @@
+description: Hyperlink
+categories:
+- flow
+- interactive
+- palpable
+- phrasing
 attributes:
 - accesskey
 - autocapitalize
@@ -39,11 +45,5 @@ attributes:
 - translate
 - type
 - writingsuggestions
-categories:
-- flow
-- interactive
-- palpable
-- phrasing
 children:
 - transparent
-description: Hyperlink

@@ -1,3 +1,6 @@
+description: Parenthesis for ruby annotation text
+categories:
+- none
 attributes:
 - accesskey
 - autocapitalize
@@ -31,8 +34,5 @@ attributes:
 - title
 - translate
 - writingsuggestions
-categories:
-- none
 children:
 - text
-description: Parenthesis for ruby annotation text

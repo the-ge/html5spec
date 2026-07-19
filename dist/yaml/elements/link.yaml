@@ -1,3 +1,8 @@
+description: Link metadata
+categories:
+- flow
+- metadata
+- phrasing
 attributes:
 - accesskey
 - as
@@ -47,9 +52,4 @@ attributes:
 - translate
 - type
 - writingsuggestions
-categories:
-- flow
-- metadata
-- phrasing
 children: []
-description: Link metadata

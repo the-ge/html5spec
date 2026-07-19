@@ -1,3 +1,6 @@
+description: Root element
+categories:
+- none
 attributes:
 - accesskey
 - autocapitalize
@@ -31,9 +34,6 @@ attributes:
 - title
 - translate
 - writingsuggestions
-categories:
-- none
 children:
 - body
 - head
-description: Root element

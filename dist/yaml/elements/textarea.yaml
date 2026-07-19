@@ -1,3 +1,14 @@
+description: Multiline text controls
+categories:
+- flow
+- form-associated
+- interactive
+- labelable
+- listed
+- palpable
+- phrasing
+- resettable
+- submittable
 attributes:
 - accesskey
 - autocapitalize
@@ -44,16 +55,5 @@ attributes:
 - translate
 - wrap
 - writingsuggestions
-categories:
-- flow
-- form-associated
-- interactive
-- labelable
-- listed
-- palpable
-- phrasing
-- resettable
-- submittable
 children:
 - text
-description: Multiline text controls

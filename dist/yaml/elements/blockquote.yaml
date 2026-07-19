@@ -1,3 +1,7 @@
+description: A section quoted from another source
+categories:
+- flow
+- palpable
 attributes:
 - accesskey
 - autocapitalize
@@ -32,9 +36,5 @@ attributes:
 - title
 - translate
 - writingsuggestions
-categories:
-- flow
-- palpable
 children:
 - flow
-description: A section quoted from another source

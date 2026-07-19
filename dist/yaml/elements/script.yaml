@@ -1,3 +1,9 @@
+description: Embedded script
+categories:
+- flow
+- metadata
+- phrasing
+- script-supporting
 attributes:
 - accesskey
 - async
@@ -41,11 +47,5 @@ attributes:
 - translate
 - type
 - writingsuggestions
-categories:
-- flow
-- metadata
-- phrasing
-- script-supporting
 children:
 - script, data, or script documentation
-description: Embedded script

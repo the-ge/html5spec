@@ -1,9 +1,9 @@
-description: Value to be used for form submission
-next: value(2)
-separator: ''
 tag_scope:
 - button
 - option
+description: Value to be used for form submission
+value_type: string
 value_enum: []
 value_info: Text
-value_type: string
+separator: ''
+next: value(2)

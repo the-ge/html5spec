@@ -1,6 +1,6 @@
-description: Hint for selecting an input modality
-separator: ''
 tag_scope: []
+description: Hint for selecting an input modality
+value_type: enum
 value_enum:
 - decimal
 - email
@@ -11,4 +11,4 @@ value_enum:
 - text
 - url
 value_info: ''
-value_type: enum
+separator: ''

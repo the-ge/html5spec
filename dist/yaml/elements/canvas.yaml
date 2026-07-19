@@ -1,3 +1,9 @@
+description: Scriptable bitmap canvas
+categories:
+- embedded
+- flow
+- palpable
+- phrasing
 attributes:
 - accesskey
 - autocapitalize
@@ -33,11 +39,5 @@ attributes:
 - translate
 - width
 - writingsuggestions
-categories:
-- embedded
-- flow
-- palpable
-- phrasing
 children:
 - transparent
-description: Scriptable bitmap canvas

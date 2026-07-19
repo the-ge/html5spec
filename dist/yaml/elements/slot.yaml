@@ -1,3 +1,7 @@
+description: Shadow tree slot
+categories:
+- flow
+- phrasing
 attributes:
 - accesskey
 - autocapitalize
@@ -32,9 +36,5 @@ attributes:
 - title
 - translate
 - writingsuggestions
-categories:
-- flow
-- phrasing
 children:
 - transparent
-description: Shadow tree slot

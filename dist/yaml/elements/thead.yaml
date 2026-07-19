@@ -1,3 +1,6 @@
+description: Group of heading rows in a table
+categories:
+- none
 attributes:
 - accesskey
 - autocapitalize
@@ -31,9 +34,6 @@ attributes:
 - title
 - translate
 - writingsuggestions
-categories:
-- none
 children:
 - script-supporting elements
 - tr
-description: Group of heading rows in a table

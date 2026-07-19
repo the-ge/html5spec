@@ -1,6 +1,6 @@
-description: The element's desired slot
-separator: ''
 tag_scope: []
+description: The element's desired slot
+value_type: string
 value_enum: []
 value_info: Text
-value_type: string
+separator: ''

@@ -1,3 +1,6 @@
+description: Container for document metadata
+categories:
+- none
 attributes:
 - accesskey
 - autocapitalize
@@ -31,8 +34,5 @@ attributes:
 - title
 - translate
 - writingsuggestions
-categories:
-- none
 children:
 - metadata content
-description: Container for document metadata

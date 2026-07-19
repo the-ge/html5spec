@@ -1,3 +1,8 @@
+description: Image map
+categories:
+- flow
+- palpable
+- phrasing
 attributes:
 - accesskey
 - autocapitalize
@@ -32,11 +37,6 @@ attributes:
 - title
 - translate
 - writingsuggestions
-categories:
-- flow
-- palpable
-- phrasing
 children:
 - area
 - transparent
-description: Image map

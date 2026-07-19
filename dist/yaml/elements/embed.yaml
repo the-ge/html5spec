@@ -1,3 +1,10 @@
+description: Plugin
+categories:
+- embedded
+- flow
+- interactive
+- palpable
+- phrasing
 attributes:
 - accesskey
 - any
@@ -36,11 +43,4 @@ attributes:
 - type
 - width
 - writingsuggestions
-categories:
-- embedded
-- flow
-- interactive
-- palpable
-- phrasing
 children: []
-description: Plugin

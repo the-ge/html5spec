@@ -1,3 +1,12 @@
+description: Calculated output value
+categories:
+- flow
+- form-associated
+- labelable
+- listed
+- palpable
+- phrasing
+- resettable
 attributes:
 - accesskey
 - autocapitalize
@@ -34,14 +43,5 @@ attributes:
 - title
 - translate
 - writingsuggestions
-categories:
-- flow
-- form-associated
-- labelable
-- listed
-- palpable
-- phrasing
-- resettable
 children:
 - phrasing
-description: Calculated output value

@@ -1,6 +1,6 @@
-description: Classes to which the element belongs
-separator: ' '
 tag_scope: []
+description: Classes to which the element belongs
+value_type: string
 value_enum: []
 value_info: Set of space-separated tokens
-value_type: string
+separator: ' '

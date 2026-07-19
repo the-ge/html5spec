@@ -1,8 +1,8 @@
-description: URL to use for form submission
-separator: ''
 tag_scope:
 - button
 - input
+description: URL to use for form submission
+value_type: string
 value_enum: []
 value_info: Valid non-empty URL potentially surrounded by spaces
-value_type: string
+separator: ''

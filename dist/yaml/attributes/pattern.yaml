@@ -1,7 +1,7 @@
-description: Pattern to be matched by the form control's value
-separator: ''
 tag_scope:
 - input
+description: Pattern to be matched by the form control's value
+value_type: string
 value_enum: []
 value_info: Regular expression matching the JavaScript Pattern production
-value_type: string
+separator: ''

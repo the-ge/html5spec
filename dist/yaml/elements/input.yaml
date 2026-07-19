@@ -1,3 +1,14 @@
+description: Form control
+categories:
+- flow
+- form-associated
+- interactive
+- labelable
+- listed
+- palpable
+- phrasing
+- resettable
+- submittable
 attributes:
 - accept
 - accesskey
@@ -65,15 +76,4 @@ attributes:
 - value
 - width
 - writingsuggestions
-categories:
-- flow
-- form-associated
-- interactive
-- labelable
-- listed
-- palpable
-- phrasing
-- resettable
-- submittable
 children: []
-description: Form control
