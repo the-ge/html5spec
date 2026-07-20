@@ -1,4 +1,4 @@
-.PHONY: default clear publish filter all install
+.PHONY: default all clear acquire install filter normalize publish
 default: all
 
 OUTDIR = .dev/data/raw/
@@ -12,25 +12,29 @@ all_times  := $(spec_times) $(OUTDIR)aria.time
 
 all: publish
 
-install:
-	python3 -m pip install -r requirements.txt
-
-publish: filter
-	# MAKE: 📦 Generate dist/json/*.json, dist/yaml/**/*.yaml, dist/NOTICE, dist/manifest.json.
-	@python3 src/main.py
-
-filter: $(OUTDIR)manifest.json
-	# MAKE: 🧲 Extract raw HTML into faithful NDJSON records + manifest under .dev/data/filtered/
-	@python3 src/filter.py
-
 clear:
 	rm --force $(all_specs) $(spec_etags) $(spec_times)
 	rm --force $(OUTDIR)aria.html $(OUTDIR)aria.etag $(OUTDIR)aria.time $(OUTDIR)manifest.json
 	rm --force --recursive $(NORMDIR)
 	rm --force --recursive dist/*/*
 
+install:
+	python3 -m pip install -r requirements.txt
+
+publish: normalize
+	# MAKE: 📦 Generate dist/json/*.json, dist/yaml/**/*.yaml, dist/NOTICE, dist/manifest.json.
+	@python3 src/main.py
+
+normalize: filter
+
+filter: acquire
+	# MAKE: 🧲 Extract raw HTML into faithful NDJSON records + manifest under .dev/data/filtered/
+	@python3 src/filter.py
+
+acquire: $(OUTDIR)manifest.json
+
 $(OUTDIR):
-	mkdir -p $@
+	@mkdir -p $@
 
 $(OUTDIR)aria.html: | $(OUTDIR)
 	@touch $(OUTDIR)aria.etag
