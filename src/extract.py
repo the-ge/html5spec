@@ -190,20 +190,17 @@ class Extractor:
             path = self._ndjson_path(page, section)
 
             if soup is not None:
-                try:
-                    rows = list(EXTRACTORS[section](soup))
-                    if not rows:
-                        raise ValueError(f'No rows extracted for {key}; spec structure may have changed')
-                    count = write_ndjson(path, rows)
-                    entries[key] = {
-                        'status': 'ok',
-                        'row_count': count,
-                        'extracted_at': datetime.now(timezone.utc).isoformat(),
-                    }
-                    logger.info(f'🧲 Extracted {count} rows -> {path.name}')
-                    continue
-                except Exception as e:
-                    logger.error(f'❌ Failed to extract {key}: {e}')
+                rows = list(EXTRACTORS[section](soup))
+                if not rows:
+                    raise ValueError(f'No rows extracted for {key}; spec structure may have changed')
+                count = write_ndjson(path, rows)
+                entries[key] = {
+                    'status': 'ok',
+                    'row_count': count,
+                    'extracted_at': datetime.now(timezone.utc).isoformat(),
+                }
+                logger.info(f'🧲 Extracted {count} rows -> {path.name}')
+                continue
 
             # Extraction unavailable this run (missing page or a broken section) —
             # fall back to whatever was written last time, so stage 2 always has

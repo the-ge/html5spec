@@ -347,6 +347,7 @@ class SpecParser:
             return self._validate_and_cache(key, len(entries), result)
         except Exception as e:
             return self._log_parse_error_and_fallback(e, key)
+            raise
 
     # ---- public builders ----
 
@@ -364,6 +365,7 @@ class SpecParser:
         except Exception as e:
             cached = self._log_parse_error_and_fallback(e, key)
             self._global_attributes = set(cached) if isinstance(cached, list) else cached
+            raise
         return self._global_attributes
 
     def get_elements(self) -> dict[str, Any]:
@@ -418,6 +420,7 @@ class SpecParser:
             return self._validate_and_cache(key, len(entries), result)
         except Exception as e:
             return self._log_parse_error_and_fallback(e, key)
+            raise
 
     def get_event_handlers(self) -> dict[str, Any]:
         """Build event handlers with caching and validation."""
