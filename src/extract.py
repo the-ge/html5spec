@@ -163,16 +163,16 @@ EXTRACTORS = {
 class Extractor:
     """Stage 1: raw spec HTML -> faithful NDJSON records, one file per (page, section)."""
 
-    def __init__(self, raw_data_dir: Path, normalized_data_dir: Path):
+    def __init__(self, raw_data_dir: Path, filtered_data_dir: Path):
         self.raw_data_dir = raw_data_dir
-        self.normalized_data_dir = normalized_data_dir
+        self.filtered_data_dir = filtered_data_dir
 
     def _load_soup(self, page: str) -> BeautifulSoup:
         with (self.raw_data_dir / f'{page}.html').open('r') as fp:
             return BeautifulSoup(fp, 'lxml')
 
     def _ndjson_path(self, page: str, section: str) -> Path:
-        return self.normalized_data_dir / f'{page}.{section}.ndjson'
+        return self.filtered_data_dir / f'{page}.{section}.ndjson'
 
     def extract_page(self, page: str, sections: tuple[str, ...]) -> dict[str, dict]:
         """Extract every section belonging to one source page. Returns one
@@ -208,7 +208,7 @@ class Extractor:
                 logger.info(f'🛟 Kept previous {path.name} ({row_count} rows, extraction unavailable this run)')
                 entries[key] = {'status': 'fallback', 'row_count': row_count}
             else:
-                logger.error(f'❌ No normalized data available for {key} (no previous file to fall back to)')
+                logger.error(f'❌ No filtered data available for {key} (no previous file to fall back to)')
                 entries[key] = {'status': 'missing', 'row_count': 0}
 
         return entries

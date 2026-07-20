@@ -14,7 +14,7 @@ from config import (
     DUMP_JSON_KWARGS,
     DUMP_YAML_KWARGS,
     LOG_LEVEL,
-    NORMALIZED_DATA_DIR,
+    FILTERED_DATA_DIR,
     NOTICE_FILE,
     RAW_DATA_MANIFEST_FILE,
 )
@@ -92,7 +92,7 @@ def main():
     # Instantiate the parser — reads from the normalized layer (see normalize.py),
     # not raw HTML directly.
     parser = SpecParser(
-        normalized_data_dir=NORMALIZED_DATA_DIR,
+        normalized_data_dir=FILTERED_DATA_DIR,
         cache_dir=DATA_CACHE_DIR,
     )
 

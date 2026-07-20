@@ -1,8 +1,8 @@
-.PHONY: default clear publish normalize all install
+.PHONY: default clear publish filter all install
 default: all
 
 OUTDIR = .dev/data/raw/
-NORMDIR = .dev/data/normalized/
+NORMDIR = .dev/data/filtered/
 
 specs      := indices.html dom.html input.html syntax.html
 spec_etags := $(addprefix $(OUTDIR), $(specs:.html=.etag))
@@ -15,13 +15,13 @@ all: publish
 install:
 	python3 -m pip install -r requirements.txt
 
-publish: normalize
+publish: filter
 	# MAKE: 📦 Generate dist/json/*.json, dist/yaml/**/*.yaml, dist/NOTICE, dist/manifest.json.
 	@python3 src/main.py
 
-normalize: $(OUTDIR)manifest.json
-	# MAKE: 🧲 Extract raw HTML into faithful NDJSON records + manifest under .dev/data/normalized/
-	@python3 src/normalize.py
+filter: $(OUTDIR)manifest.json
+	# MAKE: 🧲 Extract raw HTML into faithful NDJSON records + manifest under .dev/data/filtered/
+	@python3 src/filter.py
 
 clear:
 	rm --force $(all_specs) $(spec_etags) $(spec_times)
