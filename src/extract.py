@@ -137,7 +137,7 @@ def extract_aria_roles(soup: BeautifulSoup) -> Iterator[RawAriaRole]:
     for role in concrete_roles:
         rows = soup.find('section', {'id': role}).find_next('ul').find_all('li')
         for row in rows:
-            deprecated='' if row.strong == None else row.strong.get_text().strip()
+            deprecated='' if row.strong is None else row.strong.get_text().strip()
             if deprecated != '':
                 deprecated = re.search(r'(?<=ARIA )\d+\.\d+', deprecated)
                 deprecated = deprecated[0] if deprecated else ''
