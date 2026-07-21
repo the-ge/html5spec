@@ -1,4 +1,5 @@
-.PHONY: default all clear acquire install filter normalize publish
+.PHONY: default all clear install acquire filter normalize publish
+
 default: all
 
 RAW_DATA_DIR        := .dev/data/raw/
@@ -14,6 +15,18 @@ spec_times := $(addprefix $(RAW_DATA_DIR), $(specs:.html=.time))
 all_specs  := $(addprefix $(RAW_DATA_DIR), $(specs))
 all_times  := $(spec_times) $(RAW_DATA_DIR)aria.time
 
+GREEN  := \033[0;32m
+YELLOW := \033[0;33m
+NC     := \033[0m
+
+define say
+	@printf "$(YELLOW)MAKE:%s$(NC)\n" "$(1)"
+endef
+
+define confirm
+	@printf "$(GREEN)MAKE: ✅%s$(NC)\n" "$(1)"
+endef
+
 all: publish
 
 clear:
@@ -22,26 +35,42 @@ clear:
 install:
 	python3 -m pip install -r requirements.txt
 
-publish: normalize | $(DIST_DATA_DIR)
-	# MAKE: 📦 Generate dist/json/*.json, dist/yaml/**/*.yaml, dist/NOTICE, dist/manifest.json.
+# --- Phony entry points ---
+# These always run their recipe, giving a final "step complete" confirmation
+# after their dependencies are resolved (or skipped if up-to-date).
+
+publish: $(DIST_DATA_DIR)manifest.json | $(DIST_DATA_DIR)
+	$(call confirm, Publishing and all preceding steps complete (see $(DIST_DATA_DIR)manifest.json).)
+
+normalize: $(NORMALIZED_DATA_DIR)manifest.json | $(NORMALIZED_DATA_DIR)
+	$(call confirm, Normalization and all preceding steps complete (see $(NORMALIZED_DATA_DIR)manifest.json))
+
+filter: $(FILTERED_DATA_DIR)manifest.json | $(FILTERED_DATA_DIR)
+	$(call confirm, Filtering and accquiring steps complete (see $(FILTERED_DATA_DIR)manifest.json))
+
+acquire: $(RAW_DATA_DIR)manifest.json | $(RAW_DATA_DIR)
+	$(call confirm, Acquiring step complete (see $(RAW_DATA_DIR)manifest.json))
+
+# --- Build rules ---
+
+$(DIST_DATA_DIR)manifest.json: $(NORMALIZED_DATA_DIR)manifest.json
+	$(call say, 📦 Publishing dist/ files...)
 	@python3 src/main.py
 
-normalize: filter | $(NORMALIZED_DATA_DIR)
-	# MAKE: 🧲 Convert filtered data to normalized data under .dev/data/normalized/
+$(NORMALIZED_DATA_DIR)manifest.json: $(FILTERED_DATA_DIR)manifest.json
+	$(call say, 🧲 Converting filtered data to normalized data under .dev/data/normalized/...)
 	@python3 src/normalizing.py
 
-filter: acquire | $(FILTERED_DATA_DIR)
-	# MAKE: 🧲 Extract raw HTML into faithful NDJSON records + manifest under .dev/data/filtered/
+$(FILTERED_DATA_DIR)manifest.json: $(RAW_DATA_DIR)manifest.json
+	$(call say, 🧲 Extracting raw HTML into faithful NDJSON records + manifest under .dev/data/filtered/...)
 	@python3 src/filtering.py
-
-acquire: $(RAW_DATA_DIR)manifest.json
 
 $(DATA_DIRS): %/:
 	@mkdir -p $@
 
 $(RAW_DATA_DIR)aria.html: | $(RAW_DATA_DIR)
 	@touch $(RAW_DATA_DIR)aria.etag
-	# MAKE: 📥 Acquire ARIA specification from https://w3c.github.io/aria/
+	$(call say, 📥 Acquiring ARIA specification from https://w3c.github.io/aria/...)
 	@curl --silent --show-error --fail \
 	      --etag-compare $(RAW_DATA_DIR)aria.etag --etag-save $(RAW_DATA_DIR)aria.etag \
 	      --dump-header $(RAW_DATA_DIR)aria.headers \
@@ -55,7 +84,7 @@ $(RAW_DATA_DIR)aria.html: | $(RAW_DATA_DIR)
 	@rm --force $(RAW_DATA_DIR)aria.headers
 
 $(RAW_DATA_DIR)%.html: | $(RAW_DATA_DIR)
-	# MAKE: 📥 Acquire HTML specification from https://html.spec.whatwg.org/multipage/$*.html
+	$(call say, 📥 Acquiring HTML specification from https://html.spec.whatwg.org/multipage/$*.html...)
 	@touch $(RAW_DATA_DIR)$*.etag
 	@curl --silent --show-error --fail \
 	     --etag-compare $(RAW_DATA_DIR)$*.etag --etag-save $(RAW_DATA_DIR)$*.etag \
@@ -69,7 +98,6 @@ $(RAW_DATA_DIR)%.html: | $(RAW_DATA_DIR)
 	@rm --force $(RAW_DATA_DIR)$*.headers
 
 $(RAW_DATA_DIR)manifest.json: $(all_specs) $(RAW_DATA_DIR)aria.html
-	# MAKE: 📋 Generate manifest.json – collects all last‑modified timestamps
 	@{ \
 	    echo '{'; \
 	    i=0; \
@@ -83,3 +111,4 @@ $(RAW_DATA_DIR)manifest.json: $(all_specs) $(RAW_DATA_DIR)aria.html
 	    done; \
 	    echo '}'; \
 	} > $@
+	$(call confirm, Updated raw data manifest (collected all last‑modified timestamps.))
