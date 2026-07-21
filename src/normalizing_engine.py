@@ -469,9 +469,8 @@ class Normalizer:
             # Note: merge=False for attributes
             result = dictify(entries, merge=False)
             return self._validate_and_cache(key, len(entries), result)
-        except Exception as e:
+        except RECOVERABLE_FILTER_ERRORS as e:
             return self._log_parse_error_and_fallback(e, key)
-            raise
 
     def get_event_handlers(self) -> dict[str, Any]:
         """Build event handlers with caching and validation."""
