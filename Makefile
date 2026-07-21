@@ -30,7 +30,7 @@ normalize: filter | $(NORMALIZED_DATA_DIR)
 
 filter: acquire | $(FILTERED_DATA_DIR)
 	# MAKE: 🧲 Extract raw HTML into faithful NDJSON records + manifest under .dev/data/filtered/
-	@python3 src/filter.py
+	@python3 src/filtering.py
 
 acquire: $(RAW_DATA_DIR)manifest.json
 
