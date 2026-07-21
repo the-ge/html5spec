@@ -6,29 +6,43 @@ from pathlib import Path
 import yaml
 
 from config import (
-    DATA_CACHE_DIR,
     DIST_DATA_MANIFEST_FILE,
     DIST_JSON_DATA_DIR,
-    DIST_NOTICE_FILE,
     DIST_YAML_DATA_DIR,
     DUMP_JSON_KWARGS,
     DUMP_YAML_KWARGS,
     LOG_LEVEL,
-    FILTERED_DATA_DIR,
-    NOTICE_FILE,
+    NORMALIZED_DATA_DIR,
+    NORMALIZED_DATA_MANIFEST_FILE,
+    PROJECT_ROOT,
     RAW_DATA_MANIFEST_FILE,
 )
-from parser import SpecParser
-from util import make_serializable, short_path
+from util import short_path
 
 logging.basicConfig(level=LOG_LEVEL, format='%(levelname)s: %(message)s')
 logger = logging.getLogger(__name__)
+
+# ---- Licenses (single consumer: this driver) ----
+LICENSES_DIR = PROJECT_ROOT / 'licenses'
+NOTICE_FILE = LICENSES_DIR / 'NOTICE'  # static, copied verbatim to dist/NOTICE
+DIST_NOTICE_FILE = PROJECT_ROOT / 'dist/NOTICE'
 
 
 def copy_notice() -> None:
     """Copy the static licenses/NOTICE file to dist/NOTICE, unmodified."""
     DIST_NOTICE_FILE.parent.mkdir(parents=True, exist_ok=True)
     DIST_NOTICE_FILE.write_text(NOTICE_FILE.read_text(encoding='utf-8'), encoding='utf-8')
+
+
+def read_normalized_categories() -> dict[str, object]:
+    """Load every category the normalize stage produced from NORMALIZED_DATA_DIR,
+    using its manifest as the index of what to read."""
+    manifest = json.loads(NORMALIZED_DATA_MANIFEST_FILE.read_text(encoding='utf-8'))
+    results = {}
+    for category in manifest:
+        path = NORMALIZED_DATA_DIR / f'{category}.json'
+        results[category] = json.loads(path.read_text(encoding='utf-8'))
+    return results
 
 
 def build_manifest(counts: dict[str, int]) -> dict:
@@ -51,10 +65,10 @@ def build_manifest(counts: dict[str, int]) -> dict:
 
 
 def write_output(data: dict, path: Path) -> None:
-    """Write the aggregate result for one category to path as JSON."""
-    serializable = make_serializable(data)
+    """Write the aggregate result for one category to path as JSON.
+    Data is already plain-JSON-serializable — normalizing.py did that conversion."""
     path.write_text(
-        json.dumps(serializable, **DUMP_JSON_KWARGS),
+        json.dumps(data, **DUMP_JSON_KWARGS),
         encoding='utf-8',
     )
 
@@ -64,7 +78,7 @@ def write_yaml_file(data: list, path: Path) -> None:
     breakdown — used for categories like global_attributes that are just
     a list of names, not records worth splitting into their own files."""
     path.write_text(
-        yaml.dump(make_serializable(data), **DUMP_YAML_KWARGS),
+        yaml.dump(data, **DUMP_YAML_KWARGS),
         encoding='utf-8',
     )
 
@@ -77,7 +91,7 @@ def write_yaml_items(data: dict, dir_path: Path) -> int:
     for key, value in data.items():
         filename = key.replace('/', '_')  # guard against path traversal via item keys
         (dir_path / f'{filename}.yaml').write_text(
-            yaml.dump(make_serializable(value), **DUMP_YAML_KWARGS),
+            yaml.dump(value, **DUMP_YAML_KWARGS),
             encoding='utf-8',
         )
         count += 1
@@ -89,15 +103,9 @@ def main():
     DIST_JSON_DATA_DIR.mkdir(parents=True, exist_ok=True)
     DIST_YAML_DATA_DIR.mkdir(parents=True, exist_ok=True)
 
-    # Instantiate the parser — reads from the normalized layer (see normalize.py),
-    # not raw HTML directly.
-    parser = SpecParser(
-        normalized_data_dir=FILTERED_DATA_DIR,
-        cache_dir=DATA_CACHE_DIR,
-    )
-
-    # Parse everything
-    results = parser.get_all()
+    # Assemble from the normalized layer — all parsing/typing already happened
+    # in normalizing.py; this stage only formats and writes.
+    results = read_normalized_categories()
 
     # Write each result
     counts = {}

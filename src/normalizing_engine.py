@@ -3,12 +3,13 @@ import logging
 import re
 import string
 from collections.abc import Callable, Iterator
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
 from slugify import slugify
 
-from config import DUMP_JSON_KWARGS, EXCEPTION_PATTERN, KEYWORDS_PATTERN, MIN_COUNT
+from config import DUMP_JSON_KWARGS
 from filtering_engine import (
     RawAriaRole,
     RawAttribute,
@@ -19,18 +20,69 @@ from filtering_engine import (
     RawGlobalAttribute,
     RawInputType,
 )
-from util import (
-    Attribute,
-    Category,
-    Element,
-    ElementType,
-    EventHandler,
-    dictify,
-    make_serializable,
-    read_ndjson,
-)
+from util import dictify, make_serializable, read_ndjson
 
 logger = logging.getLogger(__name__)
+
+# ---- Typed, merged entities (normalize-stage output shape) ----
+
+
+@dataclass(frozen=True, slots=True)
+class Element:
+    name: str
+    description: str
+    categories: set[str]
+    attributes: set[str]
+    children: set[str]
+
+
+@dataclass(frozen=True, slots=True)
+class Category:
+    name: str
+    elements: set[str]
+    elements_maybe: list[str]
+    exceptions: str
+
+
+@dataclass(frozen=True, slots=True)
+class Attribute:
+    name: str
+    tag_scope: set[str]
+    description: str
+    value_type: str
+    value_enum: set[str]
+    value_info: str
+    separator: str
+
+
+@dataclass(frozen=True, slots=True)
+class EventHandler:
+    name: str
+    applies_to: str
+
+
+@dataclass(frozen=True, slots=True)
+class ElementType:
+    name: str
+    tags: set[str]
+    info: str
+
+
+# ---- html.spec.whatwg.org elements minimum counts ----
+MIN_COUNT = {
+    'elements': 50,
+    'categories': 5,
+    'attributes': 50,
+    'event_handlers': 50,
+    'element_types': 4,
+    'global_attributes': 32,
+}
+
+# Match a list of one-or-more keywords such as `"foo"; "bar"; "the empty string"`
+KEYWORDS_PATTERN = re.compile(r'^(?:"[a-zA-Z0-9/-]*"|the empty string)(?:; (?:"[a-zA-Z0-9/-]*"|the empty string))*$')
+
+# Match element exceptions like "element (if ...)"
+EXCEPTION_PATTERN = re.compile(r'([a-zA-Z0-9-]+) \(if [a-zA-Z0-9\' -]+\)')
 
 # Special cases: phrase -> list of yielded tokens (empty list yields nothing)
 SPECIAL_ELEMENTS = {
@@ -124,9 +176,8 @@ def warn_if_unseparated_tokens(text: str, context: str) -> None:
 
 
 # ---- Parsers for each section ----
-# Each function now takes the normalized rows for its section (read from
-# NORMALIZED_DATA_DIR by SpecParser) instead of a live soup. The transformation
-# logic below is unchanged from before the normalized layer existed.
+# Each function takes the filtered rows for its section (read from
+# FILTERED_DATA_DIR by Normalizer).
 
 
 def parse_global_attributes(rows: Iterator[RawGlobalAttribute]) -> set[str]:
@@ -218,6 +269,9 @@ def parse_attributes(rows: Iterator[RawAttribute]) -> Iterator[Attribute]:
                     value_type = 'int'
                 case 'Valid date string with optional time':
                     value_type = 'datetime'
+                case 'Valid list of floating-point numbers' | 'Valid source size list':
+                    value_type = 'string'
+                    separator = ','
                 case s if s.startswith('Valid non-negative integer'):
                     value_type = 'int'
                 case s if s.startswith('Valid floating-point number'):
@@ -225,12 +279,9 @@ def parse_attributes(rows: Iterator[RawAttribute]) -> Iterator[Attribute]:
                 case s if 'space-separated tokens' in s.lower():
                     value_type = 'string'
                     separator = ' '
-                case 'Valid list of floating-point numbers':
+                case s if 'ordered set of unique space-separated tokens' in s.lower():
                     value_type = 'string'
-                    separator = ','
-                case s if s.startswith('Valid source size list'):
-                    value_type = 'string'
-                    separator = ','
+                    separator = ' '
                 case s if 'comma-separated list of' in s.lower():
                     value_type = 'string'
                     separator = ','
@@ -281,15 +332,16 @@ def parse_element_types(rows: Iterator[RawElementType]) -> Iterator[ElementType]
         yield ElementType(name=slugify(raw.name), tags=set(raw.tags), info=raw.info)
 
 
-class SpecParser:
-    """Encapsulates building, caching, and validation of dist output from normalized data."""
+class Normalizer:
+    """Normalizing stage engine: filtered NDJSON -> typed, merged entities,
+    with validation and a fallback cache for resilience across runs."""
 
     def __init__(
         self,
-        normalized_data_dir: Path,
+        filtered_data_dir: Path,
         cache_dir: Path,
     ):
-        self.normalized_data_dir = normalized_data_dir
+        self.filtered_data_dir = filtered_data_dir
         self.cache_dir = cache_dir
         self._sections: dict[tuple[str, str], list] = {}
         self._global_attributes: set[str] | None = None
@@ -297,10 +349,10 @@ class SpecParser:
     # ---- internal helpers ----
 
     def _load_section(self, page: str, section: str, cls: type) -> list:
-        """Lazy-load a normalized (page, section) NDJSON file and cache the result."""
+        """Lazy-load a filtered (page, section) NDJSON file and cache the result."""
         key = (page, section)
         if key not in self._sections:
-            path = self.normalized_data_dir / f'{page}.{section}.ndjson'
+            path = self.filtered_data_dir / f'{page}.{section}.ndjson'
             self._sections[key] = read_ndjson(path, cls)
         return self._sections[key]
 

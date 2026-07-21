@@ -27,6 +27,8 @@ publish: normalize | $(DIST_DATA_DIR)
 	@python3 src/main.py
 
 normalize: filter | $(NORMALIZED_DATA_DIR)
+	# MAKE: 🧲 Convert filtered data to normalized data under .dev/data/normalized/
+	@python3 src/normalizing.py
 
 filter: acquire | $(FILTERED_DATA_DIR)
 	# MAKE: 🧲 Extract raw HTML into faithful NDJSON records + manifest under .dev/data/filtered/
