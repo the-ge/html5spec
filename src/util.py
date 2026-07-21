@@ -1,54 +1,12 @@
 import dataclasses
 import json
 from collections.abc import Iterable, Iterator
-from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, TypeVar
 
 from config import DUMP_NDJSON_KWARGS, PROJECT_ROOT
 
 T = TypeVar('T')
-
-
-@dataclass(frozen=True, slots=True)
-class Element:
-    name: str
-    description: str
-    categories: set[str]
-    attributes: set[str]
-    children: set[str]
-
-
-@dataclass(frozen=True, slots=True)
-class Category:
-    name: str
-    elements: set[str]
-    elements_maybe: list[str]
-    exceptions: str
-
-
-@dataclass(frozen=True, slots=True)
-class Attribute:
-    name: str
-    tag_scope: set[str]
-    description: str
-    value_type: str
-    value_enum: set[str]
-    value_info: str
-    separator: str
-
-
-@dataclass(frozen=True, slots=True)
-class EventHandler:
-    name: str
-    applies_to: str
-
-
-@dataclass(frozen=True, slots=True)
-class ElementType:
-    name: str
-    tags: set[str]
-    info: str
 
 
 def dictify(
