@@ -1,0 +1,26 @@
+{
+  "elements": {
+    "status": "ok",
+    "row_count": 115
+  },
+  "categories": {
+    "status": "ok",
+    "row_count": 15
+  },
+  "attributes": {
+    "status": "ok",
+    "row_count": 181
+  },
+  "event_handlers": {
+    "status": "ok",
+    "row_count": 89
+  },
+  "element_types": {
+    "status": "ok",
+    "row_count": 6
+  },
+  "global_attributes": {
+    "status": "ok",
+    "row_count": 32
+  }
+}

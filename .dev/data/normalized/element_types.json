@@ -1,0 +1,48 @@
+{
+  "void-elements": {
+    "tags": [
+      "area",
+      "base",
+      "br",
+      "col",
+      "embed",
+      "hr",
+      "img",
+      "input",
+      "link",
+      "meta",
+      "source",
+      "track",
+      "wbr"
+    ],
+    "info": ""
+  },
+  "the-template-element": {
+    "tags": [
+      "template"
+    ],
+    "info": ""
+  },
+  "raw-text-elements": {
+    "tags": [
+      "script",
+      "style"
+    ],
+    "info": ""
+  },
+  "escapable-raw-text-elements": {
+    "tags": [
+      "textarea",
+      "title"
+    ],
+    "info": ""
+  },
+  "foreign-elements": {
+    "tags": [],
+    "info": "Elements from the MathML namespace and the SVG namespace."
+  },
+  "normal-elements": {
+    "tags": [],
+    "info": "All other allowed HTML elements are normal elements."
+  }
+}
