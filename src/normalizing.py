@@ -17,8 +17,7 @@ logger = logging.getLogger(__name__)
 
 
 def write_categories(results: dict) -> dict[str, dict]:
-    """Write each category's typed, merged result to NORMALIZED_DATA_DIR as
-    its own JSON file. Returns one manifest entry per category."""
+    """Write each category result to NORMALIZED_DATA_DIR as its own JSON file. Returns one manifest entry per category."""
     manifest_entries: dict[str, dict] = {}
     for category, data in results.items():
         path = NORMALIZED_DATA_DIR / f'{category}.json'
