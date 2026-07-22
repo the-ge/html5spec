@@ -41,7 +41,7 @@ def main() -> None:
         json.dumps(sections, **DUMP_JSON_KWARGS),
         encoding='utf-8',
     )
-    logger.info(f'✅ Updated normalized data manifest.')
+    logger.info('✅ Updated normalized data manifest.')
 
 
 if __name__ == '__main__':
