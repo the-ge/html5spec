@@ -166,7 +166,7 @@ def extract_element_types(soup: BeautifulSoup) -> Iterator[RawElementType]:
     name = None
     for row in rows:
         if row.name == 'dt':
-            if prev not in (None, 'dd'):
+            if prev not in {None, 'dd'}:
                 logger.error('❌ <dt> not preceded by a <dd>: %s', row)
             name = row.dfn.get_text().strip()  # literal text; slugify() happens in stage 2
             prev = 'dt'
