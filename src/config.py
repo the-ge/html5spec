@@ -17,10 +17,10 @@ DATA_CACHE_DIR = PROJECT_ROOT / '.dev/data/cache'  # normalize-stage fallback ca
 # at FILTERED_DATA_DIR/{page}.{section}.ndjson and one entry in FILTERED_DATA_MANIFEST_FILE.
 PAGE_SECTIONS = {
     'indices': ('elements', 'content_categories', 'attributes', 'event_handlers'),
-    'dom': ('global_attributes'),
-    'input': ('input_types'),
-    'syntax': ('element_types'),
-    'aria': ('aria_roles'),
+    'dom': ('global_attributes',),  # NOTE! to create a tuple with one element, it needs the trailing comma.
+    'input': ('input_types',),
+    'syntax': ('element_types',),
+    'aria': ('aria_roles',),
 }
 
 # ---- Manifest ----
