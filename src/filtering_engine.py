@@ -230,7 +230,7 @@ EXTRACTORS = {
 class Extractor:
     """Stage 1: raw spec HTML -> faithful NDJSON records, one file per (page, section)."""
 
-    def __init__(self, raw_data_dir: Path, filtered_data_dir: Path):
+    def __init__(self, raw_data_dir: Path, filtered_data_dir: Path) -> None:
         self.raw_data_dir = raw_data_dir
         self.filtered_data_dir = filtered_data_dir
 
