@@ -73,6 +73,15 @@ class RawAriaRole:
     deprecated_since_version: str
 
 
+# Expected cell count in each domain of the online HTML sources
+HTML_CELL_COUNT = {
+    'elements':       7,
+    'categories':     3,
+    'attributes':     4,
+    'event_handlers': 4,
+}
+
+
 # ---- Per-section extractors ----
 # Each function pulls literal cell/anchor text out of the soup, stripped of
 # surrounding whitespace only. No splitting, typing, or spec-specific
@@ -83,10 +92,11 @@ class RawAriaRole:
 def extract_elements(soup: BeautifulSoup) -> Iterator[RawElement]:
     # https://html.spec.whatwg.org/multipage/indices.html#elements-3
     rows = soup.find('h3', {'id': 'elements-3'}).find_next('tbody').find_all('tr')
+    count = HTML_CELL_COUNT['elements']
     for row in rows:
         cells = [x.get_text().strip() for x in row.find_all(['th', 'td'])]
-        if len(cells) != 7:
-            logger.error(f'❌ Expected 7 cells, got {len(cells)}. Skipping row: {row}')
+        if len(cells) != count:
+            logger.error(f'❌ Expected {count} cells, got {len(cells)}. Skipping row: {row}')
             continue
         element, description, categories, _, children, attributes, _ = cells
         yield RawElement(
@@ -97,10 +107,11 @@ def extract_elements(soup: BeautifulSoup) -> Iterator[RawElement]:
 def extract_categories(soup: BeautifulSoup) -> Iterator[RawCategory]:
     # https://html.spec.whatwg.org/multipage/indices.html#element-content-categories
     rows = soup.find('h3', {'id': 'element-content-categories'}).find_next('tbody').find_all('tr')
+    count = HTML_CELL_COUNT['categories']
     for row in rows:
         cells = [x.get_text().strip() for x in row.find_all(['th', 'td'])]
-        if len(cells) != 3:
-            logger.error(f'❌ Expected 3 cells, got {len(cells)}. Skipping row: {row}')
+        if len(cells) != count:
+            logger.error(f'❌ Expected {count} cells, got {len(cells)}. Skipping row: {row}')
             continue
         category, elements, exceptions = cells
         yield RawCategory(category=category, elements=elements, exceptions=exceptions)
@@ -109,10 +120,11 @@ def extract_categories(soup: BeautifulSoup) -> Iterator[RawCategory]:
 def extract_attributes(soup: BeautifulSoup) -> Iterator[RawAttribute]:
     # https://html.spec.whatwg.org/multipage/indices.html#attributes-3
     rows = soup.find('h3', {'id': 'attributes-3'}).find_next('tbody').find_all('tr')
+    count = HTML_CELL_COUNT['attributes']
     for row in rows:
         cells = [x.get_text().strip() for x in row.find_all(['th', 'td'])]
-        if len(cells) != 4:
-            logger.error(f'❌ Expected 4 cells, got {len(cells)}. Skipping row: {row}')
+        if len(cells) != count:
+            logger.error(f'❌ Expected {count} cells, got {len(cells)}. Skipping row: {row}')
             continue
         attribute, elements, description, value = cells
         yield RawAttribute(
@@ -123,10 +135,11 @@ def extract_attributes(soup: BeautifulSoup) -> Iterator[RawAttribute]:
 def extract_event_handlers(soup: BeautifulSoup) -> Iterator[RawEventHandler]:
     # https://html.spec.whatwg.org/multipage/indices.html#ix-event-handlers
     rows = soup.find('table', {'id': 'ix-event-handlers'}).find_next('tbody').find_all('tr')
+    count = HTML_CELL_COUNT['event_handlers']
     for row in rows:
         cells = [x.get_text().strip() for x in row.find_all(['th', 'td'])]
-        if len(cells) != 4:
-            logger.error(f'❌ Expected 4 cells, got {len(cells)}. Skipping row: {row}')
+        if len(cells) != count:
+            logger.error(f'❌ Expected {count} cells, got {len(cells)}. Skipping row: {row}')
             continue
         attribute, elements, _, _ = cells
         yield RawEventHandler(attribute=attribute, elements=elements)
