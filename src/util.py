@@ -2,19 +2,16 @@ import dataclasses
 import json
 from collections.abc import Iterable, Iterator
 from pathlib import Path
-from typing import Any, TypeVar
+from typing import Any, TypeAlias, TypeVar
 
 from config import DUMP_NDJSON_KWARGS, PROJECT_ROOT
 
 T = TypeVar('T')
+JSONType: TypeAlias = bool | int | float | str | list['JSONType'] | dict[str, 'JSONType'] | None
 
 
-def dictify(
-    xs: Iterator[Any],  # list/generator of dataclass objects
-    merge: bool = True,
-) -> dict[str, Any]:
+def dictify(xs: Iterator[Any], *, merge: bool) -> dict[str, Any]:
     """Convert a dataclass objects list/generator to a dict with unique keys as the the first field in each object."""
-
     result = {}
 
     for x in xs:
@@ -74,7 +71,7 @@ def read_ndjson(path: Path, cls: type[T]) -> list[T]:
         return [cls(**json.loads(line)) for line in fp if line.strip()]
 
 
-def make_serializable(obj):
+def make_serializable(obj: object) -> JSONType:
     """Recursively convert sets, lists, and dicts into a JSON serializable form."""
     if isinstance(obj, set):
         return sorted(make_serializable(v) for v in obj)

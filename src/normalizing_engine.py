@@ -396,7 +396,7 @@ class Normalizer:
         try:
             rows = self._load_section(page, section, cls)
             entries = list(parser(rows, **parser_kwargs))
-            result = dictify(entries)
+            result = dictify(entries, merge=True)
             return self._validate_and_cache(key, len(entries), result)
         except RECOVERABLE_FILTER_ERRORS as e:
             return self._log_parse_error_and_fallback(e, key)
