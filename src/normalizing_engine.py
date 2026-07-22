@@ -360,6 +360,7 @@ class Normalizer:
         self.cache_dir = cache_dir
         self._sections: dict[tuple[str, str], list] = {}
         self._global_attributes: set[str] | None = None
+        self._manifest: dict[str, dict] = {}  # populated by _validate(), collected by get_all()
 
     # ---- internal helpers ----
 
@@ -396,6 +397,41 @@ class Normalizer:
         logger.info('📂 Loaded %s from cache', cache_key)
         return cached
 
+    def _cache(self, key: str, count: int, result: Any) -> Any:
+        """Persist `result` for `key` unconditionally and log success.
+        Assumes `_validate()` already ran -- this method only persists.
+        """
+        self._save_cache(key, result)
+        logger.info('🏗️ Built and cached %s %s', count, key)
+        return result
+
+    def _validate(self, key: str, count: int) -> dict:
+        """Compare `count` against the previous cached run for `key` (if any) and decide pass/warn/raise. No fixed floor:
+        a category may legitimately grow or shrink a little as the spec evolves, but a bigger jump either way is more
+        likely a broken extractor/parser than a real change upstream.
+
+        delta ==  0 or no previous run -> pass, silent
+        abs(delta) == 1                -> pass, warn
+        abs(delta) >= 2                -> raise
+
+        Stores and returns the manifest entry for `key`: {status, row_count} plus delta, omitted when 0 (nothing changed)
+        or unavailable (first run).
+        """
+        previous = self._load_cache(key)
+        previous_count = len(previous) if previous is not None else None
+        delta = None if previous_count is None else count - previous_count
+
+        if delta is not None and abs(delta) >= 2:
+            raise ValueError(f'{key}: count changed by {delta:+d} since last run ({previous_count} -> {count})')
+        if delta is not None and abs(delta) == 1:
+            logger.warning(f'⚠️ {key}: count changed by {delta:+d} since last run ({previous_count} -> {count})')
+
+        entry = {'status': 'ok', 'row_count': count}
+        if delta:
+            entry['delta'] = delta
+        self._manifest[key] = entry
+        return entry
+
     def _validate_and_cache(self, key: str, count: int, result: Any) -> Any:
         """Raise if `count` doesn't meet MIN_COUNT[key]; otherwise cache
         `result` and log success. The one place "did we get enough data"
@@ -415,8 +451,10 @@ class Normalizer:
             rows = self._load_section(page, section, cls)
             entries = list(parser(rows, **parser_kwargs))
             result = dictify(entries, merge=True)
-            return self._validate_and_cache(section, len(entries), result)
+            self._validate(section, len(result))
+            return self._cache(section, len(result), result)
         except RECOVERABLE_FILTER_ERRORS as e:
+            print('  -->  ', 458, e)
             return self._log_parse_error_and_fallback(e, section)
 
     # ---- public builders ----
@@ -431,7 +469,8 @@ class Normalizer:
         try:
             rows = self._load_section('dom', 'global_attributes', RawGlobalAttribute)
             entries = parse_global_attributes(rows)
-            self._global_attributes = self._validate_and_cache(key, len(entries), entries)
+            self._validate(key, len(entries))
+            self._global_attributes = self._cache(key, len(entries), entries)
         except RECOVERABLE_FILTER_ERRORS as e:
             cached = self._log_parse_error_and_fallback(e, key)
             self._global_attributes = set(cached) if isinstance(cached, list) else cached
@@ -481,7 +520,8 @@ class Normalizer:
 
             # Note: merge=False for attributes
             result = dictify(entries, merge=False)
-            return self._validate_and_cache(key, len(entries), result)
+            self._validate(key, len(result))
+            return self._cache(key, len(result), result)
         except RECOVERABLE_FILTER_ERRORS as e:
             return self._log_parse_error_and_fallback(e, key)
 
