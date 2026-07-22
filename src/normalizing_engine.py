@@ -348,8 +348,7 @@ def parse_element_types(rows: Iterator[RawElementType]) -> Iterator[ElementType]
 
 
 class Normalizer:
-    """Normalizing stage engine: filtered NDJSON -> typed, merged entities,
-    with validation and a fallback cache for resilience across runs."""
+    """Normalizing stage engine: filtered NDJSON -> typed, merged entities, with validation and fallback cache."""
 
     def __init__(
         self,
@@ -493,7 +492,7 @@ class Normalizer:
         return self._get_dictified('syntax', 'element_types', RawElementType, 'element_types', parse_element_types)
 
     def get_all(self) -> dict[str, Any]:
-        """Convenience method to run all builders and return a dict of results."""
+        """Run all builders and return a dict of results."""
         return {
             'elements': self.get_elements(),
             'categories': self.get_categories(),
