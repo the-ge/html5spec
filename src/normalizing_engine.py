@@ -491,8 +491,7 @@ class Normalizer:
         return self._get_dictified('indices', 'event_handlers', RawEventHandler)
 
     def get_global_attributes(self) -> set[str]:
-        """Build or load cached global attributes. Memoized on the instance,
-        since get_elements() and get_all() both depend on this."""
+        """Build or load cached global attributes. Memoized on instance, get_elements() and get_all() both depend on this."""
         if self._global_attributes is not None:
             return self._global_attributes
 
