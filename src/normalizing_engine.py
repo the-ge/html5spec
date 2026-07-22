@@ -390,8 +390,9 @@ class Normalizer:
         logger.error('❌ Filtered data missing or unexpected shape: %s', e)
         cached = self._load_cache(cache_key)
         if cached is None:
-            raise RuntimeError(f'No cache available for {cache_key}') from e
-        logger.info(f'📂 Loaded {cache_key} from cache')
+            msg = f'No cache available for {cache_key}'
+            raise RuntimeError(msg) from e
+        logger.info('📂 Loaded %s from cache', cache_key)
         return cached
 
     def _validate_and_cache(self, key: str, count: int, result: Any) -> Any:
@@ -399,7 +400,8 @@ class Normalizer:
         `result` and log success. The one place "did we get enough data"
         is decided, shared by every build entry point below."""
         if count < MIN_COUNT[key]:
-            raise ValueError(f'Expected >={MIN_COUNT[key]} {key}, got {count}')
+            msg = f'Expected >={MIN_COUNT[key]} {key}, got {count}'
+            raise ValueError(msg)
         self._save_cache(key, result)
         logger.info(f'🏗️ Built and cached {count} {key}')
         return result
