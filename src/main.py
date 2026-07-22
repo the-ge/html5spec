@@ -35,8 +35,7 @@ def copy_notice() -> None:
 
 
 def read_normalized_categories() -> dict[str, object]:
-    """Load every category the normalize stage produced from NORMALIZED_DATA_DIR,
-    using its manifest as the index of what to read."""
+    """Load categories produced by the normalize stage from NORMALIZED_DATA_DIR, using its manifest as the index."""
     manifest = json.loads(NORMALIZED_DATA_MANIFEST_FILE.read_text(encoding='utf-8'))
     results = {}
     for category in manifest:
@@ -46,11 +45,10 @@ def read_normalized_categories() -> dict[str, object]:
 
 
 def build_manifest(counts: dict[str, int]) -> dict:
-    """Combine the raw per-source fetch manifest (written by `make manifest.json`
-    into RAW_DATA_DIR) with a generation timestamp and per-category item counts."""
+    """Combine the raw manifest written by make into RAW_DATA_DIR with a timestamp and category counts."""
     sources = {}
     if not RAW_DATA_MANIFEST_FILE.exists():
-        logger.error('❌ File missing: %s; did you run `make -C .dev/state` first?', short_path(RAW_DATA_MANIFEST_FILE))
+        logger.error('❌ File missing: %s; did you run `make -C acquire` first?', short_path(RAW_DATA_MANIFEST_FILE))
     else:
         try:
             sources = json.loads(RAW_DATA_MANIFEST_FILE.read_text(encoding='utf-8'))
@@ -65,8 +63,7 @@ def build_manifest(counts: dict[str, int]) -> dict:
 
 
 def write_output(data: dict, path: Path) -> None:
-    """Write the aggregate result for one category to path as JSON.
-    Data is already plain-JSON-serializable — normalizing.py did that conversion."""
+    """Write the aggregate result for one category as JSON. Data is already JSON-serializable."""
     path.write_text(
         json.dumps(data, **DUMP_JSON_KWARGS),
         encoding='utf-8',
@@ -74,9 +71,7 @@ def write_output(data: dict, path: Path) -> None:
 
 
 def write_yaml_file(data: list, path: Path) -> None:
-    """Write a list-shaped category to a single YAML file, no per-item
-    breakdown — used for categories like global_attributes that are just
-    a list of names, not records worth splitting into their own files."""
+    """Write a list category (global_attributes) to a single YAML file."""
     path.write_text(
         yaml.dump(data, **DUMP_YAML_KWARGS),
         encoding='utf-8',
@@ -84,8 +79,8 @@ def write_yaml_file(data: list, path: Path) -> None:
 
 
 def write_yaml_items(data: dict, dir_path: Path) -> int:
-    """Write each item in data as its own YAML file under dir_path, named
-    after its key, e.g. dir_path/abbr.yaml. Returns the number of files written."""
+    """Write each item as its own YAML file, named after its key, e.g. dir_path/abbr.yaml.
+    Returns the number of files written."""
     dir_path.mkdir(parents=True, exist_ok=True)
     count = 0
     for key, value in data.items():
@@ -103,8 +98,7 @@ def main() -> None:
     DIST_JSON_DATA_DIR.mkdir(parents=True, exist_ok=True)
     DIST_YAML_DATA_DIR.mkdir(parents=True, exist_ok=True)
 
-    # Assemble from the normalized layer — all parsing/typing already happened
-    # in normalizing.py; this stage only formats and writes.
+    # Assemble from the normalized layer; this stage only formats and writes.
     results = read_normalized_categories()
 
     # Write each result
