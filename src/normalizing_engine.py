@@ -166,11 +166,11 @@ def gen_categories(categories: str) -> Iterator[str]:
 def gen_enum(keywords: str) -> Iterator[str]:
     if KEYWORDS_PATTERN.fullmatch(keywords):
 
-        def process_token(token: str) -> str:
-            token = token.strip()
-            return '' if token == 'the empty string' else token.strip('"')
+        def process_keyword(keyword: str) -> str:
+            keyword = keyword.strip()
+            return '' if keyword == 'the empty string' else keyword.strip('"')
 
-        yield from map(process_token, keywords.split(';'))
+        yield from map(process_keyword, keywords.split(';'))
 
 
 def gen_element_exceptions(xs: str) -> Iterator[str]:
