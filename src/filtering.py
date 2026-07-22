@@ -15,7 +15,7 @@ logging.basicConfig(level=LOG_LEVEL, format='%(levelname)s: %(message)s')
 logger = logging.getLogger(__name__)
 
 
-def main():
+def main() -> None:
     FILTERED_DATA_DIR.mkdir(parents=True, exist_ok=True)
 
     extractor = Extractor(raw_data_dir=RAW_DATA_DIR, filtered_data_dir=FILTERED_DATA_DIR)
