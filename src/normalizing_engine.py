@@ -178,8 +178,7 @@ def gen_element_exceptions(xs: str) -> Iterator[str]:
         return
     parts = xs.split(';') if ';' in xs else [xs]
     for x in parts:
-        x = x.strip()
-        matches = EXCEPTION_PATTERN.fullmatch(x)
+        matches = EXCEPTION_PATTERN.fullmatch(x.strip())
         if matches:
             yield matches.group(1)
 
