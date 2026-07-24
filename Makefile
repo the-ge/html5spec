@@ -56,14 +56,17 @@ acquire: $(RAW_DATA_DIR)manifest.json | $(RAW_DATA_DIR)
 $(DIST_DATA_DIR)manifest.json: $(NORMALIZED_DATA_DIR)manifest.json
 	$(call say, 📦 Publishing dist/ files...)
 	@python3 src/main.py
+	$(call confirm, Publishing completed; updated end data manifest.)
 
 $(NORMALIZED_DATA_DIR)manifest.json: $(FILTERED_DATA_DIR)manifest.json
 	$(call say, 🧲 Converting filtered data to normalized data under .dev/data/normalized/...)
 	@python3 src/normalizing.py
+	$(call confirm, Normalization completed; updated normalized data manifest.)
 
 $(FILTERED_DATA_DIR)manifest.json: $(RAW_DATA_DIR)manifest.json
 	$(call say, 🧲 Extracting raw HTML into faithful NDJSON records + manifest under .dev/data/filtered/...)
 	@python3 src/filtering.py
+	$(call confirm, Extraction completed; updated filtered data manifest.)
 
 $(DATA_DIRS): %/:
 	@mkdir -p $@
@@ -111,4 +114,4 @@ $(RAW_DATA_DIR)manifest.json: $(all_specs) $(RAW_DATA_DIR)aria.html
 	    done; \
 	    echo '}'; \
 	} > $@
-	$(call confirm, Updated raw data manifest (collected all last‑modified timestamps.))
+	$(call confirm, Acquisition completed; collected all last‑modified timestamps in the raw data manifest.)

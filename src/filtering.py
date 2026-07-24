@@ -10,6 +10,7 @@ from config import (
     RAW_DATA_DIR,
 )
 from filtering_engine import Extractor
+from util import short_path
 
 logging.basicConfig(level=LOG_LEVEL, format='%(levelname)s: %(message)s')
 logger = logging.getLogger(__name__)
@@ -25,7 +26,7 @@ def main() -> None:
         json.dumps(sections, **DUMP_JSON_KWARGS),
         encoding='utf-8',
     )
-    logger.info('✅ Updated filtered data manifest.')
+    logger.info('📝 Wrote %s', short_path(FILTERED_DATA_MANIFEST_FILE))
 
 
 if __name__ == '__main__':

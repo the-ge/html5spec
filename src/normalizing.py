@@ -10,7 +10,7 @@ from config import (
     NORMALIZED_DATA_MANIFEST_FILE,
 )
 from normalizing_engine import Normalizer
-from util import make_serializable
+from util import make_serializable, short_path
 
 logging.basicConfig(level=LOG_LEVEL, format='%(levelname)s: %(message)s')
 logger = logging.getLogger(__name__)
@@ -35,7 +35,7 @@ def main() -> None:
         json.dumps(manifest, **DUMP_JSON_KWARGS),
         encoding='utf-8',
     )
-    logger.info('✅ Updated normalized data manifest.')
+    logger.info('📝 Wrote %s', short_path(NORMALIZED_DATA_MANIFEST_FILE))
 
 
 if __name__ == '__main__':

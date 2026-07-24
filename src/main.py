@@ -122,12 +122,12 @@ def main() -> None:
 
     # Static legal notice, copied once — no per-file duplication
     copy_notice()
-    logger.info('⚖️ Wrote %s', short_path(DIST_NOTICE_FILE))
+    logger.info('📝 Wrote %s', short_path(DIST_NOTICE_FILE))
 
     # Single manifest capturing per-source fetch times, generation time, and item counts
     manifest = build_manifest(counts)
     DIST_DATA_MANIFEST_FILE.write_text(json.dumps(manifest, **DUMP_JSON_KWARGS), encoding='utf-8')
-    logger.info('✅ Updated published data manifest.')
+    logger.info('📝 Wrote %s', short_path(DIST_DATA_MANIFEST_FILE))
 
 
 if __name__ == '__main__':
